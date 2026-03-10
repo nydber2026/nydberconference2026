@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <base href="..">
+    <link rel="shortcut icon" type="image/png" href="assets/favicon.png"/>
+    <link rel="stylesheet" type="text/css" media="all" href="assets/main.css"/>
+    <meta name="description" content="Upstate NY DBER Conference 2026 – Attendee Directory">
+    <meta name="resource-type" content="document">
+    <meta name="distribution" content="global">
+    <meta name="KeyWords" content="DBER, Discipline-Based Education Research, Cornell, Upstate NY, Conference 2026">
+    <title>Directory | Upstate NY DBER Conference 2026</title>
+
+    <style>
+        /* ── Search bar ── */
+        .directory-controls {
+            max-width: 860px;
+            margin: 1.5em auto 1em;
+            display: flex;
+            gap: 0.75em;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+        .directory-controls input[type="text"] {
+            flex: 1 1 220px;
+            padding: 0.5em 0.8em;
+            font-size: 0.95em;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .directory-controls select {
+            padding: 0.5em 0.8em;
+            font-size: 0.95em;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            background: #fff;
+        }
+
+        /* ── Grid of cards ── */
+        .attendee-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            gap: 1.5em;
+            max-width: 1100px;
+            margin: 1em auto 2em;
+            padding: 0 1em;
+        }
+
+        /* ── Individual card ── */
+        .attendee-card {
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            overflow: hidden;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.07);
+            transition: box-shadow 0.2s ease;
+            display: flex;
+            flex-direction: column;
+        }
+        .attendee-card:hover {
+            box-shadow: 0 4px 14px rgba(0,0,0,0.13);
+        }
+
+        .attendee-card img {
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            object-fit: cover;
+            object-position: top center;
+            background: #eee;
+        }
+        .attendee-card .no-photo {
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            background: #e8ecf0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3em;
+            color: #aab;
+        }
+
+        .attendee-info {
+            padding: 0.9em 1em 1em;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 0.3em;
+        }
+        .attendee-name {
+            font-weight: bold;
+            font-size: 1.05em;
+            color: #222;
+            margin: 0;
+        }
+        .attendee-affiliation {
+            font-size: 0.88em;
+            color: #555;
+            margin: 0;
+        }
+        .attendee-email {
+            font-size: 0.84em;
+            margin: 0;
+        }
+        .attendee-email a {
+            color: #B31B1B; /* Cornell red */
+            text-decoration: none;
+        }
+        .attendee-email a:hover {
+            text-decoration: underline;
+        }
+
+        /* ── Keyword pills ── */
+        .keyword-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.35em;
+            margin-top: 0.4em;
+        }
+        .keyword-pill {
+            background: #f0f4f8;
+            border: 1px solid #c8d4e0;
+            border-radius: 20px;
+            padding: 0.15em 0.6em;
+            font-size: 0.76em;
+            color: #444;
+            white-space: nowrap;
+        }
+
+        /* ── Empty state ── */
+        .no-results {
+            text-align: center;
+            color: #777;
+            padding: 2em;
+            font-style: italic;
+            grid-column: 1 / -1;
+        }
+
+        /* ── Count label ── */
+        .attendee-count {
+            text-align: center;
+            color: #666;
+            font-size: 0.9em;
+            margin-bottom: 0.5em;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="banner">
+        <img src="assets/banner.jpg" alt="Upstate NY DBER Conference 2026 Banner" style="width:50%; height:auto; margin-top: 5em;">
+        <div class="top-left">
+            <span class="title1">Upstate NY</span><span class="title2">DBER</span> <span class="year">2026</span>
+        </div>
+        <div class="bottom-right">
+            June 11&ndash;12, 2026 <br> Cornell University, Ithaca NY
+        </div>
+    </div>
+
+    <table class="navigation">
+        <tr>
+            <td class="navigation">
+                <a title="Conference Home Page" href=".">Home</a>
+            </td>
+            <td class="navigation">
+                <a title="Register for the Conference" href="registration">Registration</a>
+            </td>
+            <td class="navigation">
+                <a title="Conference Program" href="program">Program</a>
+            </td>
+            <td class="navigation">
+                <a class="current" title="Conference Attendees Directory" href="attendee information">Directory</a>
+            </td>
+            <td class="navigation">
+                <a title="Directions to the Conference" href="directions">Directions</a>
+            </td>
+            <td class="navigation">
+                <a title="Conference Flyer" href="flyer">Flyer</a>
+            </td>
+        </tr>
+    </table>
+
+    <h2>Attendee Directory</h2>
+    <p style="text-align:center; max-width:700px; margin: 0 auto 1em;">
+        Browse and connect with fellow attendees. Use the search box or filter by DBER field to find colleagues with shared interests.
+    </p>
+
+    <div class="directory-controls">
+        <input type="text" id="search-input" placeholder="Search by name, institution, or keyword&hellip;" oninput="filterCards()">
+        <select id="field-filter" onchange="filterCards()">
+            <option value="">All DBER fields</option>
+            <option value="GER">GER Geoscience Education</option>
+            <option value="EER">EER Engineering Education</option>
+            <option value="PER">PER Physics Education</option>
+            <option value="RUME">RUME Math Education</option>
+            <option value="CER">CER Chemistry Education</option>
+            <option value="BER">BER Biology Education</option>
+        </select>
+    </div>
+
+    <p class="attendee-count" id="attendee-count"></p>
+
+    <div class="attendee-grid" id="attendee-grid">
+        <!-- ═══════════════════════════════════════════════════════════
+             EXAMPLE ATTENDEE CARDS — replace with real attendee data.
+             Duplicate a .attendee-card block for each person.
+             Set data-keywords to a space-separated list of DBER field
+             codes (GER, EER, PER, RUME, CER, BER) for filtering.
+        ════════════════════════════════════════════════════════════ -->
+
+        <div class="attendee-card" data-keywords="BER GER">
+            <img src="assets/kitten3.jpg"
+                 alt="Photo of Jane Doe"
+                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <div class="no-photo" style="display:none;">👤</div>
+            <div class="attendee-info">
+                <p class="attendee-name">Dr. Jane Doe</p>
+                <p class="attendee-affiliation">Cornell University</p>
+                <p class="attendee-email"><a href="mailto:jd123@cornell.edu">jd123@cornell.edu</a></p>
+                <div class="keyword-list">
+                    <span class="keyword-pill">BER</span>
+                    <span class="keyword-pill">GER</span>
+                    <span class="keyword-pill">Undergraduate learning</span>
+                    <span class="keyword-pill">Equity</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="attendee-card" data-keywords="EER RUME">
+            <img src="assets/kitten1.jpg"
+                 alt="Photo of John Smith"
+                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <div class="no-photo" style="display:none;">👤</div>
+            <div class="attendee-info">
+                <p class="attendee-name">John Smith</p>
+                <p class="attendee-affiliation">University of Rochester</p>
+                <p class="attendee-email"><a href="mailto:jsmith@rochester.edu">jsmith@rochester.edu</a></p>
+                <div class="keyword-list">
+                    <span class="keyword-pill">EER</span>
+                    <span class="keyword-pill">RUME</span>
+                    <span class="keyword-pill">Problem-based learning</span>
+                    <span class="keyword-pill">Active learning</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="attendee-card" data-keywords="PER CER">
+            <img src="assets/kitten2.jpg"
+                 alt="Photo of Alex Jones"
+                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <div class="no-photo" style="display:none;">👤</div>
+            <div class="attendee-info">
+                <p class="attendee-name">Dr. Alex Jones</p>
+                <p class="attendee-affiliation">Syracuse University</p>
+                <p class="attendee-email"><a href="mailto:ajones@syr.edu">ajones@syr.edu</a></p>
+                <div class="keyword-list">
+                    <span class="keyword-pill">PER</span>
+                    <span class="keyword-pill">CER</span>
+                    <span class="keyword-pill">Conceptual change</span>
+                    <span class="keyword-pill">Assessment</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Add more attendee cards here following the same pattern -->
+
+        <div class="no-results" id="no-results" style="display:none;">
+            No attendees match your search.
+        </div>
+    </div>
+
+    <footer>
+        &copy; 2026 Upstate NY DBER Conference Organizers &nbsp;|&nbsp; Cornell University
+        <p style="text-align: center;">
+            This conference is supported by the National Science Foundation (Award #2430496).
+        </p>
+    </footer>
+
+    <script>
+        function filterCards() {
+            const query = document.getElementById('search-input').value.toLowerCase().trim();
+            const fieldFilter = document.getElementById('field-filter').value.toUpperCase();
+            const cards = document.querySelectorAll('.attendee-card');
+            let visible = 0;
+
+            cards.forEach(card => {
+                const text = card.innerText.toLowerCase();
+                const keywords = (card.dataset.keywords || '').toUpperCase();
+
+                const matchesSearch = !query || text.includes(query);
+                const matchesField = !fieldFilter || keywords.includes(fieldFilter);
+
+                if (matchesSearch && matchesField) {
+                    card.style.display = '';
+                    visible++;
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+
+            document.getElementById('no-results').style.display = visible === 0 ? 'block' : 'none';
+            document.getElementById('attendee-count').textContent =
+                visible === cards.length
+                    ? `${cards.length} attendees`
+                    : `Showing ${visible} of ${cards.length} attendees`;
+        }
+
+        // Initialize count on load
+        filterCards();
+    </script>
+
+</body>
+</html>
