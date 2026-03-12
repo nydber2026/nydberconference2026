@@ -2,6 +2,7 @@
 <html lang='en'>
 
 <head>
+    <meta charset="UTF-8">
     <base href="..">
     <link rel="shortcut icon" type="image/png" href="assets/favicon.png"/>
     <link rel="stylesheet" type="text/css" media="all" href="assets/main.css"/>
@@ -85,6 +86,9 @@
             display: flex;
             flex-direction: column;
             gap: 0.3em;
+            min-width: 0;
+            max-width: 100%;
+            box-sizing: border-box;
         }
         .attendee-name {
             font-weight: bold;
@@ -124,6 +128,42 @@
             font-size: 0.76em;
             color: #444;
             white-space: nowrap;
+        }
+
+        /* ── Expandable bio ── */
+        .bio-toggle {
+            background: none;
+            border: none;
+            color: #B31B1B;
+            font-size: 0.82em;
+            cursor: pointer;
+            padding: 0.3em 0;
+            margin-top: 0.3em;
+            text-align: left;
+            font-family: inherit;
+        }
+        .bio-toggle:hover {
+            text-decoration: underline;
+        }
+        .bio-text {
+            font-size: 0.82em;
+            color: #444;
+            line-height: 1.45;
+            margin: 0.3em 0 0;
+            max-height: 0;
+            max-width: 100%;
+            overflow: hidden;
+            overflow-wrap: break-word;
+            word-wrap: break-word;
+            min-width: 0;
+            box-sizing: border-box;
+            transition: max-height 0.3s ease, opacity 0.3s ease;
+            opacity: 0;
+        }
+        .bio-text.open {
+            max-height: 600px;
+            opacity: 1;
+            overflow-y: auto;
         }
 
         /* ── Empty state ── */
@@ -202,10 +242,10 @@
 
     <div class="attendee-grid" id="attendee-grid">
         <!-- ═══════════════════════════════════════════════════════════
-             EXAMPLE ATTENDEE CARDS — replace with real attendee data.
-             Duplicate a .attendee-card block for each person.
-             Set data-keywords to a space-separated list of DBER field
-             codes (GER, EER, PER, RUME, CER, BER) for filtering.
+             ATTENDEE CARDS
+             Each card includes a data-bio attribute for the expandable
+             bio section. Set data-keywords to a space-separated list
+             of DBER field codes (GER, EER, PER, RUME, CER, BER).
         ════════════════════════════════════════════════════════════ -->
 
         <div class="attendee-card" data-keywords="BER GER">
@@ -223,6 +263,8 @@
                     <span class="keyword-pill">Undergraduate learning</span>
                     <span class="keyword-pill">Equity</span>
                 </div>
+                <button class="bio-toggle" onclick="toggleBio(this)" aria-expanded="false">▸ Bio</button>
+                <p class="bio-text">Jane is an Associate Professor in the Department of Ecology &amp; Evolutionary Biology at Cornell University. Her research focuses on how undergraduate students develop scientific reasoning skills in field-based biology and geoscience courses, with a particular emphasis on equity and access in outdoor learning environments.</p>
             </div>
         </div>
 
@@ -241,6 +283,8 @@
                     <span class="keyword-pill">Problem-based learning</span>
                     <span class="keyword-pill">Active learning</span>
                 </div>
+                <button class="bio-toggle" onclick="toggleBio(this)" aria-expanded="false">▸ Bio</button>
+                <p class="bio-text">John is a doctoral candidate in Engineering Education at the University of Rochester. His work examines how problem-based learning approaches in undergraduate engineering and mathematics courses affect students' ability to transfer quantitative reasoning skills across disciplines.</p>
             </div>
         </div>
 
@@ -259,10 +303,72 @@
                     <span class="keyword-pill">Conceptual change</span>
                     <span class="keyword-pill">Assessment</span>
                 </div>
+                <button class="bio-toggle" onclick="toggleBio(this)" aria-expanded="false">▸ Bio</button>
+                <p class="bio-text">Alex is an Assistant Professor of Physics and Chemistry Education at Syracuse University. Their research investigates how students navigate conceptual change at the boundary of physics and chemistry, and they develop validated assessment instruments for measuring interdisciplinary understanding in introductory STEM courses.</p>
             </div>
         </div>
 
         <!-- Add more attendee cards here following the same pattern -->
+
+        <div class="attendee-card" data-keywords="RUME PER">
+            <img src="assets/kitten1.jpg"
+                 alt="Photo of Maria Chen"
+                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <div class="no-photo" style="display:none;">👤</div>
+            <div class="attendee-info">
+                <p class="attendee-name">Dr. Maria Chen</p>
+                <p class="attendee-affiliation">Binghamton University</p>
+                <p class="attendee-email"><a href="mailto:mchen@binghamton.edu">mchen@binghamton.edu</a></p>
+                <div class="keyword-list">
+                    <span class="keyword-pill">RUME</span>
+                    <span class="keyword-pill">PER</span>
+                    <span class="keyword-pill">Computational thinking</span>
+                    <span class="keyword-pill">Curriculum design</span>
+                </div>
+                <button class="bio-toggle" onclick="toggleBio(this)" aria-expanded="false">▸ Bio</button>
+                <p class="bio-text">Maria is an Associate Professor of Mathematics Education at Binghamton University. She studies how integrating computational thinking into undergraduate calculus and physics sequences affects student problem-solving strategies, and she leads a multi-institution effort to redesign introductory STEM curricula around modeling practices.</p>
+            </div>
+        </div>
+
+        <div class="attendee-card" data-keywords="CER BER">
+            <img src="assets/kitten2.jpg"
+                 alt="Photo of David Okafor"
+                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <div class="no-photo" style="display:none;">👤</div>
+            <div class="attendee-info">
+                <p class="attendee-name">David Okafor</p>
+                <p class="attendee-affiliation">University at Buffalo</p>
+                <p class="attendee-email"><a href="mailto:dokafor@buffalo.edu">dokafor@buffalo.edu</a></p>
+                <div class="keyword-list">
+                    <span class="keyword-pill">CER</span>
+                    <span class="keyword-pill">BER</span>
+                    <span class="keyword-pill">Lab pedagogy</span>
+                    <span class="keyword-pill">Belonging</span>
+                </div>
+                <button class="bio-toggle" onclick="toggleBio(this)" aria-expanded="false">▸ Bio</button>
+                <p class="bio-text">David is a doctoral student in Chemistry Education Research at the University at Buffalo. His dissertation explores how redesigning introductory chemistry and biology lab courses around authentic research experiences influences students' sense of belonging and persistence in STEM, particularly among first-generation college students.</p>
+            </div>
+        </div>
+
+        <div class="attendee-card" data-keywords="GER EER">
+            <img src="assets/kitten3.jpg"
+                 alt="Photo of Priya Vasquez"
+                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <div class="no-photo" style="display:none;">👤</div>
+            <div class="attendee-info">
+                <p class="attendee-name">Dr. Priya Vasquez</p>
+                <p class="attendee-affiliation">Clarkson University</p>
+                <p class="attendee-email"><a href="mailto:pvasquez@clarkson.edu">pvasquez@clarkson.edu</a></p>
+                <div class="keyword-list">
+                    <span class="keyword-pill">GER</span>
+                    <span class="keyword-pill">EER</span>
+                    <span class="keyword-pill">Place-based learning</span>
+                    <span class="keyword-pill">Mixed methods</span>
+                </div>
+                <button class="bio-toggle" onclick="toggleBio(this)" aria-expanded="false">▸ Bio</button>
+                <p class="bio-text">Priya is an Assistant Professor of Environmental Engineering and Geoscience Education at Clarkson University. Her research uses mixed-methods approaches to understand how place-based learning in environmental engineering and geoscience fieldwork shapes students' professional identity development and connection to local communities.</p>
+            </div>
+        </div>
 
         <div class="no-results" id="no-results" style="display:none;">
             No attendees match your search.
@@ -277,6 +383,13 @@
     </footer>
 
     <script>
+        function toggleBio(btn) {
+            const bioText = btn.nextElementSibling;
+            const isOpen = bioText.classList.toggle('open');
+            btn.setAttribute('aria-expanded', isOpen);
+            btn.textContent = isOpen ? '▾ Bio' : '▸ Bio';
+        }
+
         function filterCards() {
             const query = document.getElementById('search-input').value.toLowerCase().trim();
             const fieldFilter = document.getElementById('field-filter').value.toUpperCase();
