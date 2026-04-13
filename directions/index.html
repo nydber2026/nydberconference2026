@@ -1,6 +1,75 @@
+
+nydberconference webste
+/
+
+<!DOCTYPE html> <html lang='en'> <head> <base href=".."> <link rel="shortcut icon" type="image/png" href="assets/favicon.png"/> <link rel="stylesheet" type="text/css" media="all" href="assets/main.css"/> <meta name="description" content="Conference Template"> <meta name="resourc
+
+pasted
+
+working on this code but need to update the parking lot to the crescent lot 
+
+https://share.google/hWOVdwL6ghECD5vc3
+
+Crescent Lot
+126 Kite Hill Dr, Ithaca, NY 14853
+
+zone 4131
+
+5:03 PM
+Let me fetch that Google Maps link to get the embed details.
+
+
+Failed to fetch: https://share.google/hWOVdwL6ghECD5vc3
+Failed to fetch: https://share.google/hWOVdwL6ghECD5vc3
+No problem — I have the address. Let me search for the embed coordinates.
+
+
+Searching for places
+Searching for places
+I have the coordinates. Here's the updated directions page with the Crescent Lot replacing the Friedman Lot:
+
+
+Created a file, read a file
+Created a file, read a file
+Three changes made to the parking section:
+
+Lot name: Friedman Visitor Lot → Crescent Lot (with address 126 Kite Hill Dr)
+Zone: 4112 → 4131
+Map embed: updated to the Crescent Lot coordinates
+Step 2 in the ParkMobile instructions updated to match
+
+Directions index
+Code · HTML 
+really close but google map image for cresent lot is weill hall or something change pls
+
+https://www.google.com/maps/place/Crescent+Lot,+126+Kite+Hill+Dr,+Ithaca,+NY+14853/@42.4445924,-76.4792568,16z/data=!3m1!4b1!4m6!3m5!1s0x89d081f48706e739:0xbc36dc75c734ed7!8m2!3d42.4445282!4d-76.4767962!16s%2Fg%2F12hl_kjt0?hl=en&entry=ttu&g_ep=EgoyMDI2MDQwOC4wIKXMDSoASAFQAw%3D%3D
+
+5:05 PM
+I can extract the correct embed coordinates from that URL directly.
+
+The coordinates are 42.4445282, -76.4767962 and the place ID is 0x89d081f48706e739:0xbc36dc75c734ed7. Let me fix the embed:
+
+
+Edited a file, read a file
+Edited a file, read a file
+Updated the embed with the correct place ID and coordinates pulled directly from your Maps link — it should now pin to the Crescent Lot properly.
+
+
+Directions index
+Code · HTML 
+
+Want to be notified when Claude responds?
+
+
+
+
+Claude is AI and can make mistakes. Please double-check responses.
+Directions index · HTML
+Copy
+
 <!DOCTYPE html>
 <html lang='en'>
-
+ 
 <head>
     <base href="..">
     <link rel="shortcut icon" type="image/png" href="assets/favicon.png"/>
@@ -11,9 +80,9 @@
     <meta name="KeyWords" content="Conference">
     <title>Directions | Conference Template</title>
 </head>
-
+ 
 <body>
-
+ 
     <div class="banner">
         <img src="assets/banner.jpg" alt="Upstate NY DBER Conference 2026 Banner" style="width:50%; height:auto; margin-top: 5em;">
         <div class="top-left">
@@ -23,7 +92,7 @@
             June 11&ndash;12, 2026 <br> Cornell University, Ithaca NY
         </div>
     </div>
-
+ 
     <table class="navigation">
         <tr>
             <td class="navigation">
@@ -46,33 +115,33 @@
             </td>
         </tr>
     </table>
-
+ 
     <h2>Venue</h2>
     <p>
         The conference will be held at <strong>Weill Hall</strong>, located at 237 Tower Road on the Cornell University campus in Ithaca, NY 14850.
         Use the map below for directions, or open in <a href="https://www.google.com/maps/dir//Weill+Hall,+237+Tower+Rd,+Ithaca,+NY+14850/@42.4474004,-76.4812884,17z/data=!4m18!1m8!3m7!1s0x89d081f51c5b92b1:0x2f16fc83a1f8795f!2sWeill+Hall!8m2!3d42.4474004!4d-76.4771685!15sChQyMzcgVG93ZXIgUmQgY29ybmVsbJIBFXVuaXZlcnNpdHlfZGVwYXJ0bWVudOABAA!16s%2Fg%2F11bxf3v01_!4m8!1m0!1m5!1m1!1s0x89d081f51c5b92b1:0x2f16fc83a1f8795f!2m2!1d-76.4771685!2d42.4474004!3e3?entry=ttu&g_ep=EgoyMDI2MDMyOS4wIKXMDSoASAFQAw%3D%3D" target="_blank">Google Maps</a>.
     </p>
-
+ 
     <iframe class="directions" 
         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1500!2d-76.4771685!3d42.4474004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89d081f51c5b92b1%3A0x2f16fc83a1f8795f!2sWeill+Hall%2C+237+Tower+Rd%2C+Ithaca%2C+NY+14850!5e0!3m2!1sen!2sus!4v1680000000000!5m2!1sen!2sus"
         allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
     </iframe>
-
+ 
     <h2>Parking</h2>
     <p>
-        Visitor parking is available nearby at the <a href="https://www.google.com/maps/dir//Parking+lot,+New+York+14853/@42.4471038,-76.4768837,17.45z/data=!4m18!1m8!3m7!1s0x89d08189d62bff05:0x31cc93b1d3aa1da6!2sParking+lot,+New+York+14853!3b1!8m2!3d42.4458743!4d-76.4751213!16s%2Fg%2F11cppb2df8!4m8!1m0!1m5!1m1!1s0x89d08189d62bff05:0x31cc93b1d3aa1da6!2m2!1d-76.4751213!2d42.4458743!3e3?entry=ttu&g_ep=EgoyMDI2MDMyOS4wIKXMDSoASAFQAw%3D%3D" target="_blank"><strong>Friedman Visitor Lot</strong></a> for <strong>$10/day</strong>, payable via the <a href="https://parkmobile.io/" target="_blank">ParkMobile app</a> (Zone <strong>4112</strong>).
+        Visitor parking is available nearby at the <a href="https://www.google.com/maps/search/?api=1&query=126+Kite+Hill+Dr,+Ithaca,+NY+14853" target="_blank"><strong>Crescent Lot</strong></a> (126 Kite Hill Dr, Ithaca, NY 14853) for <strong>$10/day</strong>, payable via the <a href="https://parkmobile.io/" target="_blank">ParkMobile app</a> (Zone <strong>4131</strong>).
     </p>
     <iframe class="directions"
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d500!2d-76.4751213!3d42.4458743!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89d08189d62bff05%3A0x31cc93b1d3aa1da6!2sParking+lot%2C+New+York+14853!5e0!3m2!1sen!2sus!4v1680000000001!5m2!1sen!2sus"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1500!2d-76.4767962!3d42.4445282!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89d081f48706e739%3A0xbc36dc75c734ed7!2sCrescent+Lot%2C+126+Kite+Hill+Dr%2C+Ithaca%2C+NY+14853!5e0!3m2!1sen!2sus!4v1680000000003!5m2!1sen!2sus"
         allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
     </iframe>
-
+ 
     <p>
         To pay for parking via ParkMobile:
     </p>
     <ol>
         <li>Download the <a href="https://parkmobile.io/" target="_blank">ParkMobile app</a> or call <strong>877-727-5730</strong>.</li>
-        <li>Enter <strong>Zone 4112</strong> (Friedman Visitor Lot).</li>
+        <li>Enter <strong>Zone 4131</strong> (Crescent Lot).</li>
         <li>Enter your license plate number and select your desired parking duration.</li>
         <li>Pay by credit card (Visa, MasterCard, Discover, or American Express). A $0.45 transaction fee applies per session.</li>
     </ol>
@@ -81,7 +150,7 @@
         <a href="https://fcs.cornell.edu/sites/default/files/imce/site_contributor/Svc_Parking_and_Transportation/documents/2019%20April_Parkmobile-n-Paystation_Map.pdf" target="_blank">here (PDF)</a>.
         Questions about parking citations can be directed to <a href="https://www.myparking.cornell.edu" target="_blank">myparking.cornell.edu</a>.
     </p>
-
+ 
     <h2>Restaurants &amp; Dining</h2>
     <p>
         Downtown Ithaca offers a vibrant dining scene just a short drive or bus ride from Cornell&rsquo;s campus. The pedestrian-friendly <strong>Ithaca Commons</strong> area features dozens of restaurants spanning a wide range of cuisines, including farm-to-table American, Asian, Mexican, Jamaican, and more, along with coffee shops, food trucks, and outdoor dining patios. For a full listing of options, visit <a href="https://www.visitithaca.com/food-drink/" target="_blank">Visit Ithaca&rsquo;s Downtown Restaurant Guide</a>.
@@ -99,12 +168,19 @@
     <li style="list-style-type: circle;"><strong style="font-weight:bold">Franco&rsquo;s Pizzeria</strong> &mdash; 527 W. State St. &mdash; A long-standing Ithaca pizzeria serving classic New York-style pies.</li>
     <li style="list-style-type: circle;"><strong style="font-weight:bold"><a href="https://www.moosewoodrestaurant.com/" target="_blank">Moosewood Restaurant</a></strong> &mdash; 215 N. Cayuga St. (DeWitt Mall) &mdash; A legendary vegetarian institution open since 1973, winner of the James Beard America&rsquo;s Classics award, and author of over a dozen influential cookbooks. The menu changes seasonally and features farm-to-table dishes with global influences, including pescatarian and vegan options.</li>
     </ul>
-
+ 
     <footer>
         <p style="text-align: center;">
             This conference is supported by the National Science Foundation (Award #2430496).
         </p>
     </footer>
-
+ 
 </body>
 </html>
+ 
+
+
+
+
+
+
