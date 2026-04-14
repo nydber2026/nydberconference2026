@@ -13,7 +13,6 @@
     <title>Directory | Upstate NY DBER Conference 2026</title>
 
     <style>
-        /* ── Search bar ── */
         .directory-controls {
             max-width: 860px;
             margin: 1.5em auto 1em;
@@ -36,8 +35,6 @@
             border-radius: 4px;
             background: #fff;
         }
-
-        /* ── Grid of cards ── */
         .attendee-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
@@ -46,8 +43,6 @@
             margin: 1em auto 2em;
             padding: 0 1em;
         }
-
-        /* ── Individual card ── */
         .attendee-card {
             background: #fff;
             border: 1px solid #ddd;
@@ -61,7 +56,6 @@
         .attendee-card:hover {
             box-shadow: 0 4px 14px rgba(0,0,0,0.13);
         }
-
         .attendee-card img {
             width: 100%;
             aspect-ratio: 1 / 1;
@@ -79,7 +73,6 @@
             font-size: 3em;
             color: #aab;
         }
-
         .attendee-info {
             padding: 0.9em 1em 1em;
             flex: 1;
@@ -90,36 +83,12 @@
             max-width: 100%;
             box-sizing: border-box;
         }
-        .attendee-name {
-            font-weight: bold;
-            font-size: 1.05em;
-            color: #222;
-            margin: 0;
-        }
-        .attendee-affiliation {
-            font-size: 0.88em;
-            color: #555;
-            margin: 0;
-        }
-        .attendee-email {
-            font-size: 0.84em;
-            margin: 0;
-        }
-        .attendee-email a {
-            color: #B31B1B; /* Cornell red */
-            text-decoration: none;
-        }
-        .attendee-email a:hover {
-            text-decoration: underline;
-        }
-
-        /* ── Keyword pills ── */
-        .keyword-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.35em;
-            margin-top: 0.4em;
-        }
+        .attendee-name { font-weight: bold; font-size: 1.05em; color: #222; margin: 0; }
+        .attendee-affiliation { font-size: 0.88em; color: #555; margin: 0; }
+        .attendee-email { font-size: 0.84em; margin: 0; }
+        .attendee-email a { color: #B31B1B; text-decoration: none; }
+        .attendee-email a:hover { text-decoration: underline; }
+        .keyword-list { display: flex; flex-wrap: wrap; gap: 0.35em; margin-top: 0.4em; }
         .keyword-pill {
             background: #f0f4f8;
             border: 1px solid #c8d4e0;
@@ -129,59 +98,22 @@
             color: #444;
             white-space: nowrap;
         }
-
-        /* ── Expandable bio ── */
         .bio-toggle {
-            background: none;
-            border: none;
-            color: #B31B1B;
-            font-size: 0.82em;
-            cursor: pointer;
-            padding: 0.3em 0;
-            margin-top: 0.3em;
-            text-align: left;
-            font-family: inherit;
+            background: none; border: none; color: #B31B1B;
+            font-size: 0.82em; cursor: pointer; padding: 0.3em 0;
+            margin-top: 0.3em; text-align: left; font-family: inherit;
         }
-        .bio-toggle:hover {
-            text-decoration: underline;
-        }
+        .bio-toggle:hover { text-decoration: underline; }
         .bio-text {
-            font-size: 0.82em;
-            color: #444;
-            line-height: 1.45;
-            margin: 0.3em 0 0;
-            max-height: 0;
-            max-width: 100%;
-            overflow: hidden;
-            overflow-wrap: break-word;
-            word-wrap: break-word;
-            min-width: 0;
-            box-sizing: border-box;
-            transition: max-height 0.3s ease, opacity 0.3s ease;
-            opacity: 0;
+            font-size: 0.82em; color: #444; line-height: 1.45;
+            margin: 0.3em 0 0; max-height: 0; max-width: 100%;
+            overflow: hidden; overflow-wrap: break-word; word-wrap: break-word;
+            min-width: 0; box-sizing: border-box;
+            transition: max-height 0.3s ease, opacity 0.3s ease; opacity: 0;
         }
-        .bio-text.open {
-            max-height: 600px;
-            opacity: 1;
-            overflow-y: auto;
-        }
-
-        /* ── Empty state ── */
-        .no-results {
-            text-align: center;
-            color: #777;
-            padding: 2em;
-            font-style: italic;
-            grid-column: 1 / -1;
-        }
-
-        /* ── Count label ── */
-        .attendee-count {
-            text-align: center;
-            color: #666;
-            font-size: 0.9em;
-            margin-bottom: 0.5em;
-        }
+        .bio-text.open { max-height: 600px; opacity: 1; overflow-y: auto; }
+        .no-results { text-align: center; color: #777; padding: 2em; font-style: italic; grid-column: 1 / -1; }
+        .attendee-count { text-align: center; color: #666; font-size: 0.9em; margin-bottom: 0.5em; }
     </style>
 </head>
 
@@ -199,24 +131,12 @@
 
     <table class="navigation">
         <tr>
-            <td class="navigation">
-                <a title="Conference Home Page" href=".">Home</a>
-            </td>
-            <td class="navigation">
-                <a title="Register for the Conference" href="registration">Registration</a>
-            </td>
-            <td class="navigation">
-                <a title="Conference Program" href="program">Program</a>
-            </td>
-            <td class="navigation">
-                <a class="current" title="Conference Attendees Directory" href="attendee information">Directory</a>
-            </td>
-            <td class="navigation">
-                <a title="Directions to the Conference" href="directions">Directions</a>
-            </td>
-            <td class="navigation">
-                <a title="Conference Flyer" href="flyer">Flyer</a>
-            </td>
+            <td class="navigation"><a title="Conference Home Page" href=".">Home</a></td>
+            <td class="navigation"><a title="Register for the Conference" href="registration">Registration</a></td>
+            <td class="navigation"><a title="Conference Program" href="program">Program</a></td>
+            <td class="navigation"><a class="current" title="Conference Attendees Directory" href="attendee information">Directory</a></td>
+            <td class="navigation"><a title="Directions to the Conference" href="directions">Directions</a></td>
+            <td class="navigation"><a title="Conference Flyer" href="flyer">Flyer</a></td>
         </tr>
     </table>
 
@@ -229,12 +149,12 @@
         <input type="text" id="search-input" placeholder="Search by name, institution, or keyword&hellip;" oninput="filterCards()">
         <select id="field-filter" onchange="filterCards()">
             <option value="">All DBER fields</option>
-            <option value="GER">GER Geoscience Education</option>
-            <option value="EER">EER Engineering Education</option>
-            <option value="PER">PER Physics Education</option>
-            <option value="RUME">RUME Math Education</option>
-            <option value="CER">CER Chemistry Education</option>
-            <option value="BER">BER Biology Education</option>
+            <option value="GER">GER – Geoscience Education</option>
+            <option value="EER">EER – Engineering Education</option>
+            <option value="PER">PER – Physics Education</option>
+            <option value="RUME">RUME – Math Education</option>
+            <option value="CER">CER – Chemistry Education</option>
+            <option value="BER">BER – Biology Education</option>
         </select>
     </div>
 
@@ -242,10 +162,144 @@
 
     <div class="attendee-grid" id="attendee-grid">
 
+        <!-- ─── Michelle Smith ─── -->
+        <div class="attendee-card" data-keywords="BER">
+            <img src="https://people.as.cornell.edu/sites/default/files/styles/person_image/public/2025-09/mks2025.jpg"
+                 alt="Photo of Michelle Smith"
+                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <div class="no-photo" style="display:none;">👤</div>
+            <div class="attendee-info">
+                <p class="attendee-name">Michelle Smith</p>
+                <p class="attendee-affiliation">Cornell University</p>
+                <p class="attendee-email"><a href="mailto:mks2@cornell.edu">mks2@cornell.edu</a></p>
+                <div class="keyword-list">
+                    <span class="keyword-pill">BER</span>
+                    <span class="keyword-pill">Active Learning</span>
+                    <span class="keyword-pill">Concept Assessment</span>
+                    <span class="keyword-pill">Faculty Development</span>
+                    <span class="keyword-pill">Undergraduate Biology</span>
+                </div>
+                <button class="bio-toggle" onclick="toggleBio(this)" aria-expanded="false">▸ Bio</button>
+                <p class="bio-text">Michelle Smith is Distinguished Professor of Arts &amp; Sciences and Senior Associate Dean for Undergraduate Education at Cornell University. Her research focuses on identifying difficult concepts in undergraduate biology, understanding what makes active learning effective, and supporting faculty implementing evidence-based instructional change. She uses classroom-based assessments, interviews, observation protocols, and surveys analyzed through quantitative and qualitative methods.</p>
+            </div>
+        </div>
+
+        <!-- ─── Natasha Holmes ─── -->
+        <div class="attendee-card" data-keywords="PER">
+            <img src="https://www.lassp.cornell.edu/sites/default/files/styles/medium_square/public/2022-03/natasha-holmes.jpg?h=79ef140f&itok=4j8AOVgN"
+                 alt="Photo of Natasha Holmes"
+                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <div class="no-photo" style="display:none;">👤</div>
+            <div class="attendee-info">
+                <p class="attendee-name">Natasha Holmes</p>
+                <p class="attendee-affiliation">Cornell University</p>
+                <p class="attendee-email"><a href="mailto:ngholmes@cornell.edu">ngholmes@cornell.edu</a></p>
+                <div class="keyword-list">
+                    <span class="keyword-pill">PER</span>
+                    <span class="keyword-pill">Physics Lab Courses</span>
+                    <span class="keyword-pill">Critical Thinking</span>
+                    <span class="keyword-pill">Assessment</span>
+                    <span class="keyword-pill">Equity &amp; Inclusion</span>
+                </div>
+                <button class="bio-toggle" onclick="toggleBio(this)" aria-expanded="false">▸ Bio</button>
+                <p class="bio-text">Natasha Holmes is Ann S. Bowers Associate Professor of Physics at Cornell University. Her lab studies teaching and learning in physics and other STEM courses, with a major focus on the efficacy of hands-on laboratory courses. Her research explores how students develop critical thinking skills, how different course environments affect motivation and persistence, and how students develop an understanding of the nature of scientific measurement. She uses both qualitative and quantitative methods.</p>
+            </div>
+        </div>
+
+        <!-- ─── Alexandra Coso Strong ─── -->
+        <div class="attendee-card" data-keywords="EER">
+            <img src="https://www.duffield.cornell.edu/wp-content/uploads/2024/06/alex-coso-strong.png"
+                 alt="Photo of Alexandra Coso Strong"
+                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <div class="no-photo" style="display:none;">👤</div>
+            <div class="attendee-info">
+                <p class="attendee-name">Alexandra Coso Strong</p>
+                <p class="attendee-affiliation">Cornell University</p>
+                <p class="attendee-email"><a href="mailto:acs386@cornell.edu">acs386@cornell.edu</a></p>
+                <div class="keyword-list">
+                    <span class="keyword-pill">EER</span>
+                    <span class="keyword-pill">Complex Systems Design</span>
+                    <span class="keyword-pill">Faculty Development</span>
+                    <span class="keyword-pill">Curricular Change</span>
+                    <span class="keyword-pill">Hispanic-Serving Institutions</span>
+                </div>
+                <button class="bio-toggle" onclick="toggleBio(this)" aria-expanded="false">▸ Bio</button>
+                <p class="bio-text">Alexandra Coso Strong is Associate Professor in the R.F. Smith School of Chemical and Biomolecular Engineering at Cornell, where she joined in 2024. Her research focuses on sustainable change within educational systems and preparing engineers to address complex global challenges. She leads the REDES team, studying student and faculty experiences in engineering courses, cross-disciplinary communication, and the voices of instructional faculty. She holds a Ph.D. in Aerospace Engineering from Georgia Tech and an NSF CAREER Award.</p>
+            </div>
+        </div>
+
+        <!-- ─── Alexandra Werth ─── -->
+        <div class="attendee-card" data-keywords="EER PER">
+            <img src="https://www.duffield.cornell.edu/wp-content/uploads/2024/06/alexandra-werth-768x768.jpg"
+                 alt="Photo of Alexandra Werth"
+                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <div class="no-photo" style="display:none;">👤</div>
+            <div class="attendee-info">
+                <p class="attendee-name">Alexandra Werth</p>
+                <p class="attendee-affiliation">Cornell University</p>
+                <p class="attendee-email"><a href="mailto:amw438@cornell.edu">amw438@cornell.edu</a></p>
+                <div class="keyword-list">
+                    <span class="keyword-pill">EER</span>
+                    <span class="keyword-pill">PER</span>
+                    <span class="keyword-pill">Authentic Learning Environments</span>
+                    <span class="keyword-pill">Lab Courses &amp; CUREs</span>
+                    <span class="keyword-pill">Assessment Development</span>
+                </div>
+                <button class="bio-toggle" onclick="toggleBio(this)" aria-expanded="false">▸ Bio</button>
+                <p class="bio-text">Alexandra Werth is Assistant Professor at the Meinig School of Biomedical Engineering at Cornell, joining in Fall 2023. Her work focuses on Engineering Education Research (EER) and developing evidence-based teaching methodologies to foster authentic learning environments. She holds dual degrees in engineering and physics from Swarthmore College and a Ph.D. in Electrical and Computer Engineering from Princeton. She played a key role in developing the first large-enrollment introductory physics course-based research experience (CURE) during her postdoc at CU Boulder.</p>
+            </div>
+        </div>
+
+        <!-- ─── Allison Godwin ─── -->
+        <div class="attendee-card" data-keywords="EER">
+            <img src="https://www.duffield.cornell.edu/wp-content/uploads/2024/06/allison-godwin-25-768x768.jpg"
+                 alt="Photo of Allison Godwin"
+                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <div class="no-photo" style="display:none;">👤</div>
+            <div class="attendee-info">
+                <p class="attendee-name">Allison Godwin</p>
+                <p class="attendee-affiliation">Cornell University</p>
+                <p class="attendee-email"><a href="mailto:afg64@cornell.edu">afg64@cornell.edu</a></p>
+                <div class="keyword-list">
+                    <span class="keyword-pill">EER</span>
+                    <span class="keyword-pill">Engineering Identity</span>
+                    <span class="keyword-pill">Diversity &amp; Inclusion</span>
+                    <span class="keyword-pill">Workforce Development</span>
+                    <span class="keyword-pill">Mixed Methods</span>
+                </div>
+                <button class="bio-toggle" onclick="toggleBio(this)" aria-expanded="false">▸ Bio</button>
+                <p class="bio-text">Allison Godwin is the Dr. G. Stephen Irwin '67, '68 Professor of Engineering Education Research in the R.F. Smith School of Chemical and Biomolecular Engineering at Cornell. She was Cornell Engineering's first engineering education hire. Her research focuses on how diverse students navigate pathways into and through engineering, engineering identity development, inclusive pedagogy, and workforce development. She is the Past Chair of the ASEE Educational Research and Methods Division and holds a Ph.D. in Engineering and Science Education from Clemson University.</p>
+            </div>
+        </div>
+
+
+        <!-- ─── Margaret Webb ─── -->
+        <div class="attendee-card" data-keywords="EER">
+            <img src="assets/Webb Headshot.jpeg" alt="Photo of Margaret Webb"
+                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <div class="no-photo" style="display:none;">👤</div>
+            <div class="attendee-info">
+                <p class="attendee-name">Margaret Webb</p>
+                <p class="attendee-affiliation">Cornell University</p>
+                <p class="attendee-email"></p>
+                <div class="keyword-list">
+                    <span class="keyword-pill">EER</span>
+                    <span class="keyword-pill">Interdisciplinary Engineering Education</span>
+                    <span class="keyword-pill">Systems Theory</span>
+                    <span class="keyword-pill">Grad, Postdoc &amp; Faculty Development</span>
+                    <span class="keyword-pill">Motivation &amp; Identity</span>
+                    <span class="keyword-pill">Instructional Change</span>
+                    <span class="keyword-pill">AI-Enabled Qualitative Research</span>
+                </div>
+                <button class="bio-toggle" onclick="toggleBio(this)" aria-expanded="false">▸ Bio</button>
+                <p class="bio-text">Webb is a Postdoctoral Fellow in Disciplinary-Based Education Research (DBER) at Cornell University. She earned her Ph.D. in Engineering Education research (EER) and M.S. in Civil Engineering from Virginia Tech, and her B.S. in Mechanical Engineering from Rice University. Before graduate school, she worked as an engineer at ExxonMobil and taught middle and high school math. Her research sits at the intersection of systems thinking and organizational change, identity, agency, and motivation in STEM graduate education — with a particular focus on how students, postdocs, and faculty develop interdisciplinary researcher identities and navigate complex educational ecosystems.</p>
+            </div>
+        </div>
+
+
         <!-- ─── Collins Ugonna Lawrence ─── -->
         <div class="attendee-card" data-keywords="EER">
-            <img src="assets/1747474943246.jpeg"
-                 alt="Photo of Collins Lawrence"
+            <img src="assets/1747474943246.jpeg" alt="Photo of Collins Lawrence"
                  onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
             <div class="no-photo" style="display:none;">👤</div>
             <div class="attendee-info">
@@ -266,8 +320,7 @@
 
         <!-- ─── Masudul Imtiaz ─── -->
         <div class="attendee-card" data-keywords="EER">
-            <img src="assets/Masudul_Imtiaz.jpg"
-                 alt="Photo of Masudul Imtiaz"
+            <img src="assets/Masudul_Imtiaz.jpg" alt="Photo of Masudul Imtiaz"
                  onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
             <div class="no-photo" style="display:none;">👤</div>
             <div class="attendee-info">
@@ -288,8 +341,7 @@
 
         <!-- ─── James Hewlett ─── -->
         <div class="attendee-card" data-keywords="BER">
-            <img src="assets/Screenshot_2025_07_18_at_5.15.46_PM.png"
-                 alt="Photo of James Hewlett"
+            <img src="assets/Screenshot_2025_07_18_at_5.15.46_PM.png" alt="Photo of James Hewlett"
                  onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
             <div class="no-photo" style="display:none;">👤</div>
             <div class="attendee-info">
@@ -310,8 +362,7 @@
 
         <!-- ─── Ash Heim ─── -->
         <div class="attendee-card" data-keywords="BER">
-            <img src="assets/ashheim0619gmail.com_5a407a43_50.jpg"
-                 alt="Photo of Ash Heim"
+            <img src="assets/ashheim0619gmail.com_5a407a43_50.jpg" alt="Photo of Ash Heim"
                  onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
             <div class="no-photo" style="display:none;">👤</div>
             <div class="attendee-info">
@@ -332,8 +383,7 @@
 
         <!-- ─── Duncan Mullins ─── -->
         <div class="attendee-card" data-keywords="EER">
-            <img src="assets/Headshot.jpg"
-                 alt="Photo of Duncan Mullins"
+            <img src="assets/Headshot.jpg" alt="Photo of Duncan Mullins"
                  onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
             <div class="no-photo" style="display:none;">👤</div>
             <div class="attendee-info">
@@ -354,8 +404,7 @@
 
         <!-- ─── Aaron Weinberg ─── -->
         <div class="attendee-card" data-keywords="RUME">
-            <img src="assets/WEINBERG_AARON.jpg"
-                 alt="Photo of Aaron Weinberg"
+            <img src="assets/WEINBERG_AARON.jpg" alt="Photo of Aaron Weinberg"
                  onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
             <div class="no-photo" style="display:none;">👤</div>
             <div class="attendee-info">
@@ -375,8 +424,7 @@
 
         <!-- ─── Courtney Faber ─── -->
         <div class="attendee-card" data-keywords="EER">
-            <img src="assets/courtney_faber_543.jpg"
-                 alt="Photo of Courtney Faber"
+            <img src="assets/courtney_faber_543.jpg" alt="Photo of Courtney Faber"
                  onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
             <div class="no-photo" style="display:none;">👤</div>
             <div class="attendee-info">
@@ -397,8 +445,7 @@
 
         <!-- ─── Colleen Countryman ─── -->
         <div class="attendee-card" data-keywords="PER">
-            <img src="assets/h_s_headshots_1559.jpg_copy.jpg"
-                 alt="Photo of Colleen Countryman"
+            <img src="assets/h_s_headshots_1559.jpg_copy.jpg" alt="Photo of Colleen Countryman"
                  onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
             <div class="no-photo" style="display:none;">👤</div>
             <div class="attendee-info">
@@ -418,8 +465,7 @@
 
         <!-- ─── Kriz George ─── -->
         <div class="attendee-card" data-keywords="EER RUME">
-            <img src="assets/GEORGE_KRIZ.png"
-                 alt="Photo of Kriz George"
+            <img src="assets/GEORGE_KRIZ.png" alt="Photo of Kriz George"
                  onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
             <div class="no-photo" style="display:none;">👤</div>
             <div class="attendee-info">
@@ -440,8 +486,7 @@
 
         <!-- ─── Siddharthsinh Jadeja ─── -->
         <div class="attendee-card" data-keywords="EER">
-            <img src="assets/Sid.jpg"
-                 alt="Photo of Siddharthsinh Jadeja"
+            <img src="assets/Sid.jpg" alt="Photo of Siddharthsinh Jadeja"
                  onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
             <div class="no-photo" style="display:none;">👤</div>
             <div class="attendee-info">
@@ -461,8 +506,7 @@
 
         <!-- ─── Samuel Adedeji ─── -->
         <div class="attendee-card" data-keywords="EER">
-            <img src="assets/Samuel_Adedeji.jpg"
-                 alt="Photo of Samuel Adedeji"
+            <img src="assets/Samuel_Adedeji.jpg" alt="Photo of Samuel Adedeji"
                  onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
             <div class="no-photo" style="display:none;">👤</div>
             <div class="attendee-info">
@@ -482,8 +526,7 @@
 
         <!-- ─── Macarena GomezdelaTorre Clavel ─── -->
         <div class="attendee-card" data-keywords="BER">
-            <img src="assets/GomezdelaTorreClavel_Macarena.jpeg"
-                 alt="Photo of Macarena Gomezdela Torre Clavel"
+            <img src="assets/GomezdelaTorreClavel_Macarena.jpeg" alt="Photo of Macarena GomezdelaTorre Clavel"
                  onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
             <div class="no-photo" style="display:none;">👤</div>
             <div class="attendee-info">
@@ -502,36 +545,237 @@
             </div>
         </div>
 
-        <!-- ─── Margaret Webb ─── -->
+        <!-- ─── Jutshi Agarwal ─── -->
         <div class="attendee-card" data-keywords="EER">
-            <img src="assets/Webb Headshot.jpeg"
-                 alt="Photo of Margaret Webb"
+            <img src="assets/Agarwal_Jutshi_02.jpg" alt="Photo of Jutshi Agarwal"
                  onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
             <div class="no-photo" style="display:none;">👤</div>
             <div class="attendee-info">
-                <p class="attendee-name">Margaret Webb</p>
-                <p class="attendee-affiliation"></p>
-                <p class="attendee-email"></p>
+                <p class="attendee-name">Jutshi Agarwal</p>
+                <p class="attendee-affiliation">University at Buffalo</p>
+                <p class="attendee-email"><a href="mailto:jutshiag@buffalo.edu">jutshiag@buffalo.edu</a></p>
                 <div class="keyword-list">
                     <span class="keyword-pill">EER</span>
-                    <span class="keyword-pill">Interdisciplinary Engineering Education</span>
-                    <span class="keyword-pill">Systems Theory</span>
-                    <span class="keyword-pill">Grad, Postdoc &amp; Faculty Development</span>
-                    <span class="keyword-pill">Motivation &amp; Identity</span>
-                    <span class="keyword-pill">Instructional Change</span>
-                    <span class="keyword-pill">AI-Enabled Qualitative Research</span>
+                    <span class="keyword-pill">Graduate Student Teaching Development</span>
+                    <span class="keyword-pill">Teaching Self-Efficacy</span>
+                    <span class="keyword-pill">Agency</span>
+                    <span class="keyword-pill">Student Teamwork</span>
                 </div>
                 <button class="bio-toggle" onclick="toggleBio(this)" aria-expanded="false">▸ Bio</button>
-                <p class="bio-text"> Webb is a Postdoctoral Fellow in Disciplinary-Based Education Research (DBER) at Cornell University. She earned her Ph.D. in Engineering Education research (EER) and M.S. in Civil Engineering from Virginia Tech, and her B.S. in Mechanical Engineering from Rice University. Before graduate school, she worked as an engineer at ExxonMobil and taught middle and high school math (pre-algebra and geometry). Her research sits at the intersection of systems thinking and organizational change, identity, agency, and motivation and in STEM graduate education — with a particular focus on how students, postdocs, and faculty develop interdisciplinary researcher identities and navigate complex educational ecosystems. She uses mixed methods approaches and emerging qualitative analysis methods enabled by GenAI to study experiences across disciplinary and institutional boundaries. She also works on digital justice initiatives in partnership with communities, effective change models in higher education, active learning initiatives and other evidence-based pedagogies, as well as novel research methods in EER.</p>
+                <p class="bio-text">Jutshi Agarwal is a Research Scientist with the Department of Engineering Education at the University at Buffalo, SUNY. Her research is focused on the teaching preparation of graduate students as future engineering faculty, agency of students in open-ended problems, teamwork in classrooms, and the professional development of K-12 teachers for teaching engineering design. She has expertise in applying soft-computing tools to solve problems in education and strives to identify, adopt, or adapt knowledge from different DBER literature to promote better preparedness and efficacy of educators in engineering at different levels.</p>
             </div>
         </div>
 
-        <!-- ─── Placeholder cards from original template (Jane Doe, John Smith, etc.) ───
-             Remove these if they are not real attendees; kept here for reference.
-        <div class="attendee-card" data-keywords="BER GER">
-            ...
+        <!-- ─── Karissa Garbarini ─── -->
+        <div class="attendee-card" data-keywords="BER">
+            <img src="assets/Headshot (1).jpg" alt="Photo of Karissa Garbarini"
+                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <div class="no-photo" style="display:none;">👤</div>
+            <div class="attendee-info">
+                <p class="attendee-name">Karissa Garbarini</p>
+                <p class="attendee-affiliation">University at Buffalo</p>
+                <p class="attendee-email"><a href="mailto:kkgarbar@buffalo.edu">kkgarbar@buffalo.edu</a></p>
+                <div class="keyword-list">
+                    <span class="keyword-pill">BER</span>
+                    <span class="keyword-pill">Career Development</span>
+                    <span class="keyword-pill">Quantitative Methods</span>
+                    <span class="keyword-pill">Mixed Methods</span>
+                    <span class="keyword-pill">STEM Workforce Retention</span>
+                </div>
+                <button class="bio-toggle" onclick="toggleBio(this)" aria-expanded="false">▸ Bio</button>
+                <p class="bio-text">Karissa Garbarini is a 4th year Neuroscience PhD student in Dr. Melissa McCartney's lab at the University at Buffalo. Her research focuses on promoting and retaining biology and biomedical science (BBS) students in the STEM workforce. She is interested in improving career development for undergraduate and graduate BBS students.</p>
+            </div>
         </div>
-        -->
+
+        <!-- ─── Doga Yucalan ─── -->
+        <div class="attendee-card" data-keywords="EER">
+            <img src="assets/YUCALAN_DOGA.jpg" alt="Photo of Doga Yucalan"
+                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <div class="no-photo" style="display:none;">👤</div>
+            <div class="attendee-info">
+                <p class="attendee-name">Doga Yucalan</p>
+                <p class="attendee-affiliation">University at Buffalo</p>
+                <p class="attendee-email"><a href="mailto:dogayuca@buffalo.edu">dogayuca@buffalo.edu</a></p>
+                <div class="keyword-list">
+                    <span class="keyword-pill">EER</span>
+                    <span class="keyword-pill">Engineering Design</span>
+                    <span class="keyword-pill">Problem Solving</span>
+                    <span class="keyword-pill">Mechanics</span>
+                    <span class="keyword-pill">Metacognition</span>
+                </div>
+                <button class="bio-toggle" onclick="toggleBio(this)" aria-expanded="false">▸ Bio</button>
+                <p class="bio-text">Doga Yucalan is an Assistant Professor of Teaching in the Department of Engineering Education at SUNY Buffalo. They graduated from Cornell University with a PhD in Aerospace Engineering in 2022, and from Middle East Technical University with a B.Sc. in Electrical and Electronics Engineering and a B.Sc. in Physics in 2016. At SUNY Buffalo, they teach first- and second-year courses with an emphasis on improving students' problem solving, engineering design skills, and metacognition.</p>
+            </div>
+        </div>
+
+        <!-- ─── Sama Ghoreyshi ─── -->
+        <div class="attendee-card" data-keywords="EER">
+            <img src="assets/Sama_Ghoreyshi_headshot__1_.jpg" alt="Photo of Sama Ghoreyshi"
+                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <div class="no-photo" style="display:none;">👤</div>
+            <div class="attendee-info">
+                <p class="attendee-name">Sama Ghoreyshi</p>
+                <p class="attendee-affiliation">University at Buffalo</p>
+                <p class="attendee-email"><a href="mailto:samaghor@buffalo.edu">samaghor@buffalo.edu</a></p>
+                <div class="keyword-list">
+                    <span class="keyword-pill">EER</span>
+                    <span class="keyword-pill">Problem-Solving</span>
+                    <span class="keyword-pill">Epistemic Thinking</span>
+                    <span class="keyword-pill">Assessment</span>
+                    <span class="keyword-pill">Reflection</span>
+                    <span class="keyword-pill">Professional Engineering Identity</span>
+                </div>
+                <button class="bio-toggle" onclick="toggleBio(this)" aria-expanded="false">▸ Bio</button>
+                <p class="bio-text">Sama Ghoreyshi's research focuses on developing tools, strategies, and instructional designs that enhance engineering students' problem-solving performance, especially in problem-based learning (PBL) contexts. Her work explores teaching, facilitation, and assessment of problem-solving processes and discourse. She also researches how reflection practices support engineering undergraduates as they transition from student to professional and develop engineering professional identity.</p>
+            </div>
+        </div>
+
+        <!-- ─── Lorna Treffert ─── -->
+        <div class="attendee-card" data-keywords="EER">
+            <img src="assets/TREFFERT_LORNA.jpg" alt="Photo of Lorna Treffert"
+                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <div class="no-photo" style="display:none;">👤</div>
+            <div class="attendee-info">
+                <p class="attendee-name">Lorna Treffert</p>
+                <p class="attendee-affiliation">University at Buffalo</p>
+                <p class="attendee-email"><a href="mailto:lornatre@buffalo.edu">lornatre@buffalo.edu</a></p>
+                <div class="keyword-list">
+                    <span class="keyword-pill">EER</span>
+                    <span class="keyword-pill">Narrative Research</span>
+                    <span class="keyword-pill">Participatory Methods</span>
+                    <span class="keyword-pill">Undergraduate Research Experiences</span>
+                    <span class="keyword-pill">Power &amp; Agency</span>
+                </div>
+                <button class="bio-toggle" onclick="toggleBio(this)" aria-expanded="false">▸ Bio</button>
+                <p class="bio-text">Lorna Treffert is a 3rd year PhD Candidate in Engineering Education at the University at Buffalo. She holds both a BS and MS in Industrial and Systems Engineering from the University of Tennessee – Knoxville. Her research interests include exploring the factors which encourage intellectual risk taking in engineering and engineering education spaces.</p>
+            </div>
+        </div>
+
+        <!-- ─── Ronald Hedden ─── -->
+        <div class="attendee-card" data-keywords="EER CER">
+            <img src="assets/HEDDEN_RONALD.png" alt="Photo of Ronald Hedden"
+                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <div class="no-photo" style="display:none;">👤</div>
+            <div class="attendee-info">
+                <p class="attendee-name">Ronald Hedden</p>
+                <p class="attendee-affiliation">Rensselaer Polytechnic Institute</p>
+                <p class="attendee-email"><a href="mailto:hedder@rpi.edu">hedder@rpi.edu</a></p>
+                <div class="keyword-list">
+                    <span class="keyword-pill">EER</span>
+                    <span class="keyword-pill">CER</span>
+                    <span class="keyword-pill">Virtual Reality</span>
+                    <span class="keyword-pill">Laboratory Courses</span>
+                    <span class="keyword-pill">AI in Education</span>
+                </div>
+                <button class="bio-toggle" onclick="toggleBio(this)" aria-expanded="false">▸ Bio</button>
+                <p class="bio-text">Dr. Ronald C. Hedden is a Professor of Practice in the Department of Chemical and Biological Engineering at RPI. He obtained his Ph.D. in Chemical Engineering at Cornell in 2000. His research interests encompass polymers and materials science as well as virtual reality applications in engineering education, with a particular interest in AI usage and policy in STEM laboratory courses.</p>
+            </div>
+        </div>
+
+        <!-- ─── Kevin Coldren ─── -->
+        <div class="attendee-card" data-keywords="PER">
+            <img src="assets/COLDREN_KEVIN.jpg" alt="Photo of Kevin Coldren"
+                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <div class="no-photo" style="display:none;">👤</div>
+            <div class="attendee-info">
+                <p class="attendee-name">Kevin Coldren</p>
+                <p class="attendee-affiliation">Rochester Institute of Technology</p>
+                <p class="attendee-email"><a href="mailto:ktc9926@rit.edu">ktc9926@rit.edu</a></p>
+                <div class="keyword-list">
+                    <span class="keyword-pill">PER</span>
+                    <span class="keyword-pill">Graduate Physics Education</span>
+                    <span class="keyword-pill">Departmental Culture</span>
+                    <span class="keyword-pill">Change</span>
+                </div>
+                <button class="bio-toggle" onclick="toggleBio(this)" aria-expanded="false">▸ Bio</button>
+                <p class="bio-text">Kevin Coldren has been teaching physics at the high school and undergraduate levels for over 10 years and is currently pursuing his Ph.D. in physics at RIT. His research focuses on the field of graduate physics education under the guidance of Dr. Diana Sachmpazidi.</p>
+            </div>
+        </div>
+
+        <!-- ─── Mateo Cacheiro ─── -->
+        <div class="attendee-card" data-keywords="PER">
+            <img src="assets/PXL_20250808_223210075___Copy.jpg" alt="Photo of Mateo Cacheiro"
+                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <div class="no-photo" style="display:none;">👤</div>
+            <div class="attendee-info">
+                <p class="attendee-name">Mateo Cacheiro</p>
+                <p class="attendee-affiliation">Rochester Institute of Technology</p>
+                <p class="attendee-email"><a href="mailto:mac2059@g.rit.edu">mac2059@g.rit.edu</a></p>
+                <div class="keyword-list">
+                    <span class="keyword-pill">PER</span>
+                    <span class="keyword-pill">Quantum Information Science &amp; Engineering</span>
+                    <span class="keyword-pill">Workforce Development</span>
+                    <span class="keyword-pill">Representations</span>
+                    <span class="keyword-pill">Web Scraping</span>
+                </div>
+                <button class="bio-toggle" onclick="toggleBio(this)" aria-expanded="false">▸ Bio</button>
+                <p class="bio-text">Mateo Cacheiro is a first year Physics PhD student at RIT doing physics education research. Prior to graduate school he worked as an REU student on two PER projects. His current work is focused on the quantum workforce, with broad interests in the use of representations within and outside of physics.</p>
+            </div>
+        </div>
+
+        <!-- ─── Abby Lupi ─── -->
+        <div class="attendee-card" data-keywords="EER">
+            <img src="assets/1657033193346.jpg" alt="Photo of Abby Lupi"
+                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <div class="no-photo" style="display:none;">👤</div>
+            <div class="attendee-info">
+                <p class="attendee-name">Abby Lupi</p>
+                <p class="attendee-affiliation">Rochester Institute of Technology</p>
+                <p class="attendee-email"><a href="mailto:al2667@rit.edu">al2667@rit.edu</a></p>
+                <div class="keyword-list">
+                    <span class="keyword-pill">EER</span>
+                    <span class="keyword-pill">Deliberative Dialogue</span>
+                    <span class="keyword-pill">AI in Education</span>
+                    <span class="keyword-pill">AI Governance</span>
+                    <span class="keyword-pill">Public Interest Technology</span>
+                </div>
+                <button class="bio-toggle" onclick="toggleBio(this)" aria-expanded="false">▸ Bio</button>
+                <p class="bio-text">Abby Lupi is a master's student at RIT's School of Individualized Study specializing in Public Interest Technology. Their research focuses on engaging students to prototype discipline-based AI use policy in higher education. Outside of school, they are the Research Manager at CareerVillage, a nonprofit focused on economic mobility and expanding access to quality career guidance.</p>
+            </div>
+        </div>
+
+        <!-- ─── Jeffrey Stransky ─── -->
+        <div class="attendee-card" data-keywords="EER">
+            <img src="assets/Stransky_Jeff.png" alt="Photo of Jeffrey Stransky"
+                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <div class="no-photo" style="display:none;">👤</div>
+            <div class="attendee-info">
+                <p class="attendee-name">Jeffrey Stransky</p>
+                <p class="attendee-affiliation">Rochester Institute of Technology</p>
+                <p class="attendee-email"><a href="mailto:jsscet@rit.edu">jsscet@rit.edu</a></p>
+                <div class="keyword-list">
+                    <span class="keyword-pill">EER</span>
+                    <span class="keyword-pill">Engineering Ethics</span>
+                    <span class="keyword-pill">Engineering Judgment</span>
+                    <span class="keyword-pill">Game-Based Learning</span>
+                    <span class="keyword-pill">Statistical Modeling</span>
+                </div>
+                <button class="bio-toggle" onclick="toggleBio(this)" aria-expanded="false">▸ Bio</button>
+                <p class="bio-text">Jeffrey Stransky, PhD is an Assistant Professor in the Manufacturing and Mechanical Engineering Technology Department at the Rochester Institute of Technology. He holds a PhD in Engineering Education and MS in Mechanical Engineering from Rowan University. His research interests include engineering ethics, use of educational simulations and games, and statistical modeling.</p>
+            </div>
+        </div>
+
+        <!-- ─── Suann Yang ─── -->
+        <div class="attendee-card" data-keywords="BER">
+            <img src="assets/YANG_SUANN.jpg" alt="Photo of Suann Yang"
+                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <div class="no-photo" style="display:none;">👤</div>
+            <div class="attendee-info">
+                <p class="attendee-name">Suann Yang</p>
+                <p class="attendee-affiliation">SUNY Geneseo</p>
+                <p class="attendee-email"><a href="mailto:yang@geneseo.edu">yang@geneseo.edu</a></p>
+                <div class="keyword-list">
+                    <span class="keyword-pill">BER</span>
+                    <span class="keyword-pill">Collaborative Exam</span>
+                    <span class="keyword-pill">Faculty Professional Development</span>
+                    <span class="keyword-pill">Counter-Stereotypical Role Models</span>
+                    <span class="keyword-pill">Curriculum Design</span>
+                    <span class="keyword-pill">Data Literacy</span>
+                </div>
+                <button class="bio-toggle" onclick="toggleBio(this)" aria-expanded="false">▸ Bio</button>
+                <p class="bio-text">Suann Yang is an Associate Professor of Biology at SUNY Geneseo interested in the effectiveness of inclusive teaching practices, faculty professional development, and culture change in response to adopting new practices or curricula. She is the PI of the NSF-funded Biologists and Graph Interpretation (BioGraphI) project, a professional development network of faculty who develop and implement curricula featuring counter-stereotypical scientists and data literacy skills.</p>
+            </div>
+        </div>
 
         <div class="no-results" id="no-results" style="display:none;">
             No attendees match your search.
@@ -561,10 +805,8 @@
             cards.forEach(card => {
                 const text = card.innerText.toLowerCase();
                 const keywords = (card.dataset.keywords || '').toUpperCase();
-
                 const matchesSearch = !query || text.includes(query);
                 const matchesField = !fieldFilter || keywords.includes(fieldFilter);
-
                 if (matchesSearch && matchesField) {
                     card.style.display = '';
                     visible++;
@@ -580,7 +822,6 @@
                     : `Showing ${visible} of ${cards.length} attendees`;
         }
 
-        // Initialize count on load
         filterCards();
     </script>
 
