@@ -26,6 +26,16 @@
             margin: 0 0 16px 0;
             padding-left: 4px;
         }
+        .topic-label {
+            background-color: #f0ece8;
+            border-left: 3px solid #b05a2a;
+            padding: 6px 14px;
+            margin: 20px 0 4px 0;
+            font-size: 0.95em;
+            font-weight: bold;
+            color: #555;
+            font-style: italic;
+        }
         table.posters {
             width: 100%;
             border-spacing: 0;
@@ -130,25 +140,29 @@
     <p>
         Poster sessions will be held in the Weill Hall Atrium on Day 1 (Thursday, June 11).
         Presenters should set up their posters by 9:00&nbsp;am and remain with them during their assigned session.
-        Each poster board is 4&prime;&nbsp;&times;&nbsp;8&prime;. Sessions are organized to mix DBER fields and institutions,
-        so attendees can explore both familiar and new research areas.
+        Each poster board is 4&prime;&nbsp;&times;&nbsp;8&prime;. Sessions are organized thematically to encourage cross-disciplinary conversation
+        and help attendees explore both familiar and new research areas.
     </p>
 
     <!-- ==================== SESSION A ==================== -->
     <div class="session-header">Session A &mdash; 9:30&nbsp;am to 10:15&nbsp;am</div>
+    <p class="session-subhead">AI &amp; Technology in STEM Education &bull; Pedagogy, Assessment &amp; Instructional Design</p>
+
+    <div class="topic-label">AI &amp; Technology in STEM Education</div>
 
     <table class="posters" id="poster-A1">
         <tr>
             <td class="poster-number">A1</td>
             <td class="poster-content">
                 <table style="width:100%; border-spacing:0;">
-                    <tr><td class="poster-title">Impact of generative artificial intelligence on novices' problem categorization</td></tr>
+                    <tr><td class="poster-title">Impact of generative artificial intelligence on novices&rsquo; problem categorization</td></tr>
                     <tr><td class="poster-author">Mary McMullan &nbsp;&middot;&nbsp; <span class="poster-field">PER</span> &nbsp;&middot;&nbsp; Rochester Institute of Technology</td></tr>
-                    <tr><td class="poster-abstract">It is an open question how generative artificial intelligence (genAI) impacts students' learning in higher education. GenAI tools' ability to do student-level tasks is rapidly evolving, and genAI adoption rates across young adults continues to rise. Recent studies suggest that learners who rely on genAI may bypass critical thought even if short-term task performance is enhanced. It is unclear if genAI can support the learning of expert-like behavior better than traditional approaches. Prior foundational cognitive science research on categorization of physics problems revealed experts' tendency to use principles, contrary to novices' tendency to use surface-level features. A seminal study by Docktor et al. 2012 found that an elaborate feedback intervention during a short similarity categorization task shifted physics novices' categorization strategies from surface features to principles without improving correctness of the categorization. This study extends the study design of Docktor et al. 2012 by providing new feedback conditions that use genAI tools. We analyze how access to genAI and guided prompting practices impact introductory physics students' categorization strategies, correctness, engagement time, and confidence.</td></tr>
+                    <tr><td class="poster-abstract">It is an open question how generative artificial intelligence (genAI) impacts students&rsquo; learning in higher education. GenAI tools&rsquo; ability to do student-level tasks is rapidly evolving, and genAI adoption rates across young adults continues to rise. Recent studies suggest that learners who rely on genAI may bypass critical thought even if short-term task performance is enhanced. It is unclear if genAI can support the learning of expert-like behavior better than traditional approaches. Prior foundational cognitive science research on categorization of physics problems revealed experts&rsquo; tendency to use principles, contrary to novices&rsquo; tendency to use surface-level features. A seminal study by Docktor et al. 2012 found that an elaborate feedback intervention during a short similarity categorization task shifted physics novices&rsquo; categorization strategies from surface features to principles without improving correctness of the categorization. This study extends the study design of Docktor et al. 2012 by providing new feedback conditions that use genAI tools. We analyze how access to genAI and guided prompting practices impact introductory physics students&rsquo; categorization strategies, correctness, engagement time, and confidence.</td></tr>
                 </table>
             </td>
         </tr>
     </table>
+
     <table class="posters" id="poster-A2">
         <tr>
             <td class="poster-number">A2</td>
@@ -156,105 +170,152 @@
                 <table style="width:100%; border-spacing:0;">
                     <tr><td class="poster-title">Constraining AI to Prevent Cognitive Offloading in Chemical Engineering</td></tr>
                     <tr><td class="poster-author">Christopher Chen &nbsp;&middot;&nbsp; <span class="poster-field">EER</span> &nbsp;&middot;&nbsp; Columbia University</td></tr>
-                    <tr><td class="poster-abstract">A major concern with AI is that students will use chatbots to think for them instead of as a tool to think with. Training custom chatbots as experts or tutors may further encourage students to seek answers from AI, bypassing necessary friction for learning. Instead, we present three projects that deliberately constrain AI to encourage cognitive engagement. The first uses a "novice" chatbot trained on course materials but prompted to make common student mistakes and to produce output that students critique. This constrained chatbot creates more opportunities for students to encounter AI errors. We have found that students' ability to catch mistakes correlates inversely with confidence in AI. The second tasks students with teaching a "naive" chatbot. This chatbot has limited knowledge so students must repackage course concepts and problem solving methods to a less-knowledgeable peer's level, facilitating scalable learning-by-teaching. The third project uses AI role-play to facilitate the contextualization of engineering and decision-making practice. AI is constrained to raising concerns and asking questions through the lens of various stakeholders. By preventing AI from providing answers, students cannot offload decision-making to AI and are forced to modify their design proposals to balance technical constraints and perceived problems raised by the role-playing chatbot. In all of these examples, students are unable to have AI think for them, and need to think with AI to complete the tasks. Through this, we aim to provide a transferable design strategy for AI-enabled learning activities that can promote productive friction.</td></tr>
+                    <tr><td class="poster-abstract">A major concern with AI is that students will use chatbots to think for them instead of as a tool to think with. Training custom chatbots as experts or tutors may further encourage students to seek answers from AI, bypassing necessary friction for learning. Instead, we present three projects that deliberately constrain AI to encourage cognitive engagement. The first uses a &ldquo;novice&rdquo; chatbot trained on course materials but prompted to make common student mistakes and to produce output that students critique. This constrained chatbot creates more opportunities for students to encounter AI errors. We have found that students&rsquo; ability to catch mistakes correlates inversely with confidence in AI. The second tasks students with teaching a &ldquo;naive&rdquo; chatbot. This chatbot has limited knowledge so students must repackage course concepts and problem solving methods to a less-knowledgeable peer&rsquo;s level, facilitating scalable learning-by-teaching. The third project uses AI role-play to facilitate the contextualization of engineering and decision-making practice. AI is constrained to raising concerns and asking questions through the lens of various stakeholders. By preventing AI from providing answers, students cannot offload decision-making to AI and are forced to modify their design proposals to balance technical constraints and perceived problems raised by the role-playing chatbot. In all of these examples, students are unable to have AI think for them, and need to think with AI to complete the tasks. Through this, we aim to provide a transferable design strategy for AI-enabled learning activities that can promote productive friction.</td></tr>
                 </table>
             </td>
         </tr>
     </table>
+
     <table class="posters" id="poster-A3">
         <tr>
             <td class="poster-number">A3</td>
             <td class="poster-content">
                 <table style="width:100%; border-spacing:0;">
-                    <tr><td class="poster-title">Effectiveness of a Course in Advancing Students' Understanding of Barriers to Learning and Participation of Underutilized Groups in Science, Technology, Engineering and Math (STEM)</td></tr>
-                    <tr><td class="poster-author">Ash Heim &nbsp;&middot;&nbsp; <span class="poster-field">BER</span> &nbsp;&middot;&nbsp; Syracuse University</td></tr>
-                    <tr><td class="poster-abstract">A course was created at a large private R1 university in the northeast U.S. to explore Diversity, Equity, Inclusion, and Accessibility (DEIA) in STEM. Open-response pre- and post-tests were designed that measured students' understanding of barriers to learning and participation across four underutilized groups in STEM: (1) women, (2) racial minorities, (3) people with disabilities, and (4) people raised in lower socioeconomic households. Written responses on the first and last day of class were analyzed for 69 unique students in three successive cohorts and disaggregated by student-reported demographic data. A common codebook was developed that could be broadly applied to all four underutilized groups with overarching categories of individual/self; cultural/societal; and institutional/educational/career, with codes and subcodes specific to each category. Additionally, codes distinct to each underutilized group also emerged. When exploring STEM barriers for women, women reported more unique codes in the pre-test than men, but men showed higher gains from pre- to post-test. Similarly, White and Asian students showed greater gains than racial minority students when identifying STEM barriers for racial minorities. Students without disabilities reported a doubling in unique STEM barrier codes in the post-test. Students who reported being from a low socioeconomic household were limited in this study, though they commonly cited barriers related to access to opportunity. In general, we found that STEM students acquired significant understanding of barriers to STEM participation in the four underutilized groups of focus after completing a dedicated DEIA course. Additionally, learning gains were often greater in the majority (or privileged) demographic.</td></tr>
+                    <tr><td class="poster-title">Exploring interactions between AI agent and Student in Front-End Design Process</td></tr>
+                    <tr><td class="poster-author">Siddharthsinh Jadeja &nbsp;&middot;&nbsp; <span class="poster-field">EER</span> &nbsp;&middot;&nbsp; University at Buffalo</td></tr>
+                    <tr><td class="poster-abstract">Design is an essential ability that enables each engineer to adopt solution-focused strategies and apply abductive thinking to consider the world&rsquo;s varied problems, classified as ill-structured. Researchers have well-established the significance of the beginning stages of the design process, known as the front-end design process, which focuses on problem definition, concept generation, and idea evaluation. Researchers have experimented and conceptualized the use of computers and Artificial Intelligence (AI) in design education to introduce a divergent-convergent process, identifying opportunities for AI to accelerate the ability of human design engineers in the iterative front-end design process. This integration of AI in design offers an opportunity for researchers to engage students in the design process in a computer-supported learning environment with another actor, an AI agent. However, this addition of another actor in design warrants the use of an integrated lens of Actors (Student and AI agent), their Actions to create Artifacts to understand the design process. Ideally, the students interact with the AI, forming new knowledge and information, and make design decisions to create artifacts. Simultaneously, the AI agent learns from interactions with the user and adjusts its behavior based on individual user interactions. By examining those interactions in a front-end design process, this proposed research will provide knowledge and understanding of students&rsquo; AI agent interaction in the front-end design process and will continue the dialogue to address the concerns about the development of creativity and critical thinking among science and engineering students when using AI.</td></tr>
                 </table>
             </td>
         </tr>
     </table>
+
     <table class="posters" id="poster-A4">
         <tr>
             <td class="poster-number">A4</td>
             <td class="poster-content">
                 <table style="width:100%; border-spacing:0;">
-                    <tr><td class="poster-title">Does a course that prioritizes the transformational role of college improve students' affective outcomes?</td></tr>
-                    <tr><td class="poster-author">Macarena Gomez De LaTorre Clavel &nbsp;&middot;&nbsp; <span class="poster-field">BER</span> &nbsp;&middot;&nbsp; Binghamton University</td></tr>
-                    <tr><td class="poster-abstract">Students who take a more transactional view of the purpose of college, i.e., I go to college to get a degree that leads to a job/career, experience less sense of belonging than those who take a more transformational view, i.e., I go to college to explore who I want to be. Additionally, students who experienced more of the Gallup "Big Six" college experiences, half of which have a transformational leaning, thrived more across five measures of wellbeing after graduation. While many studies have examined the impact of various pedagogical interventions on student affective outcomes and/or the role affective outcomes play in student learning, many fewer have examined the impact of curricula with a transformation, aka whole-person development, focus. This study examines the short-term impact on student affective outcomes of a first-semester-of-college course focused on whole-person development. The course framework is Esfahani-Smith's Four Pillars of Meaning: Belonging, Storytelling, Purpose, and Transcendence. Students engage in self-reflection and discussion of research for each of these topics. Previously, we presented our study design and preliminary findings from a pilot study of the first iteration of the course. While the numbers were too small for statistical analysis, we found that there were increases in average outcomes for belonging, college expectations, life satisfaction and mindset, regardless of gender or first-generation status. In this poster, we will present the statistical analysis of these outcomes for fifteen sections of the course over the span of five years.</td></tr>
+                    <tr><td class="poster-title">Virtual Reality in the Chemical Engineering Laboratory</td></tr>
+                    <tr><td class="poster-author">Ronald Hedden &nbsp;&middot;&nbsp; <span class="poster-field">EER</span> &nbsp;&middot;&nbsp; Rensselaer Polytechnic Institute</td></tr>
+                    <tr><td class="poster-abstract">VR simulations of chemical engineering unit operations have been developed at RPI to enhance both remote and in-person education opportunities. By emulating complex industrial workspaces, VR technology facilitates interactive experimentation that would otherwise be too large, costly, or hazardous to implement in a classroom setting. In addition, VR experiments allow students to conduct laboratory experimentation remotely. This poster details the design and testing of three VR modules addressing core subjects in the chemical engineering curriculum: process control, chemical reactor design, and fluid flow. VR experiments were first used to support laboratory education during the Covid-19 pandemic when on-campus laboratories were inaccessible, but they have now been incorporated into our in-person laboratory courses, enabling a hybrid pedagogical approach incorporating both hands-on experiments and computer simulations. Due to their predictive capability, VR simulations have become a cornerstone element of a semester-long laboratory design project, in which students design, build, and test a microfluidic device. Over the past five years, implementation of VR modules in our laboratory courses has transformed course content and student perceptions, while supporting key educational outcomes.</td></tr>
                 </table>
             </td>
         </tr>
     </table>
+
     <table class="posters" id="poster-A5">
         <tr>
             <td class="poster-number">A5</td>
             <td class="poster-content">
                 <table style="width:100%; border-spacing:0;">
-                    <tr><td class="poster-title">Exploring Relationships Among STEM Student Success, Belonging, and Support</td></tr>
-                    <tr><td class="poster-author">Tony Wong &nbsp;&middot;&nbsp; <span class="poster-field">RUME</span> &nbsp;&middot;&nbsp; Rochester Institute of Technology</td></tr>
-                    <tr><td class="poster-abstract">Undergraduate STEM student success is shaped by a complex set of academic, social, and financial factors. STEM education research has increasingly emphasized the importance of students' sense of belonging, professional identity, and access to effective support structures in influencing persistence and academic outcomes. This poster presents preliminary findings from an ongoing mixed-methods research study investigating factors associated with undergraduate STEM student persistence and academic experience at the Rochester Institute of Technology. Drawing on two years of institution-wide survey data, qualitative follow-up interview data, and 10+ years of longitudinal institutional records, this work explores relationships among student success, financial stress, employment, sense of belonging, metacognitive awareness, STEM professional identity, and the use of academic support structures such as Learning Assistants (LAs), tutoring centers, and instructional support programs.
-
-Initial analyses suggest that financial pressures and employment experiences may shape students' academic experiences in distinct ways. For example, results suggest that students working more than ten hours per week in off-campus jobs report lower sense of belonging and metacognitive awareness as compared to students working on-campus. Interview data further highlighted differences between students who experienced financial stress primarily as a social belonging challenge versus those who experienced it as an academic performance challenge. This project is intended as an opportunity to share emerging findings, discuss and explore methodological approaches for combining institutional and qualitative data, and build collaborations around STEM education research and student support interventions.</td></tr>
+                    <tr><td class="poster-title">Cluster-Based Analysis of Elementary Students&rsquo; Affective Profiles and Learning in Augmented Reality-Supported Engineering Design</td></tr>
+                    <tr><td class="poster-author">Samuel Adedeji &nbsp;&middot;&nbsp; <span class="poster-field">EER</span> &nbsp;&middot;&nbsp; University at Buffalo</td></tr>
+                    <tr><td class="poster-abstract">This study examines how elementary students&rsquo; affective profiles relate to learning outcomes during an augmented reality (AR)-supported engineering design unit. Engineering design activities are cognitively and emotionally demanding, often evoking a range of emotions such as excitement, frustration, curiosity, and worry. Using data collected from 176 fourth-grade students participating in a seven-session AR-supported engineering curriculum, this study employed k-means clustering to identify distinct emotional profiles based on students&rsquo; self-reported affective states. Four emotional clusters emerged, representing varying combinations of positive emotions, mild negative emotions, and strong negative emotions. Pre- and post-assessment scores were analyzed to examine differences in learning gains across these groups. Findings revealed that all emotional clusters demonstrated significant learning gains; however, the magnitude of improvement varied across profiles. Interestingly, students experiencing high levels of strong negative emotions demonstrated the largest gains, suggesting that productive struggle and emotional intensity may support deeper engagement in engineering design learning. The study highlights the importance of considering students&rsquo; emotional experiences when designing AR-supported STEM learning environments and suggests implications for emotionally responsive instructional practices and adaptive educational technologies.</td></tr>
                 </table>
             </td>
         </tr>
     </table>
+
+    <div class="topic-label">Pedagogy, Assessment &amp; Instructional Design</div>
+
     <table class="posters" id="poster-A6">
         <tr>
             <td class="poster-number">A6</td>
             <td class="poster-content">
                 <table style="width:100%; border-spacing:0;">
-                    <tr><td class="poster-title">Provoking Intellectual Need</td></tr>
-                    <tr><td class="poster-author">Aaron Weinberg &nbsp;&middot;&nbsp; <span class="poster-field">RUME</span> &nbsp;&middot;&nbsp; Ithaca College</td></tr>
-                    <tr><td class="poster-abstract">The concept of intellectual need, which proposes that learning is the result of students wrestling with a problem that is unsolvable by their current knowledge, has been used in instructional design for many years. However, there has been little empirical evidence of students&#x27; experiences of intellectual need; little empirical evidence directly connecting these experiences with learning; and scant recommendations for designing and enacting tasks to provoke intellectual need. The goal of my (collaborative) research project is to address these gaps in the research literature and our pedagogical knowledge by designing, enacting, evaluating, and refining tasks to provoke intellectual need in the context of first-semester calculus. The poster will include a general description of intellectual need, examples of (potential) intellectual need-provoking tasks, a brief summary of our published results, and a brief illustration of our current data-collection and analysis.</td></tr>
+                    <tr><td class="poster-title">Predictive Modeling for High Impact Active Learning Classrooms</td></tr>
+                    <tr><td class="poster-author">Olive Ross &nbsp;&middot;&nbsp; <span class="poster-field">PER</span> &nbsp;&middot;&nbsp; Cornell University</td></tr>
+                    <tr><td class="poster-abstract">Though a large body of research has shown that active learning is more effective than traditional lecture in undergraduate science courses, little research has examined which types and combinations of active learning strategies are most effective. In this study, we use a multi-field, multi-institutional dataset of 69 undergraduate science classes to create a predictive model that maps time spent on different classroom activities to student conceptual learning. We identify one type of class that produces exceptional learning gains (effect sizes): 10 to 20% of time on group worksheets, 20 to 40% on group clicker questions, and two or more student questions per hour. We also find that classes without group worksheets show learning gains comparable to lecture-only courses. These results offer testable recommendations for future controlled studies.</td></tr>
                 </table>
             </td>
         </tr>
     </table>
+
     <table class="posters" id="poster-A7">
         <tr>
             <td class="poster-number">A7</td>
             <td class="poster-content">
                 <table style="width:100%; border-spacing:0;">
-                    <tr><td class="poster-title">Identifying Gaps in Published Plant Science Lesson Plans for Undergraduate Biology</td></tr>
-                    <tr><td class="poster-author">Bryan MacNeill &nbsp;&middot;&nbsp; <span class="poster-field">BER</span> &nbsp;&middot;&nbsp; Cornell University</td></tr>
-                    <tr><td class="poster-abstract">Plants serve as powerful and accessible models for teaching core concepts in biology. Because plant systems can be studied in laboratory, greenhouse, field, and classroom settings, they also offer flexible opportunities for inquiry-based and skills-based teaching. However, plant science content is underrepresented in undergraduate biology education, and many biology students do not recognize the ecological and societal importance of plants. This disconnect between the instructional value of plants and their limited presence in the biology curriculum aligns with broader concerns about gaps in lesson plans for undergraduate courses. Initiatives such as the 2011 Vision and Change (V&amp;C) report have called to transform undergraduate biology curricula. In plant science, this call led to the subsequent development of the ASPB-BSA Core Concepts and Objectives in Plant Biology for Undergraduates, which provides plant science educators with a more discipline-specific guide for curriculum design. By identifying key biology concepts and competencies, these frameworks help instructors align their pedagogical activities with shared learning goals. Despite these efforts, it remains unclear how well currently available teaching materials reflect these goals and what gaps remain. To better understand the current landscape of plant science education resources, we conducted a systematic analysis of published lesson plans</td></tr>
+                    <tr><td class="poster-title">Provoking Intellectual Need</td></tr>
+                    <tr><td class="poster-author">Aaron Weinberg &nbsp;&middot;&nbsp; <span class="poster-field">RUME</span> &nbsp;&middot;&nbsp; Ithaca College</td></tr>
+                    <tr><td class="poster-abstract">The concept of intellectual need, which proposes that learning is the result of students wrestling with a problem that is unsolvable by their current knowledge, has been used in instructional design for many years. However, there has been little empirical evidence of students&rsquo; experiences of intellectual need; little empirical evidence directly connecting these experiences with learning; and scant recommendations for designing and enacting tasks to provoke intellectual need. The goal of my (collaborative) research project is to address these gaps in the research literature and our pedagogical knowledge by designing, enacting, evaluating, and refining tasks to provoke intellectual need in the context of first-semester calculus. The poster will include a general description of intellectual need, examples of (potential) intellectual need-provoking tasks, a brief summary of our published results, and a brief illustration of our current data-collection and analysis.</td></tr>
                 </table>
             </td>
         </tr>
     </table>
+
     <table class="posters" id="poster-A8">
         <tr>
             <td class="poster-number">A8</td>
             <td class="poster-content">
                 <table style="width:100%; border-spacing:0;">
-                    <tr><td class="poster-title">Meaningful Failure: Transforming Academic Structures and Incentives through Personalization in Engineering Education</td></tr>
-                    <tr><td class="poster-author">Spencer Sabatino &nbsp;&middot;&nbsp; <span class="poster-field">EER</span> &nbsp;&middot;&nbsp; Cornell University</td></tr>
-                    <tr><td class="poster-abstract">This project aims to develop personalized learning tools to support engineering students in engaging with &quot;meaningful failure". This research adopts a multi-pronged approach, including three strands (1) exploring how the cognitive and affective states that students experience are reflected in recorded biosignals that can be decoded in real-time to understand how individual students respond differently to failure across different learning and social contexts, and (2) documenting, capturing, and analyzing real-time interactions of students and instructors in the classroom, including moments of individual-level and group-level failures and successes during the experience of regular activities in several engineering courses. Three research questions were defined for each strand: (1) What are the useful real-time failure profile signals that would yield actionable personalization in engineering education contexts?; (2) How do students&#x27; differential responses to failure present opportunities for personalization of support in engineering education contexts?; (3) What changes to pedagogy, assessment, policy, and instructor professional development might be necessary to facilitate a culture of learning from and through failure in engineering education? The significant results of this project are:  (1) four classes of failure response related to engagement and identity were defined, students' definitions of failure seem to be very personalized and sensitive to how meaningful others may view it, and (2) at small institutions failure is viewed very negatively and mostly in the mode of academic failure (e.g., failing a course, dropping out, etc.). These same concerns were not observed at larger research-intensive institutions.</td></tr>
+                    <tr><td class="poster-title">Cultivating growth: Impact of equitable grading</td></tr>
+                    <tr><td class="poster-author">Benjamin Schermerhorn &nbsp;&middot;&nbsp; <span class="poster-field">PER / EER</span> &nbsp;&middot;&nbsp; Monroe Community College</td></tr>
+                    <tr><td class="poster-abstract">Equitable grading practices, such as retakes, flexible deadlines, and minimum grading, provide opportunities for persistence and success by accounting for the realities of our students&rsquo; lives in present day education. In this poster presentation, we share the results of work at a community college investigating (a) the impact of minimum grading on student success in an introductory geology course, (b) results of Likert surveys over the course of a semester tracking students&rsquo; motivation, confidence, effort, and anxiety in an second-year engineering course employing retakes and flexible deadlines, and (c) summary of focus-group interviews across geology, physics, and engineering. Students largely report lower anxiety and a greater sense of their own opportunity to succeed.</td></tr>
                 </table>
             </td>
         </tr>
     </table>
+
     <table class="posters" id="poster-A9">
         <tr>
             <td class="poster-number">A9</td>
             <td class="poster-content">
                 <table style="width:100%; border-spacing:0;">
-                    <tr><td class="poster-title">Predictive Modeling for High Impact Active Learning Classrooms</td></tr>
-                    <tr><td class="poster-author">Olive Ross &nbsp;&middot;&nbsp; <span class="poster-field">PER</span> &nbsp;&middot;&nbsp; Cornell University</td></tr>
-                    <tr><td class="poster-abstract">Though a large body of research has shown that active learning is more effective than traditional lecture in undergraduate science courses, little research has examined which types and combinations of active learning strategies are most effective. In this study, we use a multi-field, multi-institutional dataset of 69 undergraduate science classes to create a predictive model that maps time spent on different classroom activities to student conceptual learning.  We identify one type of class that produces exceptional learning gains (effect sizes): 10 to 20% of time on group worksheets, 20 to 40% on group clicker questions, and two or more student questions per hour. We also find that classes without group worksheets show learning gains comparable to lecture-only courses. These results offer testable recommendations for future controlled studies.</td></tr>
+                    <tr><td class="poster-title">Exploring Assessment as an Epistemic System in Ill-Structured Engineering Problem Solving</td></tr>
+                    <tr><td class="poster-author">Sama Ghoreyshi &nbsp;&middot;&nbsp; <span class="poster-field">EER</span> &nbsp;&middot;&nbsp; University at Buffalo</td></tr>
+                    <tr><td class="poster-abstract">This study examines assessment as a multi-layered epistemic interaction system within an ill-structured engineering problem-solving environment. While engineering education increasingly emphasizes open-ended problem solving, assessment practices often prioritize final products over the cognitive, metacognitive, and epistemic processes involved in problem solving. As a result, assessment may shape students&rsquo; engagement with engineering problems in ways that are not fully understood. Guided by the overarching research question, <em>How does assessment function as a multi-layered epistemic system within an ill-structured engineering problem-solving environment between instructors and students?</em>, this study explores how assessment expectations are designed, interpreted, enacted, and evaluated within a Statics course at a large public university. The study employs an exploratory embedded case study design focused on an open-ended modeling and problem-solving (OEMP) task implemented across multiple sections taught by two instructors. Data collection includes instructor interviews, classroom observations, assessment artifacts, longitudinal collection of student deliverables, artifact-based student interviews conducted across the semester, and instructor think-aloud evaluation sessions. Rather than treating assessment as a neutral measurement process, this work conceptualizes assessment as an evolving system of interaction and meaning-making between instructors and students.</td></tr>
                 </table>
             </td>
         </tr>
     </table>
+
     <table class="posters" id="poster-A10">
         <tr>
             <td class="poster-number">A10</td>
             <td class="poster-content">
                 <table style="width:100%; border-spacing:0;">
-                    <tr><td class="poster-title">Evaluating the Impact of Undergraduate Physics Instruction on Student Understanding of Measurement Uncertainty</td></tr>
-                    <tr><td class="poster-author">Rachel Merrill &nbsp;&middot;&nbsp; <span class="poster-field">PER</span> &nbsp;&middot;&nbsp; Cornell University</td></tr>
-                    <tr><td class="poster-abstract">Student conceptions of measurement uncertainty across classical and quantum mechanics have been shown to differ between introductory-level and more advanced undergraduates. Given these results, it is reasonable to suggest that at least some of the physics curriculum affects their understanding of these topics, but it is unclear when and how the shift from novice to expert occurs. Using a previously-validated survey, we assessed students across 15 higher-education institutions at both the beginning and end of their participation in either a physics lab course or a quantum mechanics course. The survey assesses their understanding of sources of uncertainty, how uncertainty can be minimized, and whether a true value even exists to be measured. I will present the results from two terms of data collection and discuss the shifts that do (and do not) occur in students&#x27; thinking at each level. In the future, these findings will be cross referenced with instructional materials to provide context about the type of instruction these students received in an effort to better understand how students are led to an expert-like understanding.</td></tr>
+                    <tr><td class="poster-title">When Intentions and Actions Diverge: A Cross-Disciplinary Guide for DBER Research</td></tr>
+                    <tr><td class="poster-author">Jeffrey Stransky &nbsp;&middot;&nbsp; <span class="poster-field">EER</span> &nbsp;&middot;&nbsp; Rochester Institute of Technology</td></tr>
+                    <tr><td class="poster-abstract">What people say they will do does not always match what they actually do. Depending on the context, that gap can be merely inconvenient or deeply consequential. In DBER, it may appear when instructors decide whether to use research-based teaching strategies, when students respond to ethical dilemmas, or when engineers weigh public safety in professional decisions. Yet, research that directly compares stated future behavior with observed behavior remains limited and difficult to design well. This poster presents recent work outlining key steps for studying intention-action gaps across disciplines. These steps include defining the behavior of interest, measuring what people say they would do, collecting evidence of what they actually do, and interpreting the difference with care. The poster invites DBER researchers to identify where these gaps matter in their own work and how stronger study designs could improve research on learning, teaching, ethics, and professional practice.</td></tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+
+    <table class="posters" id="poster-A11">
+        <tr>
+            <td class="poster-number">A11</td>
+            <td class="poster-content">
+                <table style="width:100%; border-spacing:0;">
+                    <tr><td class="poster-title">Engineering Students&rsquo; Use of Self-Regulated Learning for Optional Resources in an Introductory Calculus Course</td></tr>
+                    <tr><td class="poster-author">Kriz George &nbsp;&middot;&nbsp; <span class="poster-field">EER</span> &nbsp;&middot;&nbsp; Rochester Institute of Technology</td></tr>
+                    <tr><td class="poster-abstract">Prior research has demonstrated that engineering students struggle with introductory calculus courses. Instructors and institutions have responded to this issue by implementing a variety of interventions, such as initiatives to provide more resources to students to succeed in these courses. However, regardless of these interventions, pass rates for calculus among first year engineering students continue to remain low. One possible reason for this low pass rate could be that the availability of resources does not guarantee student success in their course. Students might not know how to effectively utilize the resources to augment their learning and performance. In this study, we investigate how engineering students decide to use optional calculus resources to assist their learning and performance. To this end, we analyzed interview data from 14 engineering students enrolled in an introductory calculus course in an R2 institution in the mid-Atlantic. Each student participated in 3 interviews over the course of the semester. Data were analyzed using thematic analysis, guided by the self-regulated learning framework, to capture why students started, stopped, continued, or refused using optional resources and how their resource use changed during the semester. We found that students modified their use of resources for reasons broadly categorized as reasons related to the self, reasons related to the resource, and reasons related to external factors.</td></tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+
+    <table class="posters" id="poster-A12">
+        <tr>
+            <td class="poster-number">A12</td>
+            <td class="poster-content">
+                <table style="width:100%; border-spacing:0;">
+                    <tr><td class="poster-title">Meaningful Failure: Transforming Academic Structures and Incentives through Personalization in Engineering Education</td></tr>
+                    <tr><td class="poster-author">Spencer Sabatino &nbsp;&middot;&nbsp; <span class="poster-field">EER</span> &nbsp;&middot;&nbsp; Cornell University</td></tr>
+                    <tr><td class="poster-abstract">This project aims to develop personalized learning tools to support engineering students in engaging with &ldquo;meaningful failure.&rdquo; This research adopts a multi-pronged approach, including three strands: (1) exploring how the cognitive and affective states that students experience are reflected in recorded biosignals that can be decoded in real-time to understand how individual students respond differently to failure across different learning and social contexts, and (2) documenting, capturing, and analyzing real-time interactions of students and instructors in the classroom, including moments of individual-level and group-level failures and successes during the experience of regular activities in several engineering courses. Three research questions were defined for each strand: (1) What are the useful real-time failure profile signals that would yield actionable personalization in engineering education contexts?; (2) How do students&rsquo; differential responses to failure present opportunities for personalization of support in engineering education contexts?; (3) What changes to pedagogy, assessment, policy, and instructor professional development might be necessary to facilitate a culture of learning from and through failure in engineering education? Significant results include four classes of failure response related to engagement and identity, and evidence that failure is viewed very negatively at small institutions primarily in the mode of academic failure.</td></tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+
+    <table class="posters" id="poster-A13">
+        <tr>
+            <td class="poster-number">A13</td>
+            <td class="poster-content">
+                <table style="width:100%; border-spacing:0;">
+                    <tr><td class="poster-title">CURE-like, not cure-all: Varying broad relevance in experimentation labs produces similar student outcomes</td></tr>
+                    <tr><td class="poster-author">Mike Verostek &nbsp;&middot;&nbsp; <span class="poster-field">PER</span> &nbsp;&middot;&nbsp; Cornell University</td></tr>
+                    <tr><td class="poster-abstract">Expanding access to authentic experimental science experiences beyond students who conduct traditional undergraduate research is critical to broadening participation in physics and improving retention. Course-based undergraduate research experiences (CUREs) offer an effective way of integrating authentic physics into the standard undergraduate curriculum. However, CUREs are resource intensive, and little work has compared relevant student outcomes in physics CUREs to those of skills-focused introductory labs that similarly emphasize experimental practices. To address this gap, we conducted a controlled study between students enrolled in a CURE-based course relevant to experimental particle physics and a skills-focused introductory physics lab. Pre- and post-surveys were administered to assess changes in students&rsquo; critical thinking about and attitudes toward physics experimentation. We observe no significant difference in student gains between the two lab types across several constructs linked to persistence in physics, including belonging, agency, and self-efficacy. Results are discussed alongside their implications for designing scalable classroom experiences to engage students in the skills and practices of experimental physics.</td></tr>
                 </table>
             </td>
         </tr>
@@ -262,51 +323,49 @@ Initial analyses suggest that financial pressures and employment experiences may
 
     <!-- ==================== SESSION B ==================== -->
     <div class="session-header">Session B &mdash; 10:15&nbsp;am to 11:00&nbsp;am</div>
+    <p class="session-subhead">Equity, Identity &amp; Belonging &bull; Careers, Research Experiences &amp; Doctoral Training &bull; Curriculum, Community &amp; Institutional Research</p>
+
+    <div class="topic-label">Equity, Identity &amp; Belonging in STEM</div>
 
     <table class="posters" id="poster-B1">
         <tr>
             <td class="poster-number">B1</td>
             <td class="poster-content">
                 <table style="width:100%; border-spacing:0;">
-                    <tr><td class="poster-title">Exploring interactions between AI agent and Student in Front-End Design Process</td></tr>
-                    <tr><td class="poster-author">Siddharthsinh Jadeja &nbsp;&middot;&nbsp; <span class="poster-field">EER</span> &nbsp;&middot;&nbsp; University at Buffalo</td></tr>
-                    <tr><td class="poster-abstract">Design is an essential ability that enables each engineer to adopt solution-focused strategies and apply abductive thinking to consider the world's varied problems, classified as ill-structured. Researchers have well-established the significance of the beginning stages of the design process, known as the front-end design process, which focuses on problem deﬁnition, concept generation, and idea evaluation. Researchers have experimented and conceptualized the use of computers and Artificial Intelligence (AI) in design education to introduce a divergent-convergent process, identifying opportunities for AI to accelerate the ability of human design engineers in the iterative front-end design process. This integration of AI in design offers an opportunity for researchers to engage students in the design process in a computer-supported learning environment with another actor, an AI agent. However, this addition of another actor in design warrants the use of an integrated lens of Actors (Student and AI agent), their Actions to create Artifacts to understand the design process.
-Ideally, the students interact with the AI, forming new knowledge and information, and make design decisions to create artifacts. Simultaneously, the AI agent learns from interactions with the user and adjusts its behavior based on individual user interactions. By examining those interactions in a front-end design process, this proposed research will provide knowledge and understanding of students&#x27; AI agent interaction in the front-end design process and will continue the dialogue to address the concerns about the development of creativity and critical thinking among science and engineering students when using AI.</td></tr>
+                    <tr><td class="poster-title">Effectiveness of a Course in Advancing Students&rsquo; Understanding of Barriers to Learning and Participation of Underutilized Groups in STEM</td></tr>
+                    <tr><td class="poster-author">Ash Heim &nbsp;&middot;&nbsp; <span class="poster-field">BER</span> &nbsp;&middot;&nbsp; Syracuse University</td></tr>
+                    <tr><td class="poster-abstract">A course was created at a large private R1 university in the northeast U.S. to explore Diversity, Equity, Inclusion, and Accessibility (DEIA) in STEM. Open-response pre- and post-tests were designed that measured students&rsquo; understanding of barriers to learning and participation across four underutilized groups in STEM: (1) women, (2) racial minorities, (3) people with disabilities, and (4) people raised in lower socioeconomic households. Written responses on the first and last day of class were analyzed for 69 unique students in three successive cohorts and disaggregated by student-reported demographic data. A common codebook was developed that could be broadly applied to all four underutilized groups. When exploring STEM barriers for women, women reported more unique codes in the pre-test than men, but men showed higher gains from pre- to post-test. Similarly, White and Asian students showed greater gains than racial minority students when identifying STEM barriers for racial minorities. Students without disabilities reported a doubling in unique STEM barrier codes in the post-test. In general, we found that STEM students acquired significant understanding of barriers to STEM participation in the four underutilized groups of focus after completing a dedicated DEIA course. Additionally, learning gains were often greater in the majority (or privileged) demographic.</td></tr>
                 </table>
             </td>
         </tr>
     </table>
+
     <table class="posters" id="poster-B2">
         <tr>
             <td class="poster-number">B2</td>
             <td class="poster-content">
                 <table style="width:100%; border-spacing:0;">
-                    <tr><td class="poster-title">Investigating Educational Practices to Support Learners in Energy Technical Assistance Programs</td></tr>
-                    <tr><td class="poster-author">Gabriel Mendez-Sanders &nbsp;&middot;&nbsp; <span class="poster-field">EER</span> &nbsp;&middot;&nbsp; Cornell University</td></tr>
-                    <tr><td class="poster-abstract">Unprecedented growth in U.S. energy demand is straining the electric grid and placing the nation's economy and security at risk. Distributed energy resources (DERs) can relieve grid stress, but they are often deployed by stakeholders with limited engineering expertise (e.g., school systems, nonprofits, municipalities). To deploy and sustain DERs, stakeholders must learn and apply complex engineering concepts outside traditional educational settings. Energy technical assistance (TA) programs support this learning by providing educational offerings and project guidance that help stakeholders make informed decisions about DER design, construction, and maintenance. However, TA designs and evaluation standards remain fragmented, with limited understanding of how stakeholder learning is supported. 
-This project examines the extent to which principles of adult education (andragogy) are incorporated into energy TA program design, how practitioners conceptualize adult learning, and how these principles can be effectively enacted. The findings will generate an overview of current educational practices and inform a framework to help TA practitioners intentionally design and refine stakeholder learning to support effective DER deployment.</td></tr>
+                    <tr><td class="poster-title">Does a course that prioritizes the transformational role of college improve students&rsquo; affective outcomes?</td></tr>
+                    <tr><td class="poster-author">Macarena Gomez De LaTorre Clavel &nbsp;&middot;&nbsp; <span class="poster-field">BER</span> &nbsp;&middot;&nbsp; Binghamton University</td></tr>
+                    <tr><td class="poster-abstract">Students who take a more transactional view of the purpose of college experience less sense of belonging than those who take a more transformational view. Additionally, students who experienced more of the Gallup &ldquo;Big Six&rdquo; college experiences, half of which have a transformational leaning, thrived more across five measures of wellbeing after graduation. While many studies have examined the impact of various pedagogical interventions on student affective outcomes, many fewer have examined the impact of curricula with a transformation, or whole-person development, focus. This study examines the short-term impact on student affective outcomes of a first-semester-of-college course focused on whole-person development using Esfahani-Smith&rsquo;s Four Pillars of Meaning: Belonging, Storytelling, Purpose, and Transcendence. Students engage in self-reflection and discussion of research for each of these topics. Previously, we presented our study design and preliminary findings from a pilot study. While the numbers were too small for statistical analysis, we found increases in average outcomes for belonging, college expectations, life satisfaction and mindset, regardless of gender or first-generation status. In this poster, we present the statistical analysis of these outcomes for fifteen sections of the course over the span of five years.</td></tr>
                 </table>
             </td>
         </tr>
     </table>
+
     <table class="posters" id="poster-B3">
         <tr>
             <td class="poster-number">B3</td>
             <td class="poster-content">
                 <table style="width:100%; border-spacing:0;">
-                    <tr><td class="poster-title">"I Feel Like the Walls Are Closing In:" Biomedical Graduate and Professional Student Perceptions of Workforce Entry Amid U.S. Social, Economic, and Political Disruptions</td></tr>
-                    <tr><td class="poster-author">Connor Ferguson &nbsp;&middot;&nbsp; <span class="poster-field">BER</span> &nbsp;&middot;&nbsp; University at Buffalo</td></tr>
-                    <tr><td class="poster-abstract">Since January 2025, the U.S. science enterprise has faced major disruptions, including terminations of research grants, reduced federal positions, and changes to federal student loan policies. Despite growing concerns, little is known about how these macro-level changes shape students' perception of entering the workforce. This project explores how biomedical graduate and medical students perceive recent social, economic, and political (SEP) changes as impacting their training and workforce transition. 
-
-We employed an exploratory mixed-methods approach. In fall 2025, we recruited graduate/professional students (n=295) across U.S. institutions to complete a questionnaire consisting of six Likert-scale items assessing awareness, anxiousness, and perceived career impacts, alongside a free-response item. Qualitative data were analyzed using inductive coding, producing themes organized by patterns of relatedness. Quantitative data were analyzed using ordinal logistic regression with career goal (healthcare vs. biomedical-focused) as the predictor variable. We report odds ratios (OR), which are the odds compared to the healthcare group that the biomedical-focused career goal group will be in a higher category on the Likert scale.
-
-Four themes emerged: 1) career uncertainty, 2) financial instability and barriers, 3) professional identity and practice, and 4) looking to the future. Quantitatively, biomedical-focused participants reported higher SEP awareness (OR: 1.86-2.04), greater anxiousness about entering the workforce (OR: 2.11), more anticipated negative career impact (OR: 1.71), and less anticipated positive impact (OR: 0.48) compared to healthcare-focused participants. 
-
-This work establishes a foundation for designing targeted career development support for students during periods of uncertainty.</td></tr>
+                    <tr><td class="poster-title">Exploring Relationships Among STEM Student Success, Belonging, and Support</td></tr>
+                    <tr><td class="poster-author">Tony Wong &nbsp;&middot;&nbsp; <span class="poster-field">RUME</span> &nbsp;&middot;&nbsp; Rochester Institute of Technology</td></tr>
+                    <tr><td class="poster-abstract">Undergraduate STEM student success is shaped by a complex set of academic, social, and financial factors. STEM education research has increasingly emphasized the importance of students&rsquo; sense of belonging, professional identity, and access to effective support structures in influencing persistence and academic outcomes. This poster presents preliminary findings from an ongoing mixed-methods research study investigating factors associated with undergraduate STEM student persistence and academic experience at the Rochester Institute of Technology. Drawing on two years of institution-wide survey data, qualitative follow-up interview data, and 10+ years of longitudinal institutional records, this work explores relationships among student success, financial stress, employment, sense of belonging, metacognitive awareness, STEM professional identity, and the use of academic support structures. Initial analyses suggest that students working more than ten hours per week in off-campus jobs report lower sense of belonging and metacognitive awareness as compared to students working on-campus. Interview data further highlighted differences between students who experienced financial stress primarily as a social belonging challenge versus those who experienced it as an academic performance challenge.</td></tr>
                 </table>
             </td>
         </tr>
     </table>
+
     <table class="posters" id="poster-B4">
         <tr>
             <td class="poster-number">B4</td>
@@ -314,86 +373,232 @@ This work establishes a foundation for designing targeted career development sup
                 <table style="width:100%; border-spacing:0;">
                     <tr><td class="poster-title">Impact of mentor pairing approach on student self-efficacy, identity, and values alignment in a biology peer mentoring program</td></tr>
                     <tr><td class="poster-author">Heather Coleman &nbsp;&middot;&nbsp; <span class="poster-field">BER</span> &nbsp;&middot;&nbsp; Syracuse University</td></tr>
-                    <tr><td class="poster-abstract">Mentoring is widely used to support student development in STEM, yet the mechanisms by which mentor-protege pairing approaches influence program outcomes remain poorly understood. Drawing on the Tripartite Integration Model of Social Influence (TIMSI), which frames self-efficacy, science identity, and values alignment as key psychosocial outcomes of mentoring relationships, this study will examine whether pairing strategy affects these outcomes in an undergraduate biology peer mentoring program. My research goal is to compare two pairing approaches, random assignment and similarity-based pairing matched on shared interests and disinterests. I hypothesize that similarity-based pairing will produce stronger gains in self-efficacy, science identity, and values alignment among protoges.
-This ongoing study employs a mixed-methods design. Pre- and post-semester surveys assess changes in self-efficacy, science identity, and values alignment across both pairing conditions, while semi-structured interviews with protoges will provide insight into perceived mentor-protege relationship quality and serve as formative program evaluation. Data collection is currently underway, with one semester completed to date.
-This work has direct relevance for faculty and administrators seeking evidence-based approaches to design mentoring programs that support undergraduate retention and belonging in STEM fields.</td></tr>
+                    <tr><td class="poster-abstract">Mentoring is widely used to support student development in STEM, yet the mechanisms by which mentor-prot&eacute;g&eacute; pairing approaches influence program outcomes remain poorly understood. Drawing on the Tripartite Integration Model of Social Influence (TIMSI), which frames self-efficacy, science identity, and values alignment as key psychosocial outcomes of mentoring relationships, this study will examine whether pairing strategy affects these outcomes in an undergraduate biology peer mentoring program. The research goal is to compare two pairing approaches, random assignment and similarity-based pairing matched on shared interests and disinterests. I hypothesize that similarity-based pairing will produce stronger gains in self-efficacy, science identity, and values alignment among prot&eacute;g&eacute;s. This ongoing study employs a mixed-methods design. Pre- and post-semester surveys assess changes in self-efficacy, science identity, and values alignment across both pairing conditions, while semi-structured interviews with prot&eacute;g&eacute;s will provide insight into perceived mentor-prot&eacute;g&eacute; relationship quality and serve as formative program evaluation. This work has direct relevance for faculty and administrators seeking evidence-based approaches to design mentoring programs that support undergraduate retention and belonging in STEM fields.</td></tr>
                 </table>
             </td>
         </tr>
     </table>
+
     <table class="posters" id="poster-B5">
         <tr>
             <td class="poster-number">B5</td>
             <td class="poster-content">
                 <table style="width:100%; border-spacing:0;">
-                    <tr><td class="poster-title">Cultivating growth: Impact of equitable grading</td></tr>
-                    <tr><td class="poster-author">Benjamin Schermerhorn &nbsp;&middot;&nbsp; <span class="poster-field">PER / EER</span> &nbsp;&middot;&nbsp; Monroe Community College</td></tr>
-                    <tr><td class="poster-abstract">Equitable grading practices, such as retakes, flexible deadlines, and minimum grading, provide opportunities for persistence and success by accounting for the realities of our students' lives in present day education. In this poster presentation, we share the results of work at a community college investigating (a) the impact of minimum grading on student success in an introductory geology course, (b) results of Likert surveys over the course of a semester tracking students' motivation, confidence, effort, and anxiety in an second-year engineering course employing retakes and flexible deadlines, and (c) summary of focus-group interviews across geology, physics, and engineering. Students largely report lower anxiety and a greater sense of their own opportunity to succeed.</td></tr>
+                    <tr><td class="poster-title">What We Do, Where We&rsquo;re Going: Research in the Equity-Centered Instruction and Practice Lab (EQUIP)</td></tr>
+                    <tr><td class="poster-author">Mariel Pfeifer &nbsp;&middot;&nbsp; <span class="poster-field">BER</span> &nbsp;&middot;&nbsp; Cornell University</td></tr>
+                    <tr><td class="poster-abstract">Founded in 2026, the EQUIP Lab is a biology education research laboratory led by Dr. Mariel Pfeifer in the School of Integrative Plant Science (Horticulture Section) at Cornell University. We investigate how STEM learning and mentoring environments can better support both students and faculty. A central focus of our work is generating foundational knowledge about how undergraduates, graduate students, and faculty with disabilities navigate STEM systems. This research informs instructional practices and institutional decision-making aimed at promoting student success and faculty well-being. The EQUIP Lab builds on Mariel&rsquo;s dissertation research, which examined how neurodivergent STEM undergraduates practice self-advocacy to formally access academic accommodations and how active-learning environments shape students&rsquo; perceptions of learning. Since its founding, the lab&rsquo;s work has expanded to include the experiences of STEM undergraduates with a wide range of disabilities, as well as disabled graduate students and faculty. We currently have several qualitative and systematic research projects underway and in development. Stop by this poster to learn more about our work and future directions. We are also seeking to recruit a graduate student to begin in Fall 2027.</td></tr>
                 </table>
             </td>
         </tr>
     </table>
+
     <table class="posters" id="poster-B6">
         <tr>
             <td class="poster-number">B6</td>
             <td class="poster-content">
                 <table style="width:100%; border-spacing:0;">
-                    <tr><td class="poster-title">Building a culture of research: Factors that drive the development of an undergraduate research culture at a community college</td></tr>
-                    <tr><td class="poster-author">James Hewlett &nbsp;&middot;&nbsp; <span class="poster-field">BER</span> &nbsp;&middot;&nbsp; Finger Lakes Community College</td></tr>
-                    <tr><td class="poster-abstract">The Community College Undergraduate Research Initiative (CCURI) is a national consortium of 142 community colleges dedicated to the development, implementation, and assessment of models for integrating an undergraduate research experience (URE) into a community college STEM curriculum. CCURI has developed a model for embedding undergraduate research at a community college, and through a series of professional development workshops has helped network partners produce comprehensive strategic plans for expanding opportunities for their students to engage in a URE. CCURI has been focused on two primary research questions: (1) How does an institution move from a culture of &quot;no research&quot; to a culture of &quot;research as the norm,&quot; with research as an integral part of the student experience? and (2) What factors promote or constrain culture change from &quot;no research&quot; to &quot;research as the norm?&quot; Institutions invited to participate in the study were assigned to one of three clusters situated along a spectrum of "no research" to "research as the norm." To understand the extent to which these factors influenced the development of a research culture, CCURI developed a structured interview and focus group study from a subsample of partners from each of the clusters. Responses were coded and aligned with the initial assignment to a specific cluster. Preliminary results suggest that the critical promoters of culture change are associated with top-down drivers such as institutional strategic planning, the level of engagement with research networks and scientific disciplinary societies, and the employment of embedded Course based models (CUREs).</td></tr>
+                    <tr><td class="poster-title">Feature counter-stereotypical scientists in curricula with the Biologists and Graph Interpretation (BioGraphI) Project</td></tr>
+                    <tr><td class="poster-author">Suann Yang &nbsp;&middot;&nbsp; <span class="poster-field">BER</span> &nbsp;&middot;&nbsp; State University of New York &ndash; Geneseo</td></tr>
+                    <tr><td class="poster-abstract">Biology students can benefit from being introduced to relatable role models; however, textbooks generally lack representation of contemporary scientists to whom our students can relate. BioGraphI modules are lessons designed to fill this gap, addressing graph interpretation skills along the way. BioGraphI modules include video interviews with counter-stereotypical scientists, allowing students to hear directly from the scientists. In this poster, we illustrate the components of a BioGraphI module and review the modules we have produced thus far. Over 50% of modules are designed for introductory students, and 72% for biology majors. We also summarize the identities of scientists who have been featured in these modules, and compare this representation to that of commonly used textbooks. The representation of identities in BioGraphI modules counters the strong gender and racial bias in biology textbook citations of scientists: nearly 50% of our modules feature scientists who identify as women, and 30% feature scientists who identify as People of Color. We hope to inspire instructors to adapt our modules and to encourage biologists to collaborate with us to co-author BioGraphI modules, thereby continuing to expand the range of identities and research areas addressed by our curricula.</td></tr>
                 </table>
             </td>
         </tr>
     </table>
+
     <table class="posters" id="poster-B7">
         <tr>
             <td class="poster-number">B7</td>
             <td class="poster-content">
                 <table style="width:100%; border-spacing:0;">
-                    <tr><td class="poster-title">Engineering Students' Use of Self-Regulated Learning for Optional Resources in an Introductory Calculus Course</td></tr>
-                    <tr><td class="poster-author">Kriz George &nbsp;&middot;&nbsp; <span class="poster-field">EER</span> &nbsp;&middot;&nbsp; Rochester Institute of Technology</td></tr>
-                    <tr><td class="poster-abstract">Prior research has demonstrated that engineering students struggle with introductory calculus courses. Instructors and institutions have responded to this issue by implementing a variety of interventions, such as initiatives to provide more resources to students to succeed in these courses. However, regardless of these interventions, pass rates for calculus among first year engineering students continue to remain low. One possible reason for this low pass rate could be that the availability of resources does not guarantee student success in their course. Students might not know how to effectively utilize the resources to augment their learning and performance. In this study, we investigate how engineering students decide to use optional calculus resources to assist their learning and performance. To this end, we analyzed interview data from 14 engineering students enrolled in an introductory calculus course in an R2 institution in the mid-Atlantic. Each student participated in 3 interviews over the course of the semester. Data were analyzed using thematic analysis, guided by the self-regulated learning framework, to capture why students started, stopped, continued, or refused using optional resources and how their resource use changed during the semester. We found that students modified their use of resources for reasons broadly categorized as reasons related to the self, reasons related to the resource, and reasons related to external factors. The findings provide deeper insights into how and why the resources by instructors and institutions are used. This insight can help resource providers modify how their resources are delivered for higher student engagement.</td></tr>
+                    <tr><td class="poster-title">Costello Lab Biology Education Research</td></tr>
+                    <tr><td class="poster-author">Carolyn Graham &nbsp;&middot;&nbsp; <span class="poster-field">BER</span> &nbsp;&middot;&nbsp; University at Buffalo</td></tr>
+                    <tr><td class="poster-abstract">This poster describes the current projects in the Costello Lab at the University at Buffalo. Our research centers on three themes: representation of scientists, how human biases shape scientific knowledge, and obstacles to persistence in science. As a lab, we use experimental approaches to identify the features of educational resources showcasing scientists that are responsible for creating change in student attitudes towards science and scientists. We also explore how explicitly acknowledging human biases, stereotypes, and assumptions in science can increase student awareness of the impact science has on social issues. Finally, we characterize the obstacles that both scientists and students face in STEM and test interventions aimed at overcoming research challenges. We are currently looking for graduate students interested in exploring these research areas at Buffalo!</td></tr>
                 </table>
             </td>
         </tr>
     </table>
+
+    <div class="topic-label">Careers, Research Experiences &amp; Doctoral Training</div>
+
     <table class="posters" id="poster-B8">
         <tr>
             <td class="poster-number">B8</td>
             <td class="poster-content">
                 <table style="width:100%; border-spacing:0;">
-                    <tr><td class="poster-title">What We Do, Where We&#x27;re Going: Research in the Equity-Centered Instruction and Practice Lab (EQUIP)</td></tr>
-                    <tr><td class="poster-author">Mariel Pfeifer &nbsp;&middot;&nbsp; <span class="poster-field">BER</span> &nbsp;&middot;&nbsp; Cornell University</td></tr>
-                    <tr><td class="poster-abstract">Founded in 2026, the EQUIP Lab is a biology education research laboratory led by Dr. Mariel Pfeifer in the School of Integrative Plant Science (Horticulture Section) at Cornell University. We investigate how STEM learning and mentoring environments can better support both students and faculty. A central focus of our work is generating foundational knowledge about how undergraduates, graduate students, and faculty with disabilities navigate STEM systems. This research informs instructional practices and institutional decision‑making aimed at promoting student success and faculty well‑being.
-The EQUIP Lab builds on Mariel's dissertation research, which examined how neurodivergent STEM undergraduates practice self‑advocacy to formally access academic accommodations and how active‑learning environments shape students' perceptions of learning. Since its founding, the lab's work has expanded to include the experiences of STEM undergraduates with a wide range of disabilities, as well as disabled graduate students and faculty. We currently have several qualitative and systematic research projects underway and in development. Stop by this poster to learn more about our work and future directions. We are also seeking to recruit a graduate student to begin in Fall 2027 and welcome conversations with interested students and collaborators.</td></tr>
+                    <tr><td class="poster-title">&ldquo;I Feel Like the Walls Are Closing In:&rdquo; Biomedical Graduate and Professional Student Perceptions of Workforce Entry Amid U.S. Social, Economic, and Political Disruptions</td></tr>
+                    <tr><td class="poster-author">Connor Ferguson &nbsp;&middot;&nbsp; <span class="poster-field">BER</span> &nbsp;&middot;&nbsp; University at Buffalo</td></tr>
+                    <tr><td class="poster-abstract">Since January 2025, the U.S. science enterprise has faced major disruptions, including terminations of research grants, reduced federal positions, and changes to federal student loan policies. Despite growing concerns, little is known about how these macro-level changes shape students&rsquo; perception of entering the workforce. This project explores how biomedical graduate and medical students perceive recent social, economic, and political (SEP) changes as impacting their training and workforce transition. We employed an exploratory mixed-methods approach recruiting graduate/professional students (n=295) across U.S. institutions. Four themes emerged from qualitative analysis: (1) career uncertainty, (2) financial instability and barriers, (3) professional identity and practice, and (4) looking to the future. Quantitatively, biomedical-focused participants reported higher SEP awareness, greater anxiousness about entering the workforce, more anticipated negative career impact, and less anticipated positive impact compared to healthcare-focused participants. This work establishes a foundation for designing targeted career development support for students during periods of uncertainty.</td></tr>
                 </table>
             </td>
         </tr>
     </table>
+
     <table class="posters" id="poster-B9">
         <tr>
             <td class="poster-number">B9</td>
             <td class="poster-content">
                 <table style="width:100%; border-spacing:0;">
-                    <tr><td class="poster-title">Exploring how Engineering Faculty Support Knowledge Brokering in Doctoral Training</td></tr>
-                    <tr><td class="poster-author">Gala Campos Oaxaca &nbsp;&middot;&nbsp; <span class="poster-field">EER</span> &nbsp;&middot;&nbsp; Cornell University</td></tr>
-                    <tr><td class="poster-abstract">Engineering doctoral education is changing rapidly.  Globally,  fewer PhD holders are pursuing academic careers, not necessarily by choice, but because the supply of doctorates now far exceeds the demand for tenure-track positions. As a result, many highly trained researchers are entering industry, government, and hybrid sectors that require translating and applying scientific knowledge beyond academia. These non-linear, cross-sectoral pathways point to the growing need for doctoral students to develop knowledge brokering abilities. That is, to be able to connect, translate, and co-create knowledge across disciplinary, institutional, professional, and geographical boundaries.
-At the same time, AI-driven innovation and new STEM workforce policies in the U.S. are reshaping expectations of what it means to be an engineer with a doctorate. Graduates are expected to work across boundaries while linking research and technical excellence with societal impact.
-Doctoral supervision plays a crucial role in preparing students for their future careers. However, it has been underexamined in the context of knowledge brokering and engineering. This project aims to examine how engineering faculty support students in developing knowledge brokering skills through their supervisory practices.</td></tr>
+                    <tr><td class="poster-title">Exploring Possible Self Achievement and Change in Undergraduate Research Experiences</td></tr>
+                    <tr><td class="poster-author">Marie Ramirez &nbsp;&middot;&nbsp; <span class="poster-field">BER</span> &nbsp;&middot;&nbsp; Cornell University</td></tr>
+                    <tr><td class="poster-abstract">Possible selves, or an individual&rsquo;s conception of who they may become in the future, can shape motivation, academic behavior, and educational outcomes. While possible selves have been widely explored in educational research, limited work has examined how they develop within undergraduate research experiences (UREs). As such, we sought to explore undergraduate students&rsquo; short-term and long-term possible selves within the context of a summer URE. In this study, students completed pre- and post-program surveys using a modified Possible Selves Questionnaire that asked them who they expect to become by the end of the research experience and after graduating from college, as well as the strategies they plan to use to achieve these future selves. Post-program surveys additionally assessed students&rsquo; perceived achievement of their short-term possible selves and changes in their future self-perceptions across the program. Our project aims to characterize the range of future selves students envision during UREs and examine how research experiences may shape students&rsquo; developing perceptions of themselves and their futures in STEM.</td></tr>
                 </table>
             </td>
         </tr>
     </table>
+
     <table class="posters" id="poster-B10">
         <tr>
             <td class="poster-number">B10</td>
             <td class="poster-content">
                 <table style="width:100%; border-spacing:0;">
-                    <tr><td class="poster-title">Exploring Possible Self Achievement and Change in Undergraduate Research Experiences</td></tr>
-                    <tr><td class="poster-author">Marie Ramirez &nbsp;&middot;&nbsp; <span class="poster-field">BER</span> &nbsp;&middot;&nbsp; Cornell University</td></tr>
-                    <tr><td class="poster-abstract">Possible selves, or an individual&#x27;s conception of who they may become in the future, can shape motivation, academic behavior, and educational outcomes. While possible selves have been widely explored in educational research, limited work has examined how they develop within undergraduate research experiences (UREs). As such, we sought to explore undergraduate students' short-term and long-term possible selves within the context of a summer URE. In this study, students completed pre- and post-program surveys using a modified Possible Selves Questionnaire that asked them who they expect to become by the end of the research experience and after graduating from college, as well as the strategies they plan to use to achieve these future selves. Post-program surveys additionally assessed students' perceived achievement of their short-term possible selves and changes in their future self-perceptions across the program.
+                    <tr><td class="poster-title">Understanding Undergraduate Research Experiences Through Story</td></tr>
+                    <tr><td class="poster-author">Lorna Treffert &nbsp;&middot;&nbsp; <span class="poster-field">EER</span> &nbsp;&middot;&nbsp; University at Buffalo</td></tr>
+                    <tr><td class="poster-abstract">Over the past 20 years, science and engineering education researchers have identified numerous benefits for students who engage in undergraduate research experiences (UREs). More recent studies have suggested that we may be underestimating the prevalence of negative undergraduate research experiences and the harm that can be caused by ineffective mentoring and toxic lab cultures. In my dissertation study, I am collaborating with undergraduate researchers to construct storied, visual representations of their lived experiences (e.g., narrative portraits). My hope is that research mentors can use these portraits to critically reflect on their mentoring practices and identify how they can better facilitate positive, authentic experiences for undergraduate researchers. In this poster, I present two narrative portraits along with a set of reflection questions. I hope to get conference attendees&rsquo; responses to these questions and engage in conversations about how they can be used as tools for critical reflection.</td></tr>
+                </table>
+            </td>
+        </tr>
+    </table>
 
-Our project aims to characterize the range of future selves students envision during UREs and examine how research experiences may shape students' developing perceptions of themselves and their futures in STEM.</td></tr>
+    <table class="posters" id="poster-B11">
+        <tr>
+            <td class="poster-number">B11</td>
+            <td class="poster-content">
+                <table style="width:100%; border-spacing:0;">
+                    <tr><td class="poster-title">Exploring how Engineering Faculty Support Knowledge Brokering in Doctoral Training</td></tr>
+                    <tr><td class="poster-author">Gala Campos Oaxaca &nbsp;&middot;&nbsp; <span class="poster-field">EER</span> &nbsp;&middot;&nbsp; Cornell University</td></tr>
+                    <tr><td class="poster-abstract">Engineering doctoral education is changing rapidly. Globally, fewer PhD holders are pursuing academic careers, not necessarily by choice, but because the supply of doctorates now far exceeds the demand for tenure-track positions. As a result, many highly trained researchers are entering industry, government, and hybrid sectors that require translating and applying scientific knowledge beyond academia. These non-linear, cross-sectoral pathways point to the growing need for doctoral students to develop knowledge brokering abilities &mdash; to be able to connect, translate, and co-create knowledge across disciplinary, institutional, professional, and geographical boundaries. At the same time, AI-driven innovation and new STEM workforce policies in the U.S. are reshaping expectations of what it means to be an engineer with a doctorate. Doctoral supervision plays a crucial role in preparing students for their future careers; however, it has been underexamined in the context of knowledge brokering and engineering. This project aims to examine how engineering faculty support students in developing knowledge brokering skills through their supervisory practices.</td></tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+
+    <table class="posters" id="poster-B12">
+        <tr>
+            <td class="poster-number">B12</td>
+            <td class="poster-content">
+                <table style="width:100%; border-spacing:0;">
+                    <tr><td class="poster-title">Preparing graduate students for teaching responsibilities in future faculty roles</td></tr>
+                    <tr><td class="poster-author">Jutshi Agarwal &nbsp;&middot;&nbsp; <span class="poster-field">EER</span> &nbsp;&middot;&nbsp; University at Buffalo</td></tr>
+                    <tr><td class="poster-abstract">Engineering doctoral students typically do not receive training in pedagogy that adequately prepares them for their teaching roles as teaching assistants or future faculty. This impacts undergraduate engineering education where disciplinary content knowledge is assumed to be sufficient for effective instruction and pedagogical decisions rely on &ldquo;how I was taught when I was a student.&rdquo; With the need for increasing student-centered pedagogies in engineering classrooms, intentional training programs that improve doctoral students&rsquo; teaching self-efficacy, metacognition, and agency can help prepare them for effective instruction. Leveraging knowledge from a mixed-methods dissertation study on teaching self-efficacy of engineering graduate students, this poster covers findings from prior studies, reflections from experiences as a Lead Teaching Assistant of a large undergraduate engineering course, and current research ideas for extending this work toward creating collaborations between the STEM-DBER scholarly and practitioner communities.</td></tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+
+    <div class="topic-label">Curriculum, Community &amp; Institutional Research</div>
+
+    <table class="posters" id="poster-B13">
+        <tr>
+            <td class="poster-number">B13</td>
+            <td class="poster-content">
+                <table style="width:100%; border-spacing:0;">
+                    <tr><td class="poster-title">Identifying Gaps in Published Plant Science Lesson Plans for Undergraduate Biology</td></tr>
+                    <tr><td class="poster-author">Bryan MacNeill &nbsp;&middot;&nbsp; <span class="poster-field">BER</span> &nbsp;&middot;&nbsp; Cornell University</td></tr>
+                    <tr><td class="poster-abstract">Plants serve as powerful and accessible models for teaching core concepts in biology. Because plant systems can be studied in laboratory, greenhouse, field, and classroom settings, they also offer flexible opportunities for inquiry-based and skills-based teaching. However, plant science content is underrepresented in undergraduate biology education, and many biology students do not recognize the ecological and societal importance of plants. This disconnect aligns with broader concerns about gaps in lesson plans for undergraduate courses. Initiatives such as the 2011 Vision and Change (V&amp;C) report have called to transform undergraduate biology curricula. In plant science, this call led to the development of the ASPB-BSA Core Concepts and Objectives in Plant Biology for Undergraduates, which provides plant science educators with a discipline-specific guide for curriculum design. By identifying key biology concepts and competencies, these frameworks help instructors align their pedagogical activities with shared learning goals. Despite these efforts, it remains unclear how well currently available teaching materials reflect these goals and what gaps remain. To better understand the current landscape of plant science education resources, we conducted a systematic analysis of published lesson plans.</td></tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+
+    <table class="posters" id="poster-B14">
+        <tr>
+            <td class="poster-number">B14</td>
+            <td class="poster-content">
+                <table style="width:100%; border-spacing:0;">
+                    <tr><td class="poster-title">Evaluating the Impact of Undergraduate Physics Instruction on Student Understanding of Measurement Uncertainty</td></tr>
+                    <tr><td class="poster-author">Rachel Merrill &nbsp;&middot;&nbsp; <span class="poster-field">PER</span> &nbsp;&middot;&nbsp; Cornell University</td></tr>
+                    <tr><td class="poster-abstract">Student conceptions of measurement uncertainty across classical and quantum mechanics have been shown to differ between introductory-level and more advanced undergraduates. Given these results, it is reasonable to suggest that at least some of the physics curriculum affects their understanding of these topics, but it is unclear when and how the shift from novice to expert occurs. Using a previously-validated survey, we assessed students across 15 higher-education institutions at both the beginning and end of their participation in either a physics lab course or a quantum mechanics course. The survey assesses their understanding of sources of uncertainty, how uncertainty can be minimized, and whether a true value even exists to be measured. These findings will be cross referenced with instructional materials to provide context about the type of instruction these students received in an effort to better understand how students are led to an expert-like understanding.</td></tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+
+    <table class="posters" id="poster-B15">
+        <tr>
+            <td class="poster-number">B15</td>
+            <td class="poster-content">
+                <table style="width:100%; border-spacing:0;">
+                    <tr><td class="poster-title">Student Perceptions of Pedagogical Approaches and Learning Outcomes in Graduate Physics Courses</td></tr>
+                    <tr><td class="poster-author">Kevin Coldren &nbsp;&middot;&nbsp; <span class="poster-field">PER</span> &nbsp;&middot;&nbsp; Rochester Institute of Technology</td></tr>
+                    <tr><td class="poster-abstract">Graduate STEM programs play a critical role in preparing students to become the academics and researchers of tomorrow. Anecdotal evidence suggests that required graduate coursework in physics often features pedagogical approaches that are outdated, with an emphasis on rigorous mathematical formalism instead of deep conceptual learning or connections to authentic physics research. Prior PER research has documented that physics graduate students can still show shortcomings in their conceptual understanding in their coursework. This pilot study investigates the current experiences of graduate students in their physics coursework in a single R1 Ph.D. program. We conducted 30-minute semi-structured interviews with 14 graduate students. Thematic analysis of the interview transcripts was performed, and the emerging themes include a high prevalence of traditional lecture pedagogies in all coursework, high value being placed by students on course content relevant to research, and required courses having higher intensity and workloads when compared to elective courses.</td></tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+
+    <table class="posters" id="poster-B16">
+        <tr>
+            <td class="poster-number">B16</td>
+            <td class="poster-content">
+                <table style="width:100%; border-spacing:0;">
+                    <tr><td class="poster-title">Overcoming Pedagogical Inertia: Amplifying the Course Transformation Narratives of Engineering Educators</td></tr>
+                    <tr><td class="poster-author">Alexandra Coso Strong &nbsp;&middot;&nbsp; <span class="poster-field">EER</span> &nbsp;&middot;&nbsp; Cornell University</td></tr>
+                    <tr><td class="poster-abstract">Research in engineering education often highlights the barriers that impede instructional change and curricular transformation. While federally funded projects and the creation of new engineering degree programs have transformed engineering curricula in some places, this same level of administrative and financial support is unavailable for many engineering departments and institutions. At the same time, evidence suggests the existence of alternative approaches to educational innovation and change by educators who have overcome barriers that have impeded others &mdash; even in contexts where resources may be limited or constrained. The stories of these educators are rarely amplified, even though they provide valuable opportunities to understand the strategic actions individuals take to affect change. This poster shares preliminary work on the project, including: (1) a literature review on how engineering education communities describe curricular transformation, (2) a qualitative analysis connecting our understanding of literature with the narratives of educators who have transformed their courses, and (3) the development of a survey to characterize the ways in which engineering educators engage in course and curricular transformation.</td></tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+
+    <table class="posters" id="poster-B17">
+        <tr>
+            <td class="poster-number">B17</td>
+            <td class="poster-content">
+                <table style="width:100%; border-spacing:0;">
+                    <tr><td class="poster-title">ENLITE Lab: Exploring Knowledge Learning and Identity to Transform Engineering Education</td></tr>
+                    <tr><td class="poster-author">Courtney Faber &nbsp;&middot;&nbsp; <span class="poster-field">EER</span> &nbsp;&middot;&nbsp; University at Buffalo</td></tr>
+                    <tr><td class="poster-abstract">The Exploring Knowledge, Learning, and Identity to Transform Engineering Education (ENLITE) research lab was established in 2016 by Dr. Courtney Faber. Broadly, we aim to make transformational change in engineering by studying areas related to knowledge, learning, and identity. Our work focuses on (1) empowering engineering education scholars to effectively impact change in engineering and (2) developing educational experiences that consider students&rsquo; approaches to acquiring, justifying, and using knowledge &mdash; known as epistemic thinking. We primarily use qualitative research approaches and often combine methods in novel ways. Stop by to learn more about ongoing projects in the ENLITE Lab and opportunities for collaboration.</td></tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+
+    <table class="posters" id="poster-B18">
+        <tr>
+            <td class="poster-number">B18</td>
+            <td class="poster-content">
+                <table style="width:100%; border-spacing:0;">
+                    <tr><td class="poster-title">Building a culture of research: Factors that drive the development of an undergraduate research culture at a community college</td></tr>
+                    <tr><td class="poster-author">James Hewlett &nbsp;&middot;&nbsp; <span class="poster-field">BER</span> &nbsp;&middot;&nbsp; Finger Lakes Community College</td></tr>
+                    <tr><td class="poster-abstract">The Community College Undergraduate Research Initiative (CCURI) is a national consortium of 142 community colleges dedicated to the development, implementation, and assessment of models for integrating an undergraduate research experience (URE) into a community college STEM curriculum. CCURI has been focused on two primary research questions: (1) How does an institution move from a culture of &ldquo;no research&rdquo; to a culture of &ldquo;research as the norm,&rdquo; with research as an integral part of the student experience? and (2) What factors promote or constrain culture change? Institutions invited to participate in the study were assigned to one of three clusters situated along a spectrum of &ldquo;no research&rdquo; to &ldquo;research as the norm.&rdquo; To understand the extent to which these factors influenced the development of a research culture, CCURI developed a structured interview and focus group study from a subsample of partners from each cluster. Preliminary results suggest that the critical promoters of culture change are associated with top-down drivers such as institutional strategic planning, the level of engagement with research networks and scientific disciplinary societies, and the employment of embedded course-based models (CUREs).</td></tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+
+    <table class="posters" id="poster-B19">
+        <tr>
+            <td class="poster-number">B19</td>
+            <td class="poster-content">
+                <table style="width:100%; border-spacing:0;">
+                    <tr><td class="poster-title">Building CASTLE: Lessons from Developing a Sustainable Interdisciplinary STEM Education Research Center</td></tr>
+                    <tr><td class="poster-author">Dina Newman &nbsp;&middot;&nbsp; <span class="poster-field">BER</span> &nbsp;&middot;&nbsp; Rochester Institute of Technology</td></tr>
+                    <tr><td class="poster-abstract">The Center for Advancing Scholarship to Transform Learning (CASTLE) at the Rochester Institute of Technology was established to support interdisciplinary collaboration in STEM education research and evidence-based teaching practices. Beginning with modest seed funding from the Dean&rsquo;s office, CASTLE has grown over the past decade into a self-sustaining research center that brings together faculty from biology, chemistry, physics, mathematics, engineering, and other disciplines. We describe the development and evolution of CASTLE as a community-centered model for supporting discipline-based education research and programs. We highlight the structures and practices that helped build and sustain the center, including weekly journal clubs, research-in-progress meetings, a seminar series, collaborative grant development, undergraduate research experiences, and a postdoctoral mentoring program. We also discuss how CASTLE contributed to building a shared culture around evidence-based teaching practices and fostered collaborations across departments and colleges. By sharing CASTLE&rsquo;s history, organizational structure, and lessons learned, we aim to provide ideas and practical approaches that may be useful to other institutions interested in developing similar interdisciplinary STEM education research communities.</td></tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+
+    <table class="posters" id="poster-B20">
+        <tr>
+            <td class="poster-number">B20</td>
+            <td class="poster-content">
+                <table style="width:100%; border-spacing:0;">
+                    <tr><td class="poster-title">Investigating Educational Practices to Support Learners in Energy Technical Assistance Programs</td></tr>
+                    <tr><td class="poster-author">Gabriel Mendez-Sanders &nbsp;&middot;&nbsp; <span class="poster-field">EER</span> &nbsp;&middot;&nbsp; Cornell University</td></tr>
+                    <tr><td class="poster-abstract">Unprecedented growth in U.S. energy demand is straining the electric grid and placing the nation&rsquo;s economy and security at risk. Distributed energy resources (DERs) can relieve grid stress, but they are often deployed by stakeholders with limited engineering expertise (e.g., school systems, nonprofits, municipalities). To deploy and sustain DERs, stakeholders must learn and apply complex engineering concepts outside traditional educational settings. Energy technical assistance (TA) programs support this learning by providing educational offerings and project guidance that help stakeholders make informed decisions about DER design, construction, and maintenance. However, TA designs and evaluation standards remain fragmented, with limited understanding of how stakeholder learning is supported. This project examines the extent to which principles of adult education (andragogy) are incorporated into energy TA program design, how practitioners conceptualize adult learning, and how these principles can be effectively enacted. The findings will generate an overview of current educational practices and inform a framework to help TA practitioners intentionally design and refine stakeholder learning to support effective DER deployment.</td></tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+
+    <table class="posters" id="poster-B21">
+        <tr>
+            <td class="poster-number">B21</td>
+            <td class="poster-content">
+                <table style="width:100%; border-spacing:0;">
+                    <tr><td class="poster-title">WIP: Supporting Faculty Authentic Pedagogy: Development of an Interview Protocol for College&ndash;Industry Partnerships with Wastewater Treatment Plants</td></tr>
+                    <tr><td class="poster-author">Campbell McColley &nbsp;&middot;&nbsp; <span class="poster-field">EER</span> &nbsp;&middot;&nbsp; Cornell University</td></tr>
+                    <tr><td class="poster-abstract">This work-in-progress explores the development and pilot of an interview protocol to investigate the formation and sustainability of college&ndash;industry partnerships (CIPs) with wastewater treatment plants (WWTPs). With over 16,000 WWTPs across the United States, the wastewater industry represents a largely untapped opportunity for engineering education partnerships. CIPs with WWTPs offer authentic learning environments that enhance student motivation, professional skill development, and real-world relevance. However, many faculty members lack the tools and frameworks to initiate and sustain such collaborations. This work aims to support faculty development by investigating best practices for forming and maintaining WWTP-based CIPs through the lens of stakeholder engagement. The study employs a multi-case qualitative approach with semi-structured interviews of engineering faculty and WWTP collaborators. Interview protocol development is guided by Donaldson and Preston&rsquo;s Stakeholder Theory Framework, which categorizes stakeholder interactions as descriptive, instrumental, or normative. Thematic coding and comparative analysis will be conducted across cases, beginning with a pilot study involving faculty engaged in WWTP and public utilities partnerships. Ultimately, this work seeks to foster an environment of experiential learning and stakeholder collaboration in engineering curricula by leveraging the accessibility and relevance of the wastewater industry.</td></tr>
                 </table>
             </td>
         </tr>
