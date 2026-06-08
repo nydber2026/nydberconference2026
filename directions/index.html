@@ -1,68 +1,3 @@
-<!DOCTYPE html> <html lang='en'> <head> <base href=".."> <link rel="shortcut icon" type="image/png" href="assets/favicon.png"/> <link rel="stylesheet" type="text/css" media="all" href="assets/main.css"/> <meta name="description" content="Conference Template"> <meta name="resourc
-
-pasted
-
-working on this code but need to update the parking lot to the crescent lot 
-
-https://share.google/hWOVdwL6ghECD5vc3
-
-Crescent Lot
-126 Kite Hill Dr, Ithaca, NY 14853
-
-zone 4131
-
-5:03 PM
-Let me fetch that Google Maps link to get the embed details.
-
-
-Failed to fetch: https://share.google/hWOVdwL6ghECD5vc3
-Failed to fetch: https://share.google/hWOVdwL6ghECD5vc3
-No problem — I have the address. Let me search for the embed coordinates.
-
-
-Searching for places
-Searching for places
-I have the coordinates. Here's the updated directions page with the Crescent Lot replacing the Friedman Lot:
-
-
-Created a file, read a file
-Created a file, read a file
-Three changes made to the parking section:
-
-Lot name: Friedman Visitor Lot → Crescent Lot (with address 126 Kite Hill Dr)
-Zone: 4112 → 4131
-Map embed: updated to the Crescent Lot coordinates
-Step 2 in the ParkMobile instructions updated to match
-
-Directions index
-Code · HTML 
-really close but google map image for cresent lot is weill hall or something change pls
-
-https://www.google.com/maps/place/Crescent+Lot,+126+Kite+Hill+Dr,+Ithaca,+NY+14853/@42.4445924,-76.4792568,16z/data=!3m1!4b1!4m6!3m5!1s0x89d081f48706e739:0xbc36dc75c734ed7!8m2!3d42.4445282!4d-76.4767962!16s%2Fg%2F12hl_kjt0?hl=en&entry=ttu&g_ep=EgoyMDI2MDQwOC4wIKXMDSoASAFQAw%3D%3D
-
-5:05 PM
-I can extract the correct embed coordinates from that URL directly.
-
-The coordinates are 42.4445282, -76.4767962 and the place ID is 0x89d081f48706e739:0xbc36dc75c734ed7. Let me fix the embed:
-
-
-Edited a file, read a file
-Edited a file, read a file
-Updated the embed with the correct place ID and coordinates pulled directly from your Maps link — it should now pin to the Crescent Lot properly.
-
-
-Directions index
-Code · HTML 
-
-Want to be notified when Claude responds?
-
-
-
-
-Claude is AI and can make mistakes. Please double-check responses.
-Directions index · HTML
-Copy
-
 <!DOCTYPE html>
 <html lang='en'>
  
@@ -117,11 +52,32 @@ Copy
         The conference will be held at <strong>Weill Hall</strong>, located at 237 Tower Road on the Cornell University campus in Ithaca, NY 14850.
         Use the map below for directions, or open in <a href="https://www.google.com/maps/dir//Weill+Hall,+237+Tower+Rd,+Ithaca,+NY+14850/@42.4474004,-76.4812884,17z/data=!4m18!1m8!3m7!1s0x89d081f51c5b92b1:0x2f16fc83a1f8795f!2sWeill+Hall!8m2!3d42.4474004!4d-76.4771685!15sChQyMzcgVG93ZXIgUmQgY29ybmVsbJIBFXVuaXZlcnNpdHlfZGVwYXJ0bWVudOABAA!16s%2Fg%2F11bxf3v01_!4m8!1m0!1m5!1m1!1s0x89d081f51c5b92b1:0x2f16fc83a1f8795f!2m2!1d-76.4771685!2d42.4474004!3e3?entry=ttu&g_ep=EgoyMDI2MDMyOS4wIKXMDSoASAFQAw%3D%3D" target="_blank">Google Maps</a>.
     </p>
+
+    <figure style="margin: 1.5em 0; text-align: center;">
+        <img src="assets/Weill_Hall_Cornell_University.jpg" alt="Weill Hall, Cornell University" style="width: 100%; max-width: 800px; height: auto; border: 1px solid #ccc;">
+        <figcaption style="font-size: 0.9em; color: #555; margin-top: 0.5em;">Weill Hall, 237 Tower Road, Cornell University &mdash; the main entrance is on the south-facing glass atrium (center of photo).</figcaption>
+    </figure>
  
     <iframe class="directions" 
         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1500!2d-76.4771685!3d42.4474004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89d081f51c5b92b1%3A0x2f16fc83a1f8795f!2sWeill+Hall%2C+237+Tower+Rd%2C+Ithaca%2C+NY+14850!5e0!3m2!1sen!2sus!4v1680000000000!5m2!1sen!2sus"
         allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
     </iframe>
+
+    <h3>Walking from the Crescent Lot</h3>
+    <p>
+        Weill Hall is approximately a <strong>10&ndash;12 minute walk</strong> from the Crescent Lot. There are two routes depending on current construction:
+    </p>
+    <ul>
+        <li style="list-style-type: disc; margin-bottom: 0.75em;">
+            <strong>Via the hockey area (recommended):</strong> From the Crescent Lot, head north along Kite Hill Drive and follow the path past the Lynah Rink (hockey arena). Continue along the path heading northeast toward Tower Road. Turn right on Tower Road &mdash; Weill Hall will be visible on your left. Look for the large white building with the glass atrium entrance.
+        </li>
+        <li style="list-style-type: disc; margin-bottom: 0.75em;">
+            <strong>Around the construction:</strong> If the path near the hockey area is blocked, exit the Crescent Lot onto Kite Hill Drive and head east toward Campus Road. Follow Campus Road north, then turn left onto Tower Road. Weill Hall will be on your right. This route adds a few minutes but avoids any active construction zones.
+        </li>
+    </ul>
+    <p>
+        <em>Note: Construction activity near the central campus area may affect pedestrian access. Signage on site will direct you to the nearest open path. If in doubt, the Tower Road route around the perimeter is always accessible.</em>
+    </p>
  
     <h2>Parking</h2>
     <p>
@@ -152,6 +108,11 @@ Copy
         Downtown Ithaca offers a vibrant dining scene just a short drive or bus ride from Cornell&rsquo;s campus. The pedestrian-friendly <strong>Ithaca Commons</strong> area features dozens of restaurants spanning a wide range of cuisines, including farm-to-table American, Asian, Mexican, Jamaican, and more, along with coffee shops, food trucks, and outdoor dining patios. For a full listing of options, visit <a href="https://www.visitithaca.com/food-drink/" target="_blank">Visit Ithaca&rsquo;s Downtown Restaurant Guide</a>.
     </p>
     <p>
+        If you plan to join fellow attendees for dinner, please sign up using 
+        <a href="https://docs.google.com/spreadsheets/d/1X4hjZ_2gE4FMCpWPkXdnsBQMes5FtexOg9jzvnMl4bE/edit?usp=sharing" target="_blank">this shared spreadsheet</a> 
+        so we can coordinate group reservations.
+    </p>
+    <p>
         The list below is provided informally for convenience and does not represent an official endorsement by the conference organizers. A few options from the area include:
     </p>
     <ul>
@@ -173,10 +134,3 @@ Copy
  
 </body>
 </html>
- 
-
-
-
-
-
-
