@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <base href="..">
+    <link rel="shortcut icon" type="image/png" href="assets/favicon.png"/>
+    <link rel="stylesheet" type="text/css" media="all" href="assets/main.css"/>
+    <meta name="description" content="Upstate NYDBER 2026 Conference">
+    <meta name="resource-type" content="document">
+    <meta name="distribution" content="global">
+    <meta name="KeyWords" content="Conference">
+    <title>Photo Gallery | Upstate NYDBER 2026</title>
+
+    <style>
+        /* ── Password gate ── */
+        #gate {
+            max-width: 420px;
+            margin: 60px auto 80px;
+            text-align: center;
+            font-family: Georgia, serif;
+        }
+        #gate h2 {
+            color: #7a1f1f;
+            margin-bottom: 8px;
+        }
+        #gate p {
+            color: #555;
+            font-size: 0.95rem;
+            margin-bottom: 24px;
+        }
+        #gate-form {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        #pw-input {
+            padding: 10px 14px;
+            font-size: 1rem;
+            border: 2px solid #ccc;
+            border-radius: 4px;
+            width: 220px;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+        #pw-input:focus {
+            border-color: #7a1f1f;
+        }
+        #pw-input.error {
+            border-color: #c0392b;
+            animation: shake 0.3s ease;
+        }
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-6px); }
+            75% { transform: translateX(6px); }
+        }
+        #pw-btn {
+            padding: 10px 20px;
+            background: #7a1f1f;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        #pw-btn:hover {
+            background: #5c1515;
+        }
+        #pw-error {
+            color: #c0392b;
+            font-size: 0.88rem;
+            margin-top: 10px;
+            min-height: 1.2em;
+        }
+
+        /* ── Gallery ── */
+        #gallery {
+            display: none;
+            padding-bottom: 60px;
+        }
+        .gallery-header {
+            text-align: center;
+            margin: 24px 0 32px;
+        }
+        .gallery-header h2 {
+            color: #7a1f1f;
+            font-size: 1.6rem;
+            margin-bottom: 6px;
+        }
+        .gallery-header p {
+            color: #666;
+            font-size: 0.92rem;
+        }
+
+        .photo-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 16px;
+        }
+        @media (max-width: 900px) {
+            .photo-grid { grid-template-columns: repeat(3, 1fr); }
+        }
+        @media (max-width: 600px) {
+            .photo-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        .photo-grid img {
+            width: 100%;
+            aspect-ratio: 4 / 3;
+            object-fit: cover;
+            border-radius: 3px;
+            cursor: pointer;
+            display: block;
+            transition: opacity 0.15s, transform 0.15s;
+        }
+        .photo-grid img:hover {
+            opacity: 0.88;
+            transform: scale(1.02);
+        }
+
+        /* ── Lightbox ── */
+        #lightbox {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.88);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+        }
+        #lightbox.open {
+            display: flex;
+        }
+        #lightbox img {
+            max-width: 90vw;
+            max-height: 88vh;
+            object-fit: contain;
+            border-radius: 4px;
+            box-shadow: 0 8px 40px rgba(0,0,0,0.6);
+        }
+        #lb-close {
+            position: fixed;
+            top: 18px;
+            right: 24px;
+            color: white;
+            font-size: 2rem;
+            cursor: pointer;
+            line-height: 1;
+            background: none;
+            border: none;
+            padding: 4px 8px;
+            opacity: 0.8;
+        }
+        #lb-close:hover { opacity: 1; }
+        #lb-prev, #lb-next {
+            position: fixed;
+            top: 50%;
+            transform: translateY(-50%);
+            color: white;
+            font-size: 2.4rem;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 10px 16px;
+            opacity: 0.7;
+            user-select: none;
+        }
+        #lb-prev:hover, #lb-next:hover { opacity: 1; }
+        #lb-prev { left: 12px; }
+        #lb-next { right: 12px; }
+        #lb-counter {
+            position: fixed;
+            bottom: 18px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: rgba(255,255,255,0.65);
+            font-size: 0.85rem;
+            font-family: Georgia, serif;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="banner">
+        <img src="assets/banner.jpg" alt="Upstate NYDBER 2026 Banner">
+        <div class="top-left">
+            <span class="title1">Upstate</span><span class="title2"> NYDBER</span> <span class="year">2026</span>
+        </div>
+        <div class="bottom-right">
+            June 11–12, 2026 <br> Cornell University, Ithaca NY
+        </div>
+    </div>
+
+<table class="navigation">
+    <tr>
+        <td class="navigation">
+            <a class="current" title="Conference Home Page" href=".">Home</a>
+        </td>
+        <td class="navigation">
+            <a title="Register for the Conference" href="registration">Registration</a>
+        </td>
+        <td class="navigation">
+            <a title="Conference Program" href="program">Program</a>
+        </td>
+        <td class="navigation">
+            <a title="Conference Attendees Directory" href="attendee information">Directory</a>
+        </td>
+        <td class="navigation">
+            <a title="Directions to the Conference" href="directions">Directions</a>
+        </td>
+        <td class="navigation">
+            <a title="Conference Posters" href="posters">Posters</a>
+        </td>
+        <td class="navigation">
+            <a title="Photo Gallery" href="gallery">Gallery</a>
+        </td>
+    </tr>
+</table>
+
+    <!-- Password gate -->
+    <div id="gate">
+        <h2>Conference Photo Gallery</h2>
+        <p>This gallery is for conference attendees.<br>Enter the password to view photos.</p>
+        <div id="gate-form">
+            <input id="pw-input" type="password" placeholder="Password" autocomplete="off">
+            <button id="pw-btn" onclick="checkPassword()">Enter</button>
+        </div>
+        <div id="pw-error"></div>
+    </div>
+
+    <!-- Gallery (hidden until password correct) -->
+    <div id="gallery">
+        <div class="gallery-header">
+            <h2>Upstate NYDBER 2026 — Photo Gallery</h2>
+            <p>Cornell University · June 11–12, 2026 · Click any photo to enlarge</p>
+        </div>
+
+        <div class="photo-grid" id="photo-grid">
+            <!--
+                INSTRUCTIONS FOR ADDING PHOTOS:
+                Replace each src="assets/gallery/photo-001.jpg" with your actual filenames.
+                Add or remove <img> tags to match your photo count.
+                Suggested naming: photo-001.jpg, photo-002.jpg, ... photo-300.jpg
+                Put all files in: assets/gallery/
+
+                Example block (copy and repeat):
+                <img src="assets/gallery/photo-001.jpg" alt="NYDBER 2026">
+            -->
+
+            <!-- REPLACE THESE PLACEHOLDER ENTRIES WITH YOUR ACTUAL PHOTOS -->
+            <img src="assets/gallery/photo-001.jpg" alt="NYDBER 2026">
+            <img src="assets/gallery/photo-002.jpg" alt="NYDBER 2026">
+            <img src="assets/gallery/photo-003.jpg" alt="NYDBER 2026">
+            <img src="assets/gallery/photo-004.jpg" alt="NYDBER 2026">
+            <img src="assets/gallery/photo-005.jpg" alt="NYDBER 2026">
+            <img src="assets/gallery/photo-006.jpg" alt="NYDBER 2026">
+            <img src="assets/gallery/photo-007.jpg" alt="NYDBER 2026">
+            <img src="assets/gallery/photo-008.jpg" alt="NYDBER 2026">
+            <img src="assets/gallery/photo-009.jpg" alt="NYDBER 2026">
+            <img src="assets/gallery/photo-010.jpg" alt="NYDBER 2026">
+            <img src="assets/gallery/photo-011.jpg" alt="NYDBER 2026">
+            <img src="assets/gallery/photo-012.jpg" alt="NYDBER 2026">
+            <!-- Continue this pattern up to photo-300.jpg -->
+        </div>
+    </div>
+
+    <!-- Lightbox -->
+    <div id="lightbox">
+        <button id="lb-close" onclick="closeLightbox()" aria-label="Close">&#10005;</button>
+        <button id="lb-prev" onclick="changePhoto(-1)" aria-label="Previous">&#8249;</button>
+        <img id="lb-img" src="" alt="">
+        <button id="lb-next" onclick="changePhoto(1)" aria-label="Next">&#8250;</button>
+        <div id="lb-counter"></div>
+    </div>
+
+    <footer>
+        &copy; Upstate NYDBER 2026 Organizers
+        &nbsp;|&nbsp; Design by <a href="https://github.com/mikepierce">Mike Pierce</a>
+    </footer>
+
+    <script>
+        const CORRECT_PASSWORD = "interDBER";
+        let currentIndex = 0;
+        let photos = [];
+
+        function checkPassword() {
+            const input = document.getElementById("pw-input");
+            const error = document.getElementById("pw-error");
+            if (input.value === CORRECT_PASSWORD) {
+                document.getElementById("gate").style.display = "none";
+                document.getElementById("gallery").style.display = "block";
+                initGallery();
+            } else {
+                error.textContent = "Incorrect password. Please try again.";
+                input.classList.add("error");
+                input.value = "";
+                setTimeout(() => input.classList.remove("error"), 400);
+                input.focus();
+            }
+        }
+
+        // Allow Enter key to submit
+        document.getElementById("pw-input").addEventListener("keydown", function(e) {
+            if (e.key === "Enter") checkPassword();
+        });
+
+        function initGallery() {
+            const grid = document.getElementById("photo-grid");
+            photos = Array.from(grid.querySelectorAll("img"));
+            photos.forEach((img, i) => {
+                img.addEventListener("click", () => openLightbox(i));
+            });
+        }
+
+        function openLightbox(index) {
+            currentIndex = index;
+            document.getElementById("lightbox").classList.add("open");
+            updateLightbox();
+            document.addEventListener("keydown", handleKey);
+        }
+
+        function closeLightbox() {
+            document.getElementById("lightbox").classList.remove("open");
+            document.removeEventListener("keydown", handleKey);
+        }
+
+        function changePhoto(dir) {
+            currentIndex = (currentIndex + dir + photos.length) % photos.length;
+            updateLightbox();
+        }
+
+        function updateLightbox() {
+            document.getElementById("lb-img").src = photos[currentIndex].src;
+            document.getElementById("lb-counter").textContent =
+                (currentIndex + 1) + " / " + photos.length;
+        }
+
+        function handleKey(e) {
+            if (e.key === "ArrowRight") changePhoto(1);
+            if (e.key === "ArrowLeft")  changePhoto(-1);
+            if (e.key === "Escape")     closeLightbox();
+        }
+
+        // Close lightbox when clicking the dark background
+        document.getElementById("lightbox").addEventListener("click", function(e) {
+            if (e.target === this) closeLightbox();
+        });
+    </script>
+
+</body>
+</html>
