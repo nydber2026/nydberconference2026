@@ -1,0 +1,541 @@
+---
+title: "Upstate NYDBER 2026: Conference Report & Consensus-Building Summary"
+subtitle: "Cornell University · June 11–12, 2026"
+date: "`r format(Sys.Date(), '%B %d, %Y')`"
+output:
+  html_document:
+    theme: flatly
+    toc: true
+    toc_float: true
+    toc_depth: 3
+    code_folding: hide
+    df_print: paged
+    self_contained: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE, fig.align = "center")
+
+library(tidyverse)
+library(knitr)
+library(kableExtra)
+library(DT)
+library(scales)
+library(stringr)
+
+# ---- color palette ----
+nydber_colors <- c(
+  primary   = "#0E4D64",
+  secondary = "#E07A5F",
+  accent    = "#81B29A",
+  gold      = "#F2CC8F",
+  neutral   = "#3D405B"
+)
+
+theme_nydber <- function() {
+  theme_minimal(base_size = 13) +
+    theme(
+      plot.title = element_text(face = "bold", size = 15, color = nydber_colors["neutral"]),
+      panel.grid.minor = element_blank(),
+      axis.title = element_text(color = nydber_colors["neutral"]),
+      legend.position = "bottom"
+    )
+}
+```
+
+```{r load-data}
+pre  <- read_csv("data/pre_clean.csv", show_col_types = FALSE)
+post <- read_csv("data/post_clean.csv", show_col_types = FALSE)
+
+wg2_barriers   <- read_csv("data/wg2_barriers.csv", show_col_types = FALSE)
+wg2_enablers   <- read_csv("data/wg2_enablers.csv", show_col_types = FALSE)
+wg2_principles <- read_csv("data/wg2_design_principles.csv", show_col_types = FALSE)
+wg1_topics     <- read_csv("data/wg1_topics.csv", show_col_types = FALSE)
+sustain_ratings <- read_csv("data/sustainability_ratings.csv", show_col_types = FALSE)
+
+# Only keep finished responses for headline stats, but note totals
+pre_n  <- nrow(pre)
+post_n <- nrow(post)
+pre_finished  <- sum(pre$Finished == TRUE, na.rm = TRUE)
+post_finished <- sum(post$Finished == TRUE, na.rm = TRUE)
+```
+
+# Welcome
+
+**Upstate NYDBER 2026** brought together Discipline-Based Education Research (DBER) scholars —
+across Physics (PER), Biology (BER), Engineering (EER), Chemistry (CER), Geoscience (GER), and
+related fields — from across Upstate New York for two days at Cornell University
+(June 11–12, 2026). The animating question: *what could this region's DBER community build
+together that no single institution or field could build alone?*
+
+The conference was designed as a **three-phase consensus-building process**:
+
+| Phase | When | Focus |
+|---|---|---|
+| **Before** | Pre-conference survey (`r pre_n` responses) | Hopes for the conference; top barriers & enablers to InterDBER collaboration |
+| **During** | Working group documents (9 small groups, both days) | Naming specific barriers, bright spots, design principles, and draft InterDBER research questions |
+| **After** | Post-conference survey (`r post_n` responses) | Conference evaluation, concrete follow-up plans, and commitments |
+
+This report synthesizes all three phases. Barriers and enablers are presented close to each
+group's original language — this is intentional: Section 4 is meant to become the input for
+the **next step** in the consensus process, a community-wide rating of each barrier's
+*severity* and *changeability* (and each enabler's *potential* and *feasibility*), which has
+not yet been conducted.
+
+*All individual quotes and comments below are anonymized and presented as themes, not
+attributed to named participants.*
+
+---
+
+# 1. Who Was in the Room
+
+```{r institution-breakdown, fig.height=4.5, fig.width=7}
+domain_map <- c(
+  "rit.edu" = "RIT", "syr.edu" = "Syracuse University", "cornell.edu" = "Cornell University",
+  "vt.edu" = "Virginia Tech", "flcc.edu" = "Finger Lakes CC", "binghamton.edu" = "Binghamton University",
+  "buffalo.edu" = "University at Buffalo", "ithaca.edu" = "Ithaca College",
+  "monroecc.edu" = "Monroe CC", "columbia.edu" = "Columbia University",
+  "geneseo.edu" = "SUNY Geneseo", "rpi.edu" = "RPI"
+)
+
+institutions <- pre %>%
+  filter(!is.na(Q13)) %>%
+  mutate(domain = str_extract(tolower(Q13), "(?<=@)[a-z.]+")) %>%
+  mutate(institution = recode(domain, !!!domain_map, .default = "Other")) %>%
+  filter(institution != "Virginia Tech") %>%
+  count(institution, sort = TRUE)
+
+ggplot(institutions, aes(x = fct_reorder(institution, n), y = n)) +
+  geom_col(fill = nydber_colors["primary"]) +
+  coord_flip() +
+  labs(title = "Pre-Conference Registrants by Institution",
+       x = NULL, y = "Number of respondents") +
+  theme_nydber()
+```
+
+Nine small groups met throughout the conference (rotating between Working Group 1, Working
+Group 2, and the closing visioning session), each with 4–6 participants spanning multiple
+institutions, DBER fields, and career stages — from graduate students to senior faculty,
+across R1 universities, primarily-undergraduate institutions, and community colleges.
+
+---
+
+# 2. What People Came Hoping For
+
+Pre-conference, participants described what they most hoped to get out of the conference and
+what they were bringing to share. Common threads:
+
+- **Finding collaborators with complementary skills or shared interests** — a recurring "who
+  should I be looking for" theme, often phrased as wanting someone from a specific institution
+  type (community college, R1) or with specific methodological expertise.
+- **Learning how other DBER fields approach shared problems** — assessment, AI in the
+  classroom, and retention/belonging came up across many responses.
+- **Bringing something concrete to the table** — datasets, methods expertise, or lived
+  experience navigating a specific institutional barrier.
+
+```{r hopes-table}
+pre %>%
+  filter(!is.na(Q14)) %>%
+  slice_sample(n = min(6, sum(!is.na(pre$Q14))), replace = FALSE) %>%
+  select(`What they hoped for` = Q14) %>%
+  mutate(`What they hoped for` = str_trunc(`What they hoped for`, 220)) %>%
+  kable() %>%
+  kable_styling(bootstrap_options = c("striped", "hover"), full_width = TRUE) %>%
+  column_spec(1, width = "100%")
+```
+
+---
+
+# 3. Poster Session Gallery
+
+Two poster sessions ran across four tracks: **AI & Technology**, **Pedagogy & Assessment**,
+**Equity, Identity & Belonging**, and **Careers, Research Experiences & Curriculum/Community**.
+Presenters gave 30-second lightning talks before each session opened, and attendees were asked
+to visit at least one poster from their own DBER field and one from another.
+
+```{r poster-1, out.width="100%"}
+knitr::include_graphics("images/poster_page1.jpeg")
+```
+
+```{r poster-2, out.width="100%"}
+knitr::include_graphics("images/poster_page2.jpeg")
+```
+
+*(Poster images are AI-generated conference visuals summarizing the poster session; see the
+conference program for the full list of presenters and titles.)*
+
+---
+
+# 4. What Enables Collaboration
+
+## 4.1 Pre-conference: ranked enablers
+
+Before the conference, participants ranked what makes cross-institutional and InterDBER
+collaboration work well, from most to least important.
+
+```{r enabler-rank-table}
+rank_theme <- function(col) {
+  pre[[col]] %>%
+    na.omit() %>%
+    str_trunc(90)
+}
+
+tibble(
+  Rank = c("1st (most important)", "2nd", "3rd"),
+  `Sample responses` = c(
+    paste(head(rank_theme("Q21_1_TEXT"), 3), collapse = " · "),
+    paste(head(rank_theme("Q21_2_TEXT"), 3), collapse = " · "),
+    paste(head(rank_theme("Q21_3_TEXT"), 3), collapse = " · ")
+  )
+) %>%
+  kable(caption = "Cross-institutional collaboration enablers (pre-survey, ranked)") %>%
+  kable_styling(bootstrap_options = c("striped", "hover"))
+```
+
+## 4.2 Working groups: bright spots
+
+During Working Group 2, all nine groups discussed real collaborations that worked and what
+made them possible. Kept close to each group's own language:
+
+```{r enablers-table}
+wg2_enablers %>%
+  rename(Group = group, `Enabler / bright spot` = enabler) %>%
+  datatable(options = list(pageLength = 10), rownames = FALSE,
+            caption = "Enablers and bright spots named by each Working Group 2 table")
+```
+
+**Cross-cutting themes** that came up in multiple groups: clear/explicit communication and
+norm-setting; a designated convener or logistics lead; shared vision and mutual benefit;
+capitalizing on existing structures (centers like RIT's CASTLE, Cornell's CDER) that already
+create low-stakes, frequent cross-disciplinary contact; and in-person relationship-building as
+a precondition for trust.
+
+---
+
+# 5. What Blocks Collaboration
+
+## 5.1 Pre-conference: ranked barriers
+
+```{r barrier-rank-table}
+tibble(
+  Rank = c("1st (hardest)", "2nd", "3rd (easiest)"),
+  `Sample responses` = c(
+    paste(head(rank_theme("Q17_1_TEXT"), 3), collapse = " · "),
+    paste(head(rank_theme("Q17_2_TEXT"), 3), collapse = " · "),
+    paste(head(rank_theme("Q17_3_TEXT"), 3), collapse = " · ")
+  )
+) %>%
+  kable(caption = "Barriers to InterDBER-field collaboration (pre-survey, ranked)") %>%
+  kable_styling(bootstrap_options = c("striped", "hover"))
+
+tibble(
+  Rank = c("1st (hardest)", "2nd", "3rd (easiest)"),
+  `Sample responses` = c(
+    paste(head(rank_theme("Q20_1_TEXT"), 3), collapse = " · "),
+    paste(head(rank_theme("Q20_2_TEXT"), 3), collapse = " · "),
+    paste(head(rank_theme("Q20_3_TEXT"), 3), collapse = " · ")
+  )
+) %>%
+  kable(caption = "Barriers to cross-institution-type collaboration (pre-survey, ranked)") %>%
+  kable_styling(bootstrap_options = c("striped", "hover"))
+```
+
+## 5.2 Working groups: named barriers
+
+Each Working Group 2 table named specific barriers and sorted them as **local vs. systemic**
+and **movable vs. hard to change**. This table is presented close to verbatim group language
+and is intended as the **starting list for the post-conference severity × changeability rating
+round** described in the conference design (see box below).
+
+```{r barriers-table}
+wg2_barriers %>%
+  rename(Group = group, Barrier = barrier,
+         `Local / Systemic` = local_or_systemic, `Movable / Hard to change` = movable_or_hard) %>%
+  datatable(options = list(pageLength = 12), rownames = FALSE,
+            caption = "Consolidated barriers named by Working Group 2 (verbatim, by table)")
+```
+
+> **Note on Group 5:** this table reported that *"almost all our barriers are systemic"* without
+> naming individual items in the structured table — a useful data point in itself about how
+> that group perceived the landscape.
+
+### Barrier landscape at a glance
+
+```{r barrier-landscape, fig.height=4, fig.width=7}
+wg2_barriers %>%
+  filter(!is.na(local_or_systemic)) %>%
+  count(local_or_systemic) %>%
+  ggplot(aes(x = fct_reorder(local_or_systemic, n), y = n)) +
+  geom_col(fill = nydber_colors["secondary"]) +
+  coord_flip() +
+  labs(title = "Barriers named: Local vs. Systemic (as classified by groups)",
+       x = NULL, y = "Number of named barriers") +
+  theme_nydber()
+```
+
+## 5.3 Next step: the severity × changeability rating
+
+The conference design calls for a follow-up round in which all participants rate each
+consolidated barrier on **severity** (how much does it actually block collaboration?) and
+**changeability** (how realistically can this community address it?), and each enabler on
+**potential** and **feasibility**. That round has not yet been conducted. The table below is
+formatted as a ready-to-send rating instrument — the barrier/enabler language above, with
+empty columns for the next round of community input.
+
+```{r rating-template}
+rating_template <- wg2_barriers %>%
+  transmute(Item = barrier, Type = "Barrier", `Named by Group(s)` = as.character(group),
+            Severity = NA, Changeability = NA)
+
+rating_template %>%
+  select(-Type) %>%
+  head(10) %>%
+  kable(caption = "Sample of the barrier rating template (full version in data/wg2_barriers.csv)") %>%
+  kable_styling(bootstrap_options = c("striped", "hover"))
+```
+
+---
+
+# 6. Design Principles for Going Forward
+
+Each Working Group 2 table proposed 1–4 design principles for InterDBER collaboration, paired
+with what each would look like in practice.
+
+```{r principles-table}
+wg2_principles %>%
+  rename(Group = group, Principle = principle, `In practice` = in_practice) %>%
+  datatable(options = list(pageLength = 10), rownames = FALSE,
+            caption = "Design principles proposed by Working Group 2 tables")
+```
+
+Principles that surfaced independently across **multiple** tables: early-career and
+community-college inclusion, methodological pluralism, explicit/documented norms for credit
+and authorship, and building in space for "half-baked ideas" before they're polished.
+
+---
+
+# 7. Draft InterDBER Research Questions
+
+Working Group 1 asked each table to draft 1–3 research topics that genuinely require more than
+one DBER field to answer well.
+
+```{r topics-table}
+wg1_topics %>%
+  rename(Group = group, Topic = topic, `Why InterDBER` = why_interdber) %>%
+  datatable(options = list(pageLength = 10), rownames = FALSE,
+            caption = "Draft InterDBER research topics by Working Group 1 table")
+```
+
+**Recurring topic clusters:** generative AI's impact on students and pedagogy (named by more
+tables than any other topic); cross-field workforce/career pathways; how disciplines differ in
+teaching foundational/shared content; and assessment across disciplinary contexts.
+
+---
+
+# 8. Conference Feedback
+
+Qualtrics stored these ratings as ordinal text labels (e.g., "Very Valuable"), not numbers, so
+we map each scale to 1–5 before plotting.
+
+```{r ordinal-scales}
+scale_overall   <- c("Poor" = 1, "Fair" = 2, "Good" = 3, "Very Good" = 4, "Excellent" = 5)
+scale_goals     <- c("Not at all" = 1, "A little" = 2, "Some" = 3, "A lot" = 4, "Completely" = 5)
+scale_diversity <- c("Poorly" = 1, "Fairly" = 2, "Well" = 3, "Very Well" = 4, "Excellently" = 5)
+scale_valuable  <- c("Not Valuable" = 1, "Somewhat Valuable" = 2, "Valuable" = 3,
+                      "Very Valuable" = 4, "Extremely Valuable" = 5)
+scale_likely    <- c("Very unlikely" = 1, "Somewhat unlikely" = 2, "Neutral" = 3,
+                      "Somewhat likely" = 4, "Very Likely" = 5)
+```
+
+## 8.1 Overall experience
+
+```{r overall-ratings, fig.height=4, fig.width=7}
+rating_cols <- list(
+  Q15_1 = list(label = "Overall Experience", scale = scale_overall),
+  Q27_1 = list(label = "Goals Met", scale = scale_goals),
+  Q36_1 = list(label = "Diversity of Attendees Represented", scale = scale_diversity)
+)
+
+rating_long <- map_dfr(names(rating_cols), function(col) {
+  info <- rating_cols[[col]]
+  tibble(item = info$label, rating = factor(post[[col]], levels = names(info$scale)))
+}) %>% filter(!is.na(rating))
+
+ggplot(rating_long, aes(x = rating, fill = item)) +
+  geom_bar() +
+  facet_wrap(~item, ncol = 1, scales = "free") +
+  scale_fill_manual(values = unname(nydber_colors[1:3])) +
+  labs(title = "Overall Conference Ratings", x = NULL, y = "Responses") +
+  theme_nydber() +
+  theme(legend.position = "none", axis.text.x = element_text(angle = 20, hjust = 1))
+```
+
+## 8.2 Component ratings
+
+```{r component-ratings, fig.height=5, fig.width=8}
+component_cols <- c(
+  Q28_1 = "Opening session / networking",
+  Q28_2 = "Poster sessions",
+  Q28_3 = "Breakout after posters",
+  Q28_4 = "Working Group 1",
+  Q28_5 = "Working Group 2 / report-outs",
+  Q28_6 = "Closing / visioning session",
+  Q28_7 = "Informal networking time"
+)
+
+post %>%
+  select(all_of(names(component_cols))) %>%
+  mutate(across(everything(), ~ scale_valuable[.x])) %>%
+  pivot_longer(everything(), names_to = "item", values_to = "rating") %>%
+  filter(!is.na(rating)) %>%
+  mutate(item = recode(item, !!!component_cols)) %>%
+  group_by(item) %>%
+  summarise(avg = mean(rating, na.rm = TRUE), n = n(), .groups = "drop") %>%
+  ggplot(aes(x = fct_reorder(item, avg), y = avg)) +
+  geom_col(fill = nydber_colors["accent"]) +
+  coord_flip() +
+  ylim(0, 5) +
+  labs(title = "Average Rating by Conference Component (1 = Not Valuable, 5 = Extremely Valuable)",
+       x = NULL, y = "Average rating") +
+  theme_nydber()
+```
+
+## 8.3 What people said was most valuable
+
+```{r valuable-quotes}
+post %>%
+  filter(!is.na(Q31)) %>%
+  select(`Most valuable aspect` = Q31) %>%
+  mutate(`Most valuable aspect` = str_trunc(`Most valuable aspect`, 250)) %>%
+  kable() %>%
+  kable_styling(bootstrap_options = c("striped", "hover"))
+```
+
+## 8.4 What could have improved the experience
+
+```{r improve-quotes}
+post %>%
+  filter(!is.na(Q16)) %>%
+  select(`Suggested improvement` = Q16) %>%
+  mutate(`Suggested improvement` = str_trunc(`Suggested improvement`, 250)) %>%
+  kable() %>%
+  kable_styling(bootstrap_options = c("striped", "hover"))
+```
+
+## 8.5 Likely follow-through
+
+```{r likelihood-ratings, fig.height=4.5, fig.width=8}
+likelihood_cols <- c(
+  Q32_1 = "Pursue a new collaboration",
+  Q32_2 = "Share findings with home colleagues",
+  Q32_3 = "Apply methods from another DBER field",
+  Q32_4 = "Participate in a future NYDBER event",
+  Q32_5 = "Contribute to a joint grant application"
+)
+
+post %>%
+  select(all_of(names(likelihood_cols))) %>%
+  mutate(across(everything(), ~ scale_likely[.x])) %>%
+  pivot_longer(everything(), names_to = "item", values_to = "rating") %>%
+  filter(!is.na(rating)) %>%
+  mutate(item = recode(item, !!!likelihood_cols)) %>%
+  group_by(item) %>%
+  summarise(avg = mean(rating, na.rm = TRUE), .groups = "drop") %>%
+  ggplot(aes(x = fct_reorder(item, avg), y = avg)) +
+  geom_col(fill = nydber_colors["primary"]) +
+  coord_flip() +
+  ylim(0, 5) +
+  labs(title = "As a Result of Attending, How Likely Are You To... (1 = Very unlikely, 5 = Very Likely)",
+       x = NULL, y = "Average likelihood rating") +
+  theme_nydber()
+```
+
+```{r concrete-plans}
+plans_made <- post %>% filter(!is.na(Q33)) %>% count(Q33)
+```
+
+Concrete plans: several participants reported making specific follow-up plans with someone
+they met at the conference (see `Q33`/`Q34` in the raw data — kept private/aggregated here
+since these describe named collaborations).
+
+---
+
+# 9. Where This Goes Next
+
+## 9.1 Sustainability mechanisms people said they'd actually use
+
+Both the post-conference survey (Q24) and the closing-session visioning tables (1–5 enthusiasm
+ratings per mechanism) asked what would sustain this community. Combining both sources:
+
+```{r sustainability-chart, fig.height=5, fig.width=8}
+sustain_avg <- sustain_ratings %>%
+  filter(rating != "NA", !is.na(rating)) %>%
+  mutate(rating = as.numeric(rating)) %>%
+  group_by(mechanism) %>%
+  summarise(avg_enthusiasm = mean(rating, na.rm = TRUE), n_tables = n(), .groups = "drop") %>%
+  arrange(desc(avg_enthusiasm))
+
+ggplot(sustain_avg, aes(x = fct_reorder(mechanism, avg_enthusiasm), y = avg_enthusiasm)) +
+  geom_col(fill = nydber_colors["secondary"]) +
+  coord_flip() +
+  labs(title = "Closing Session: Average Enthusiasm by Sustainability Mechanism (1–5 scale)",
+       x = NULL, y = "Average enthusiasm rating") +
+  theme_nydber()
+```
+
+```{r post-mechanisms}
+# Option labels themselves contain commas, so a naive comma-split breaks them apart.
+# Match against the known option text instead.
+q24_options <- c(
+  "Annual regional symposium",
+  "Slack workspace for updates and communication",
+  "Cross-institutional reading or writing group (monthly, virtual)",
+  "Virtual seminar series (e.g., works-in-progress presentations)",
+  "Shared graduate student training or mentoring program",
+  "Shared repository of instruments, protocols, and resources",
+  "Network newsletter or blog for sharing works-in-progress",
+  "Listserv / email list",
+  "Job and opportunity sharing (postings, dissertation defenses, etc.)",
+  "Writing retreats (in-person or virtual)",
+  "Other:"
+)
+
+q24_counts <- map_int(q24_options, function(opt) {
+  sum(str_detect(post$Q24, fixed(opt)), na.rm = TRUE)
+})
+
+tibble(Mechanism = q24_options, `Times selected (post-survey)` = q24_counts) %>%
+  arrange(desc(`Times selected (post-survey)`)) %>%
+  kable() %>%
+  kable_styling(bootstrap_options = c("striped", "hover"))
+```
+
+**Highest and most consistent enthusiasm:** annual regional symposium, "share and learn"
+seminars, and research exchange opportunities. **Most divided:** a network newsletter/blog and
+a shared digital repository — both drew high interest from some tables and low interest from
+others, usually tied to who would maintain them.
+
+## 9.2 Three-month commitments
+
+Participants committed to concrete next steps. Common patterns across the closing-session
+commitments and post-survey Q25 responses:
+
+- Starting or joining a **journal club** at their home institution
+- **Connecting** other DBER researchers at their institution to the network
+- Following up directly with **specific people met at the conference**
+- Advocating for the network with their institution's leadership
+
+---
+
+# Appendix: Data Notes
+
+- Pre-conference survey: `r pre_n` total responses (`r pre_finished` completed).
+- Post-conference survey: `r post_n` total responses (`r post_finished` completed).
+- Working group data drawn from 9 filled tables each for Working Group 1 (InterDBER research
+  topics) and Working Group 2 (barriers, enablers, design principles), plus 9 closing-session
+  visioning tables (sustainability ratings and commitments). A small number of tables did not
+  fill in every field; those are reflected as gaps rather than inferred.
+- All quotes and group notes are anonymized to theme-level or group-level attribution per
+  project guidance; no individual names appear in this report.
+- Structured source data for every table in this report lives in `data/` alongside this `.Rmd`
+  file, so figures and tables can be re-run or extended directly.

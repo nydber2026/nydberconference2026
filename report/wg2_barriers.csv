@@ -1,0 +1,34 @@
+group,barrier,local_or_systemic,movable_or_hard
+1,"Communication (interpersonal, across institutions)",Local,Movable
+1,"Communication norms may differ across institutions",Both,Depends
+1,"Uneven incentives/resources across institutions and positions",Both,"Some movable, most hard"
+2,"Misalignment of theoretical/epistemological norms across fields",Both,Depends
+2,"Misalignment of methodological norms across fields",Both,Depends
+2,"Structure mismanagement and misallocation of project tasks",Both,Movable
+3,"Niche/siloed topics (e.g., quantum education) harder to find collaborators for",Systemic,Hard
+3,"Different time scales/timelines for faculty, postdocs, grad students",Both,Depends
+3,"Different fields talk about education/topics differently (jargon)",Both,Movable
+3,"Funding",Systemic,Hard
+4,"IRB limitations (institutional access, data types, cross-institution/country coordination)",Both,Hard
+4,"Data sharing agreements",Both,Hard
+4,"Time and motivation (does this align with what I'm already doing?)",Both,"Hard, with mitigations"
+4,"Buy-in (getting people to see the value added)",Both,"Hard, with mitigations"
+6,"Differing opinions/priorities among collaborators",,
+6,"Differing resources and bandwidth across institutions",,
+6,"IRB slows planning, collaboration loses momentum",,
+6,"Credit negotiation - who gets credit for the work",,
+6,"Collaboration feels like more work",,
+6,"Institutional email/spam filtering blocks outside communication",,
+7,"Power dynamics across institution types and career stage",Systemic,Hard
+7,"Institutional reward structures",Local,"Movable/Hard"
+7,"Scheduling and team engagement",Local,"Movable with structure"
+7,"Individual agenda consuming collective goals",Both,Movable
+7,"Federal funding landscape",Systemic,"Hard, feels hopeless"
+8,"Difference in values across collaborators",Both,Depends
+8,"Not communicating motivation and desired outcomes",Both,Depends
+8,"Lack of epistemic humility/curiosity",Both,Depends
+9,"No easy shared space to collaborate year-round without a new project",Local,Possibly movable
+9,"Different institutional schedules (weekly and semester/quarter)",Both,Hard
+9,"Research time squeeze for primarily-teaching faculty",Systemic,"Hard, but workarounds possible"
+9,"Jargon between disciplines",Systemic,Movable
+9,"Turnover within the community (people moving on)",Both,"Hard, but workarounds possible"
