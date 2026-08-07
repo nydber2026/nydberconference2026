@@ -1,0 +1,15 @@
+item,not_feasible_pct,moderate_feasible_pct,feasible_pct,no_improvement_pct,moderate_improvement_pct,major_improvement_pct,n
+"Annual regional symposium",11,67,22,0,11,89,9
+"Slack workspace for updates and communication",0,0,100,0,67,33,9
+"Virtual seminar series (works-in-progress)",0,22,78,11,67,22,9
+"Graduate student seminar exchange",0,22,78,0,33,67,9
+"Shared graduate student training or mentoring program",22,67,11,11,44,44,9
+"Cross-institutional reading or writing group (monthly, virtual)",0,33,67,33,56,11,9
+"Shared repository of instruments, protocols, and resources",0,78,22,22,67,11,9
+"Listserv/email list",0,0,100,22,44,33,9
+"Job and opportunity sharing",0,0,100,22,11,67,9
+"Writing retreats (in-person or virtual)",0,67,33,22,67,11,9
+"Network newsletter or blog for works-in-progress",22,44,33,44,44,11,9
+"Member directory or people library",11,33,56,0,44,56,9
+"Message board or advice space",0,44,56,11,56,33,9
+"Conference website as network landing page",11,44,44,33,44,22,9

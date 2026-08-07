@@ -44,22 +44,22 @@ theme_nydber <- function() {
 ```
 
 ```{r load-data}
-pre  <- read_csv("data/pre_clean.csv", show_col_types = FALSE)
-post <- read_csv("data/post_clean.csv", show_col_types = FALSE)
+pre  <- read_csv("/Users/margaretwebb/Documents/nydberconference2026/report/pre_clean.csv", show_col_types = FALSE)
+post <- read_csv("/Users/margaretwebb/Documents/nydberconference2026/report/post_clean.csv", show_col_types = FALSE)
 
-wg2_barriers   <- read_csv("data/wg2_barriers.csv", show_col_types = FALSE)
-wg2_enablers   <- read_csv("data/wg2_enablers.csv", show_col_types = FALSE)
-wg2_principles <- read_csv("data/wg2_design_principles.csv", show_col_types = FALSE)
-wg1_topics     <- read_csv("data/wg1_topics.csv", show_col_types = FALSE)
-sustain_ratings <- read_csv("data/sustainability_ratings.csv", show_col_types = FALSE)
+wg2_barriers   <- read_csv("/Users/margaretwebb/Documents/nydberconference2026/report/wg2_barriers.csv", show_col_types = FALSE)
+wg2_enablers   <- read_csv("/Users/margaretwebb/Documents/nydberconference2026/report/wg2_enablers.csv", show_col_types = FALSE)
+wg2_principles <- read_csv("/Users/margaretwebb/Documents/nydberconference2026/report/wg2_design_principles.csv", show_col_types = FALSE)
+wg1_topics     <- read_csv("/Users/margaretwebb/Documents/nydberconference2026/report/wg1_topics.csv", show_col_types = FALSE)
+sustain_ratings <- read_csv("/Users/margaretwebb/Documents/nydberconference2026/report/sustainability_ratings.csv", show_col_types = FALSE)
 
 # Card sort / Delphi-style rating round (post-conference, n=12 invited, 8-10 answered
 # any given item — see Section 5.3 methodology note)
-cs_enablers <- read_csv("data/card_sort_enablers.csv", show_col_types = FALSE)
-cs_barriers <- read_csv("data/card_sort_barriers.csv", show_col_types = FALSE)
-cs_collab   <- read_csv("data/card_sort_collab_types.csv", show_col_types = FALSE)
-cs_topics   <- read_csv("data/card_sort_research_topics.csv", show_col_types = FALSE)
-cs_open     <- read_csv("data/card_sort_open_text.csv", show_col_types = FALSE)
+cs_enablers <- read_csv("/Users/margaretwebb/Documents/nydberconference2026/report/card_sort_enablers.csv", show_col_types = FALSE)
+cs_barriers <- read_csv("/Users/margaretwebb/Documents/nydberconference2026/report/card_sort_barriers.csv", show_col_types = FALSE)
+cs_collab   <- read_csv("/Users/margaretwebb/Documents/nydberconference2026/report/card_sort_collab_types.csv", show_col_types = FALSE)
+cs_topics   <- read_csv("/Users/margaretwebb/Documents/nydberconference2026/report/card_sort_research_topics.csv", show_col_types = FALSE)
+cs_open     <- read_csv("/Users/margaretwebb/Documents/nydberconference2026/report/card_sort_open_text.csv", show_col_types = FALSE)
 
 # Only keep finished responses for headline stats, but note totals
 pre_n  <- nrow(pre)
@@ -163,11 +163,11 @@ Presenters gave 30-second lightning talks before each session opened, and attend
 to visit at least one poster from their own DBER field and one from another.
 
 ```{r poster-1, out.width="100%"}
-knitr::include_graphics("images/poster_page1.jpeg")
+knitr::include_graphics("/Users/margaretwebb/Documents/nydberconference2026/report/poster_page1.png")
 ```
 
 ```{r poster-2, out.width="100%"}
-knitr::include_graphics("images/poster_page2.jpeg")
+knitr::include_graphics("/Users/margaretwebb/Documents/nydberconference2026/report/poster_page2.png")
 ```
 
 *(Poster images are AI-generated conference visuals summarizing the poster session; see the

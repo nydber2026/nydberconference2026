@@ -44,29 +44,20 @@ theme_nydber <- function() {
 ```
 
 ```{r load-data}
-pre  <- read_csv("data/pre_clean.csv", show_col_types = FALSE)
-post <- read_csv("data/post_clean.csv", show_col_types = FALSE)
+pre  <- read_csv("/Users/margaretwebb/Documents/nydberconference2026/report/pre_clean.csv", show_col_types = FALSE)
+post <- read_csv("/Users/margaretwebb/Documents/nydberconference2026/report/post_clean.csv", show_col_types = FALSE)
 
-wg2_barriers   <- read_csv("data/wg2_barriers.csv", show_col_types = FALSE)
-wg2_enablers   <- read_csv("data/wg2_enablers.csv", show_col_types = FALSE)
-wg2_principles <- read_csv("data/wg2_design_principles.csv", show_col_types = FALSE)
-wg1_topics     <- read_csv("data/wg1_topics.csv", show_col_types = FALSE)
-sustain_ratings <- read_csv("data/sustainability_ratings.csv", show_col_types = FALSE)
-
-# Card sort / Delphi-style rating round (post-conference, n=12 invited, 8-10 answered
-# any given item — see Section 5.3 methodology note)
-cs_enablers <- read_csv("data/card_sort_enablers.csv", show_col_types = FALSE)
-cs_barriers <- read_csv("data/card_sort_barriers.csv", show_col_types = FALSE)
-cs_collab   <- read_csv("data/card_sort_collab_types.csv", show_col_types = FALSE)
-cs_topics   <- read_csv("data/card_sort_research_topics.csv", show_col_types = FALSE)
-cs_open     <- read_csv("data/card_sort_open_text.csv", show_col_types = FALSE)
+wg2_barriers   <- read_csv("/Users/margaretwebb/Documents/nydberconference2026/report/wg2_barriers.csv", show_col_types = FALSE)
+wg2_enablers   <- read_csv("/Users/margaretwebb/Documents/nydberconference2026/report/wg2_enablers.csv", show_col_types = FALSE)
+wg2_principles <- read_csv("/Users/margaretwebb/Documents/nydberconference2026/report/wg2_design_principles.csv", show_col_types = FALSE)
+wg1_topics     <- read_csv("/Users/margaretwebb/Documents/nydberconference2026/report/wg1_topics.csv", show_col_types = FALSE)
+sustain_ratings <- read_csv("/Users/margaretwebb/Documents/nydberconference2026/report/sustainability_ratings.csv", show_col_types = FALSE)
 
 # Only keep finished responses for headline stats, but note totals
 pre_n  <- nrow(pre)
 post_n <- nrow(post)
 pre_finished  <- sum(pre$Finished == TRUE, na.rm = TRUE)
 post_finished <- sum(post$Finished == TRUE, na.rm = TRUE)
-cs_n   <- 12  # card sort invitees; per-item n ranges 8-10, see 5.3 note
 ```
 
 # Welcome
@@ -77,19 +68,19 @@ related fields — from across Upstate New York for two days at Cornell Universi
 (June 11–12, 2026). The animating question: *what could this region's DBER community build
 together that no single institution or field could build alone?*
 
-The conference was designed as a **four-phase consensus-building process**:
+The conference was designed as a **three-phase consensus-building process**:
 
 | Phase | When | Focus |
 |---|---|---|
 | **Before** | Pre-conference survey (`r pre_n` responses) | Hopes for the conference; top barriers & enablers to InterDBER collaboration |
 | **During** | Working group documents (9 small groups, both days) | Naming specific barriers, bright spots, design principles, and draft InterDBER research questions |
-| **Right after** | Post-conference survey (`r post_n` responses) | Conference evaluation, concrete follow-up plans, and commitments |
-| **Follow-up** | Card sort / Delphi rating round (`r cs_n` invited, 8–10 responses per item) | Community rating of each barrier's severity & changeability, each enabler's potential & feasibility, and prioritization of collaboration types and research topics |
+| **After** | Post-conference survey (`r post_n` responses) | Conference evaluation, concrete follow-up plans, and commitments |
 
-This report synthesizes all four phases. Barriers and enablers are presented close to each
-group's original language in Sections 4–5, and Section 5.3 (barriers) and Section 4.3
-(enablers) now report the results of the follow-up community rating round described above —
-completed after the conference, closing the loop the working groups started.
+This report synthesizes all three phases. Barriers and enablers are presented close to each
+group's original language — this is intentional: Section 4 is meant to become the input for
+the **next step** in the consensus process, a community-wide rating of each barrier's
+*severity* and *changeability* (and each enabler's *potential* and *feasibility*), which has
+not yet been conducted.
 
 *All individual quotes and comments below are anonymized and presented as themes, not
 attributed to named participants.*
@@ -163,11 +154,11 @@ Presenters gave 30-second lightning talks before each session opened, and attend
 to visit at least one poster from their own DBER field and one from another.
 
 ```{r poster-1, out.width="100%"}
-knitr::include_graphics("images/poster_page1.jpeg")
+knitr::include_graphics("/Users/margaretwebb/Documents/nydberconference2026/report/poster_page1.png")
 ```
 
 ```{r poster-2, out.width="100%"}
-knitr::include_graphics("images/poster_page2.jpeg")
+knitr::include_graphics("/Users/margaretwebb/Documents/nydberconference2026/report/poster_page2.png")
 ```
 
 *(Poster images are AI-generated conference visuals summarizing the poster session; see the
@@ -219,77 +210,6 @@ capitalizing on existing structures (centers like RIT's CASTLE, Cornell's CDER) 
 create low-stakes, frequent cross-disciplinary contact; and in-person relationship-building as
 a precondition for trust.
 
-## 4.3 Card sort results: which enablers are most feasible and highest-impact?
-
-In the follow-up rating round, participants sorted the consolidated list of enablers twice:
-once by **feasibility** ("how realistic is this for the NYDBER community to actually do?") and
-once by **expected improvement** ("how much would this move the needle on InterDBER or
-inter-institutional collaboration?"). Ten of the twelve invited participants completed this
-question.
-
-```{r enabler-cardsort-feasibility, fig.height=5, fig.width=8}
-cs_enablers %>%
-  select(item, not_feasible_pct, moderate_feasible_pct, feasible_pct) %>%
-  pivot_longer(-item, names_to = "bucket", values_to = "pct") %>%
-  mutate(bucket = recode(bucket,
-                          not_feasible_pct = "Not at all feasible",
-                          moderate_feasible_pct = "Moderate",
-                          feasible_pct = "Feasible"),
-         bucket = factor(bucket, levels = c("Not at all feasible", "Moderate", "Feasible"))) %>%
-  ggplot(aes(x = fct_reorder(item, pct * (bucket == "Feasible")), y = pct, fill = bucket)) +
-  geom_col(position = "stack") +
-  coord_flip() +
-  scale_fill_manual(values = c("Not at all feasible" = nydber_colors["secondary"],
-                                "Moderate" = nydber_colors["gold"],
-                                "Feasible" = nydber_colors["accent"])) +
-  labs(title = "Enabler Feasibility (Card Sort, n=10)", x = NULL, y = "% of respondents",
-       fill = NULL) +
-  theme_nydber()
-```
-
-```{r enabler-cardsort-impact, fig.height=5, fig.width=8}
-cs_enablers %>%
-  select(item, no_improvement_pct, moderate_improvement_pct, major_improvement_pct) %>%
-  pivot_longer(-item, names_to = "bucket", values_to = "pct") %>%
-  mutate(bucket = recode(bucket,
-                          no_improvement_pct = "No improvement",
-                          moderate_improvement_pct = "Moderate",
-                          major_improvement_pct = "Major improvement"),
-         bucket = factor(bucket, levels = c("No improvement", "Moderate", "Major improvement"))) %>%
-  ggplot(aes(x = fct_reorder(item, pct * (bucket == "Major improvement")), y = pct, fill = bucket)) +
-  geom_col(position = "stack") +
-  coord_flip() +
-  scale_fill_manual(values = c("No improvement" = nydber_colors["secondary"],
-                                "Moderate" = nydber_colors["gold"],
-                                "Major improvement" = nydber_colors["primary"])) +
-  labs(title = "Enabler Expected Impact (Card Sort, n=10)", x = NULL, y = "% of respondents",
-       fill = NULL) +
-  theme_nydber()
-```
-
-**High feasibility AND high impact** (the network's clearest near-term priorities): a shared
-communication space (Slack) for the network (90% called it feasible, 30% major improvement);
-existing structures/centers like CASTLE and CDER (80% feasible); and small grants or dedicated
-funding (90% called this at least moderately feasible, and 80% said it would be a major
-improvement — the single highest-impact-rated enabler in the set).
-
-**High impact but lower feasibility** — the harder, structural lifts: institutional norms and
-incentives that reward interdisciplinary work (70% said "not at all feasible" under current
-conditions, yet 40% still called it a major improvement) and shared vision/mutual benefit (70%
-major improvement, but only 30% feasible as something the network can directly manufacture).
-
-```{r enabler-cardsort-table}
-cs_enablers %>%
-  transmute(Enabler = item,
-            `Feasible (%)` = feasible_pct,
-            `Not at all feasible (%)` = not_feasible_pct,
-            `Major improvement (%)` = major_improvement_pct,
-            `No improvement (%)` = no_improvement_pct) %>%
-  arrange(desc(`Feasible (%)`)) %>%
-  kable(caption = "Enabler card sort results, ranked by feasibility (n=10)") %>%
-  kable_styling(bootstrap_options = c("striped", "hover"))
-```
-
 ---
 
 # 5. What Blocks Collaboration
@@ -324,8 +244,8 @@ tibble(
 
 Each Working Group 2 table named specific barriers and sorted them as **local vs. systemic**
 and **movable vs. hard to change**. This table is presented close to verbatim group language
-and was the **starting list for the post-conference severity × changeability rating round**
-described in the conference design (results now reported in Section 5.3 below).
+and is intended as the **starting list for the post-conference severity × changeability rating
+round** described in the conference design (see box below).
 
 ```{r barriers-table}
 wg2_barriers %>%
@@ -353,97 +273,24 @@ wg2_barriers %>%
   theme_nydber()
 ```
 
-## 5.3 Card sort results: severity × changeability
+## 5.3 Next step: the severity × changeability rating
 
-**This is the follow-up round the conference design called for.** After the conference, all
-participants were invited back to rate the consolidated barrier list on **changeability**
-(sorted into "Not addressable at all" / "Moderate" / "Addressable") and on **impediment
-severity** (sorted into "No impediment" / "Moderate" / "Major impediment"). Twelve people were
-invited; 10 rated any given barrier.
-
-**A methodology note on reading this data:** this was a drag-and-drop card sort, not a 1–5
-Likert scale, so "percent" below means *the share of respondents who placed that item in this
-specific bucket, out of the ~10 who sorted it at all* — not out of all 12 survey invitees, and
-a handful of items with less crisp underlying chart data are flagged `approximate` in the
-source file (`data/card_sort_barriers.csv`) rather than presented as exact.
-
-```{r barrier-cardsort-changeability, fig.height=5, fig.width=8}
-cs_barriers %>%
-  select(item, not_addressable_pct, moderate_addressable_pct, addressable_pct) %>%
-  pivot_longer(-item, names_to = "bucket", values_to = "pct") %>%
-  mutate(bucket = recode(bucket,
-                          not_addressable_pct = "Not addressable at all",
-                          moderate_addressable_pct = "Moderate",
-                          addressable_pct = "Addressable"),
-         bucket = factor(bucket, levels = c("Not addressable at all", "Moderate", "Addressable"))) %>%
-  ggplot(aes(x = fct_reorder(item, pct * (bucket == "Addressable")), y = pct, fill = bucket)) +
-  geom_col(position = "stack") +
-  coord_flip() +
-  scale_fill_manual(values = c("Not addressable at all" = nydber_colors["secondary"],
-                                "Moderate" = nydber_colors["gold"],
-                                "Addressable" = nydber_colors["accent"])) +
-  labs(title = "Barrier Changeability (Card Sort, n≈10)", x = NULL, y = "% of respondents",
-       fill = NULL) +
-  theme_nydber()
-```
-
-```{r barrier-cardsort-severity, fig.height=5, fig.width=8}
-cs_barriers %>%
-  select(item, no_impediment_pct, moderate_impediment_pct, major_impediment_pct) %>%
-  pivot_longer(-item, names_to = "bucket", values_to = "pct") %>%
-  mutate(bucket = recode(bucket,
-                          no_impediment_pct = "No impediment",
-                          moderate_impediment_pct = "Moderate",
-                          major_impediment_pct = "Major impediment"),
-         bucket = factor(bucket, levels = c("No impediment", "Moderate", "Major impediment"))) %>%
-  ggplot(aes(x = fct_reorder(item, pct * (bucket == "Major impediment")), y = pct, fill = bucket)) +
-  geom_col(position = "stack") +
-  coord_flip() +
-  scale_fill_manual(values = c("No impediment" = nydber_colors["accent"],
-                                "Moderate" = nydber_colors["gold"],
-                                "Major impediment" = nydber_colors["secondary"])) +
-  labs(title = "Barrier Severity (Card Sort, n≈10)", x = NULL, y = "% of respondents",
-       fill = NULL) +
-  theme_nydber()
-```
-
-**Highest priority (severe AND hard to change) — the structural core:** the **federal funding
-landscape** was the single starkest result in the whole rating round: every respondent who
-sorted it called it "not addressable at all," and 70% called it a major impediment. **Time,
-workload, and motivation constraints** followed the same pattern (70% major impediment, only
-10% called it addressable). **Differing promotion & tenure/graduation requirements** was judged
-almost universally hard to change (90% not addressable) with real but more moderate severity
-(30% major impediment).
-
-**Severe but more addressable — the best return on effort:** **lack of awareness of/networks
-with other DBER researchers**, especially for students and postdocs, stood out as both a real
-impediment (50% major impediment) and the most fixable barrier in the whole list (90% called it
-addressable). This is arguably the clearest "start here" item for the network.
-
-**Named but judged lower-priority:** field-specific jargon and credit/authorship negotiation
-were both rated addressable by large majorities (50% and 90%) and low-impediment by most
-respondents — real, but not where the community's effort is most needed right now.
+The conference design calls for a follow-up round in which all participants rate each
+consolidated barrier on **severity** (how much does it actually block collaboration?) and
+**changeability** (how realistically can this community address it?), and each enabler on
+**potential** and **feasibility**. That round has not yet been conducted. The table below is
+formatted as a ready-to-send rating instrument — the barrier/enabler language above, with
+empty columns for the next round of community input.
 
 ```{r rating-template}
-cs_barriers %>%
-  transmute(Barrier = item,
-            `Not addressable (%)` = not_addressable_pct,
-            `Addressable (%)` = addressable_pct,
-            `Major impediment (%)` = major_impediment_pct,
-            `No impediment (%)` = no_impediment_pct,
-            `Approximate reading?` = approximate) %>%
-  arrange(desc(`Major impediment (%)`)) %>%
-  kable(caption = "Barrier card sort results, ranked by severity (n≈10)") %>%
-  kable_styling(bootstrap_options = c("striped", "hover"))
-```
+rating_template <- wg2_barriers %>%
+  transmute(Item = barrier, Type = "Barrier", `Named by Group(s)` = as.character(group),
+            Severity = NA, Changeability = NA)
 
-### What participants added that wasn't on the list
-
-```{r barrier-open-text}
-cs_open %>%
-  filter(str_detect(question, "Q43|Q23")) %>%
-  rename(Question = question, Response = response) %>%
-  kable() %>%
+rating_template %>%
+  select(-Type) %>%
+  head(10) %>%
+  kable(caption = "Sample of the barrier rating template (full version in data/wg2_barriers.csv)") %>%
   kable_styling(bootstrap_options = c("striped", "hover"))
 ```
 
@@ -482,56 +329,6 @@ wg1_topics %>%
 **Recurring topic clusters:** generative AI's impact on students and pedagogy (named by more
 tables than any other topic); cross-field workforce/career pathways; how disciplines differ in
 teaching foundational/shared content; and assessment across disciplinary contexts.
-
-## 7.1 Card sort results: which research topics should the network prioritize?
-
-The follow-up round asked participants to sort the eight consolidated research topics by
-**feasibility** for a regional network to actually pursue, and separately by how much each
-topic would **improve InterDBER or inter-institutional collaboration** if pursued. Eight of the
-twelve invited participants completed this question.
-
-```{r topics-cardsort, fig.height=5, fig.width=8}
-cs_topics %>%
-  select(item, feasible_pct, major_improvement_pct) %>%
-  pivot_longer(-item, names_to = "metric", values_to = "pct") %>%
-  mutate(metric = recode(metric, feasible_pct = "Feasible (%)",
-                          major_improvement_pct = "Major improvement (%)")) %>%
-  ggplot(aes(x = fct_reorder(item, pct, .fun = max), y = pct, fill = metric)) +
-  geom_col(position = "dodge") +
-  coord_flip() +
-  scale_fill_manual(values = c("Feasible (%)" = nydber_colors["accent"],
-                                "Major improvement (%)" = nydber_colors["primary"])) +
-  labs(title = "Research Topics: Feasibility vs. Expected Impact (Card Sort, n=8)",
-       x = NULL, y = "% of respondents", fill = NULL) +
-  theme_nydber()
-```
-
-**Clearest joint priority:** retention, attrition, and sense of belonging across DBER fields
-was rated feasible by 50% and, notably, 0% said it would produce no improvement — every
-respondent who sorted it saw at least moderate value. **Institutional change and incentive
-structures** was the single highest-impact topic (63% major improvement) despite being
-middle-of-the-pack on feasibility (38%) — a structural topic in the same spirit as the
-highest-severity barriers above. **Generative AI's impact on students and learning**, despite
-being the most-named topic during the working groups, drew a genuinely split verdict in the
-card sort (50% feasible, but also 38% "no improvement") — worth the network's attention but not
-a slam-dunk consensus pick. **Universal or cross-field conceptual frameworks** was the clearest
-lower-priority item: half the respondents called it "not at all feasible."
-
-```{r topics-cardsort-table}
-cs_topics %>%
-  transmute(Topic = item, `Feasible (%)` = feasible_pct,
-            `Not feasible (%)` = not_feasible_pct,
-            `Major improvement (%)` = major_improvement_pct,
-            `No improvement (%)` = no_improvement_pct) %>%
-  arrange(desc(`Major improvement (%)`)) %>%
-  kable(caption = "Research topic card sort results, ranked by expected impact (n=8)") %>%
-  kable_styling(bootstrap_options = c("striped", "hover"))
-```
-
-> One participant flagged a gap in the topic list itself: *"There don't seem to be as many
-> affective research areas explicitly mentioned"* — citing ethics (beyond AI), empathy, and the
-> nature of human-human relations and communication as areas that deserve their own spot rather
-> than folding into the categories above. Worth carrying into the next round of topic-setting.
 
 ---
 
@@ -718,53 +515,6 @@ seminars, and research exchange opportunities. **Most divided:** a network newsl
 a shared digital repository — both drew high interest from some tables and low interest from
 others, usually tied to who would maintain them.
 
-### 9.1.1 Card sort results: feasibility and impact of specific mechanisms
-
-The follow-up round asked participants to sort a longer, more granular list of possible
-collaboration mechanisms — the same ones summarized above, broken out individually — by
-feasibility and by expected improvement to InterDBER collaboration. Nine of twelve invited
-participants completed this question.
-
-```{r collab-cardsort, fig.height=6, fig.width=8}
-cs_collab %>%
-  select(item, feasible_pct, major_improvement_pct) %>%
-  pivot_longer(-item, names_to = "metric", values_to = "pct") %>%
-  mutate(metric = recode(metric, feasible_pct = "Feasible (%)",
-                          major_improvement_pct = "Major improvement (%)")) %>%
-  ggplot(aes(x = fct_reorder(item, pct, .fun = max), y = pct, fill = metric)) +
-  geom_col(position = "dodge") +
-  coord_flip() +
-  scale_fill_manual(values = c("Feasible (%)" = nydber_colors["accent"],
-                                "Major improvement (%)" = nydber_colors["primary"])) +
-  labs(title = "Collaboration Mechanisms: Feasibility vs. Expected Impact (Card Sort, n=9)",
-       x = NULL, y = "% of respondents", fill = NULL) +
-  theme_nydber()
-```
-
-**The clearest "just do this" mechanisms** — near-unanimous on both feasibility and impact:
-**a Slack workspace** (100% feasible) and **listserv/email list** (100% feasible) were the only
-two mechanisms every respondent called fully feasible, though neither drew a majority "major
-improvement" rating — these read as necessary infrastructure rather than transformative on
-their own. **Job and opportunity sharing** was similarly near-unanimous on feasibility (100%)
-and drew the strongest impact rating of the "just build it" tier (67% major improvement).
-
-**Highest expected impact overall:** the **annual regional symposium** — already the
-front-runner in the closing-session enthusiasm ratings above — was rated a major improvement by
-89% of card-sort respondents, the single highest score of any mechanism in the entire round,
-despite only 22% calling it fully "feasible" outright (most placed it in "moderate"
-feasibility, consistent with the real logistical lift of running a recurring in-person event).
-**Graduate student seminar exchanges** showed a similar profile: high expected impact (67%
-major improvement) paired with moderate-not-slam-dunk feasibility.
-
-```{r collab-cardsort-table}
-cs_collab %>%
-  transmute(Mechanism = item, `Feasible (%)` = feasible_pct,
-            `Major improvement (%)` = major_improvement_pct) %>%
-  arrange(desc(`Major improvement (%)`)) %>%
-  kable(caption = "Collaboration mechanism card sort results, ranked by expected impact (n=9)") %>%
-  kable_styling(bootstrap_options = c("striped", "hover"))
-```
-
 ## 9.2 Three-month commitments
 
 Participants committed to concrete next steps. Common patterns across the closing-session
@@ -785,16 +535,6 @@ commitments and post-survey Q25 responses:
   topics) and Working Group 2 (barriers, enablers, design principles), plus 9 closing-session
   visioning tables (sustainability ratings and commitments). A small number of tables did not
   fill in every field; those are reflected as gaps rather than inferred.
-- **Card sort / Delphi rating round:** conducted after the conference as a follow-up to the
-  working-group sessions, using a drag-and-drop "group items into buckets" question format in
-  Qualtrics rather than a numeric Likert scale. `r cs_n` participants were invited; the number
-  who rated any given item ranged from 8 (research topics) to 10 (barriers and enablers) to 9
-  (collaboration mechanisms) — not everyone answered every question. Reported percentages are
-  the share of respondents *who placed a given item somewhere in that question* who put it in
-  the specific bucket named — see Sections 4.3, 5.3, 7.1, and 9.1.1. A handful of individual
-  values in `data/card_sort_barriers.csv` are marked `approximate` where the underlying chart
-  rendering made an exact count harder to confirm; these did not change the overall ranking of
-  priorities.
 - All quotes and group notes are anonymized to theme-level or group-level attribution per
   project guidance; no individual names appear in this report.
 - Structured source data for every table in this report lives in `data/` alongside this `.Rmd`

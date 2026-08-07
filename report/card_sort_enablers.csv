@@ -1,0 +1,11 @@
+item,not_feasible_pct,moderate_feasible_pct,feasible_pct,no_improvement_pct,moderate_improvement_pct,major_improvement_pct,n
+"Open, explicit communication and norm-setting (workload/ownership/credit)",0,40,60,20,50,30,10
+"A designated convener or logistics/organizational lead",0,60,40,0,50,50,10
+"Regular recurring check-ins or meetings",0,70,30,10,70,20,10
+"Existing structures/centers (e.g., CASTLE, CDER)",0,20,80,0,60,40,10
+"In-person relationship-building and trust",0,70,30,0,40,60,10
+"Shared vision, common goals, and mutual benefit",20,50,30,30,0,70,10
+"Institutional norms/incentives (tenure & promotion credit)",70,30,0,20,40,40,10
+"Small grants or dedicated funding to start new collaborations",10,90,0,0,20,80,10
+"A shared communication space (e.g., Slack) for the network",0,10,90,10,60,30,10
+"Capitalizing on existing relationships/momentum",0,60,40,10,60,30,10

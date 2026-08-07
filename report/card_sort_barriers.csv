@@ -1,0 +1,14 @@
+item,not_addressable_pct,moderate_addressable_pct,addressable_pct,no_impediment_pct,moderate_impediment_pct,major_impediment_pct,n,approximate
+"Field-specific language/jargon",10,40,50,60,40,0,10,No
+"Lack of awareness of/networks with other DBER researchers (esp. students/postdocs)",0,10,90,10,40,50,10,No
+"DBER labs or programs being siloed",20,60,20,40,50,10,10,No
+"Misalignment of theoretical/epistemological/methodological norms",20,60,20,40,50,10,10,No
+"Uneven incentives, resources, institutional support",70,30,0,40,50,10,10,No
+"Differing promotion & tenure/graduation requirements",90,10,0,40,30,30,10,No
+"IRB coordination limitations",50,50,0,50,50,0,10,Yes
+"Data-sharing agreements across institutions",10,90,0,40,50,10,10,Yes
+"Time, workload, and motivation constraints",40,50,10,0,30,70,10,Yes
+"Power dynamics across institution types/career stages",30,50,20,50,40,10,10,Yes
+"Credit and authorship negotiation",0,10,90,80,10,0,10,Yes
+"Federal funding landscape/lack of funding",100,0,0,0,30,70,10,Yes
+"Differing institutional schedules and timelines",70,30,0,60,40,0,10,Yes
